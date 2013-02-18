@@ -1,5 +1,5 @@
 /*
-	Geo3x3 ver 1.01
+	Geo3x3 ver 1.02
 		what is Geo3x3
 			geo zone encoding
 		creator
@@ -21,6 +21,7 @@
 				E1384700 = level 6
 				longer is more in detail
 		history
+			ver 1.02 2013.2.18 add Java version, lincense CC BY-ND -> CC BY
 			ver 1.01 2012.1.15 change coding
 			ver 1.00 2012.1.15 first release
 */
