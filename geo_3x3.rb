@@ -40,7 +40,15 @@ module Geo3x3
   end
 
   def decode(code)
-    raise ArgumentError unless code or code.length == 0
+    if code.is_a? Integer
+      code = code < 0 ? "W#{-code}" : "E#{code}"
+    elsif code.is_a? String
+      code = nil if code.length == 0
+    else
+      code = nil
+    end
+
+    raise ArgumentError unless code
 
     c = code[0]
     flg = true if c == "-" or c == "W"
@@ -68,10 +76,6 @@ module Geo3x3
     lng -= 180.0 if flg
 
     [lat, lng, level, unit]
-  end
-
-  def decode_int(code)
-    decode code < 0 ? "W#{-code}" : "E#{code}"
   end
 
   def coords(code)
