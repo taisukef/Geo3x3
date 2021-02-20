@@ -3,7 +3,7 @@ Geo3x3 ver 1.03
 
 ## what is Geo3x3
 geo zone encoding  
-(JavaScript / Java / Python / Ruby / C / C++)  
+(JavaScript / TypeScript / Java / Python / Ruby / C / C++ / PHP)  
 
 ## sample app
 https://taisukef.github.io/Geo3x3/  
@@ -42,15 +42,21 @@ console.log(Geo3x3.decode("W28644"));
 </script>
 ```
 
-in Deno
+in JavaScript (Deno)
 ```
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
 ```
 
-in Node.js
+in JavaScript (Node.js)
 ```
 import { Geo3x3 } from "./Geo3x3.mjs";
+console.log(Geo3x3.decode("W28644"));
+```
+
+in TypeScript (Deno)
+```
+import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.ts";
 console.log(Geo3x3.decode("W28644"));
 ```
 
@@ -103,6 +109,19 @@ int main() {
     printf("%f %f %f %f\n", res[0], res[1], res[2], res[3]); // 35.658634 139.745466 14.000000 0.000113
     return 0;
 }
+```
+
+in PHP
+```
+<?php
+require('Geo3x3.php');
+
+$code = Geo3x3::encode(35.65858, 139.745433, 14);
+echo $code . "\n";
+
+$pos = Geo3x3::decode('E3793653391822');
+echo $pos[0] . " " . $pos[1] . " " . $pos[2] . " " . $pos[3] . "\n";
+?>
 ```
 
 ## history
