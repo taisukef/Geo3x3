@@ -1,0 +1,203 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Geo3x3</title>
+<meta property="og:image" content="http://fukuno.jig.jp/2012/geo3x3.jpg">
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyAoQeRgugDkod_6-42NMAxzsXpDXeI02Y8"></script>
+<style>
+body {
+	text-align: center;
+}
+#divmap {
+	display: inline-block;
+	width: 100%;
+	height: 400px;
+}
+#level {
+	width: 4em;
+}
+#geo3x3 {
+	font-size: 30px;
+}
+#geo3x3 input {
+	font-size: 30px;
+	width: 100%;
+}
+#unit {
+	width: 12em;
+}
+#latlng {
+	width: 20em;
+}
+#help {
+	text-align: left;
+	font-size: 90%;
+	border: gray 2px solid;
+	padding: 1em;
+	margin: 1em;
+}
+</style>
+<script type="module">
+import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.js";
+
+window.onload = function() {
+	for (let i = 1; i <= 20; i++) {
+		const opt = document.createElement("option");
+		opt.textContent = i;
+		level.appendChild(opt);
+	}
+
+	// 日本全体にちょうどいい
+    const map = new google.maps.Map(divmap, {
+		zoom: 5, // zoom level
+        //mapTypeId: "roadmap",
+        mapTypeId: "satellite",
+	});
+	//map.setZoom(5)
+	//map.panTo(new google.maps.LatLng(36.208823, 138.251953));
+
+
+	const getZonePaths = function(zone) {
+		const coords = Geo3x3.getCoords(zone);
+		const len = coords.length
+		const gcoords = new Array(len);
+		for (let i = 0; i < len; i++) {
+			gcoords[i] = new google.maps.LatLng(coords[i].lat, coords[i].lng);
+		}
+		return gcoords;
+	};
+	const drawZonePolygon = function(map, zone, linecolor, fillcolor) {
+		if (linecolor == null)
+			linecolor = 'black';
+		if (fillcolor == null)
+			fillcolor = 'red';
+		const paths = getZonePaths(zone);
+		const p = new google.maps.Polygon({
+			paths: paths,
+			strokeColor: linecolor,
+			strokeOpacity: 1,
+			strokeWeight: 2,
+			fillColor: fillcolor,
+			fillOpacity: 0.2
+		});
+		google.maps.event.addListener(p, 'click', function(e) {
+			p.setMap(null);
+		});
+		p.setMap(map);
+		const size = Geo3x3.getMeshSize(zone);
+		const tos = (n) => n > 100 ? Math.floor(n) : (n > 1 ?  n.toFixed(2) : n.toFixed(3));
+		unit.value = tos(size.x) + "m x " + tos(size.y) + "m";
+		return p;
+	};
+	const moveZone = function(map, zone) {
+		const pos = Geo3x3.decode(zone);
+//		map.setCenter(new google.maps.LatLng(pos.lat, pos.lng));
+		map.fitBounds(new google.maps.LatLngBounds(
+			new google.maps.LatLng(pos.lat - pos.unit / 2, pos.lng - pos.unit / 2),
+			new google.maps.LatLng(pos.lat + pos.unit / 2, pos.lng + pos.unit / 2)
+		));
+	}
+	google.maps.event.addListener(map, 	'zoom_changed', function(evt) {
+//		zoom.value = map.getZoom(); // 0 - 21
+		const nlevel = [ 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 9, 10, 11, 11, 12, 12, 13, 14, 15 ][map.getZoom()];
+		level.value = nlevel;
+	});
+	google.maps.event.addListener(map, 'click', function(evt) {
+		const pos = evt.latLng;
+		const nlevel = parseInt(level.value);
+		const zone = Geo3x3.encode(pos.lat(), pos.lng(), nlevel);
+		latlng.value = pos.lat() + "," + pos.lng();
+		output.value = zone;
+		if (zone == null) {
+			return;
+		}
+		
+		drawZonePolygon(map, zone);
+		save();
+		if (false) {
+			for (const i = 0; i < 9; i++) {
+				drawZonePolygon(map, zone + i, 'white', 'blue');
+			}
+		}
+	});
+	output.onkeyup = function(e) {
+		const key = e.keyCode;
+		if (key == 13) {
+			const zone = output.value;
+			drawZonePolygon(map, zone);
+			moveZone(map, zone);
+			save();
+		}
+	};
+	const load = function() {
+		let s = document.location.hash;
+		if (s != null && s.length > 0) {
+			s = s.substring(1);
+		} else {
+			s = "E3792";
+		}
+		const pos = Geo3x3.decode(s);
+		if (pos != null) {
+			output.value = s;
+			drawZonePolygon(map, s);
+			moveZone(map, s);
+			return true;
+		}
+		return false;
+	};
+	const save = function() {
+		const s = output.value;
+		document.location.replace("#" + s);
+	};
+	load();
+	
+	movebtn.onclick = function() {
+		const pos = latlng.value;
+		try {
+			const ll = pos.split(',');
+			map.setCenter(new google.maps.LatLng(parseFloat(ll[0]), parseFloat(ll[1])));
+		} catch (e) {
+		}
+	};
+};
+</script>
+</head>
+<body>
+
+<div id='geo3x3'>Geo3x3: <input type="text" id="output"></div>
+<div id="divmap"></div>
+<div>
+level: <select id="level"></select>
+<!-- zoom: <input type="text" id="zoom"> -->
+unit: <input type="text" id="unit"><br>
+lat,lng: <input type="text" id="latlng"><button id='movebtn'>move</button>
+</div>
+
+<div id='help'>
+Geo3x3（ジオスリーバイスリー）は、地球上の範囲を表すコードです。WまたはEで始まり、領域が細かくなるほどコードが長くなります。<br>
+<br>
+クリックすると書き換わるURLを場所の共有用に使えるサンプルアプリになっています。<br>
+<br>
+アルゴリズム<br>
+1. 地球全体を東半球(E)と西半球(W)の領域に分ける。<br>
+2. 領域（初回は緯度180度、経度180度分）を9分割し、該当位置を1～9の数値で表す（1が北西、5が中央）。<br>
+3. 必要な領域の大きさになるまで、2を繰り返す。<br>
+というものです。<br>
+※9分割の部分に、<a href=https://fukuno.jig.jp/2012/sanshinclk.html>3進数</a>を使いました。意外と使うものですね。<br>
+<br>
+JavaScriptのソースコードはこちら「<a href="https://taisukef.github.io/Geo3x3/Geo3x3.js">Geo3x3.js</a>」<br>
+ライセンスは何の制約もなく自由に使える <a href=http://creativecommons.org/licenses/by-nd/3.0/>CC0 (Public Domain)</a> とします。<br>
+※互換性保持のため、互換性がない変更をする場合には名称の変更をお願いします<br>
+<br>
+同様な表記方法に、<a href=http://lpaddress.com/>LPaddress</a>、<a href=https://ja.wikipedia.org/wiki/%E3%82%B8%E3%82%AA%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5>Geohash</a>、<a href=http://geohex.net/>GeoHex</a>、<a href=https://maps.google.com/pluscodes/>Plus Codes</a>などがあります。<br>
+<br>
+ブログ<br>
+- <a href=http://fukuno.jig.jp/139>Geo3x3 - 緯度経度を文字列化するシンプルなコード体系</a><br>
+- <a href=https://fukuno.jig.jp/205>緯度経度を数値にして気軽に使おう Geo3x3 Java/JavaScript (CC BY)</a><br>
+</div>
+
+<div id='credit'>
+	<p>Lib: CC0 <a href=https://github.com/taisukef/Geo3x3>Geo3x3</a></p>
+	<p>App: CC0 <a href='https://fukuno.jig.jp/3131'>@taisukef</a> (<a href=https://github.com/taisukef/Geo3x3>src on GitHub</a>)</p>
+</div>
+
+</body>
+</html>
