@@ -3,7 +3,7 @@ Geo3x3 ver 1.03
 
 ## What is Geo3x3
 geo zone encoding  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP/ Go / Kotlin / Dart)  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP/ Go / Kotlin / Dart / Rust)  
 
 ## Sample app
 https://taisukef.github.io/Geo3x3/  
@@ -248,6 +248,23 @@ to run
 dart simple_geo3x3.dart
 ```
 
+## in Rust
+```
+mod geo3x3;
+
+fn main() {
+    let res = geo3x3::encode(35.65858, 139.745433, 14);
+    println!("{}", res);
+
+    let pos = geo3x3::decode("E3793653391822".to_string());
+    println!("{} {} {} {}", pos.0, pos.1, pos.2, pos.3); // 35.658634 139.745466 14.000000 0.000113
+}
+```
+to run
+```
+rustc simple_geo3x3.rs
+./simple_geo3x3
+```
 
 ## History
 ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)  
