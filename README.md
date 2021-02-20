@@ -1,25 +1,25 @@
 Geo3x3 ver 1.03
 ======
 
-## what is Geo3x3
+## What is Geo3x3
 geo zone encoding  
-(JavaScript / TypeScript / C / C++ / Swift / Java / Python / Ruby / PHP)  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP)  
 
-## sample app
+## Sample app
 https://taisukef.github.io/Geo3x3/  
 
-## creator
+## Creator
 Taisuke Fukuno  
 http://twitter.com/taisukef  
 http://fukuno.jig.jp/139  
 http://fukuno.jig.jp/205  
 https://fukuno.jig.jp/3131  
 
-## licence
+## Licence
 CC0  
 https://creativecommons.jp/sciencecommons/aboutcc0/  
 
-## doc
+## Doc
 recursive divisiton 3x3(9th)  
 			East  West  
 	North 1 2 3 1 2 3  
@@ -32,9 +32,9 @@ divide the earth to two (West or East)
 	E1384700 = level 6  
 	longer is more in detail  
 
-## how to use
+## How to use
 
-in HTML
+### in HTML
 ```
 <script type=module>
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
@@ -42,7 +42,7 @@ console.log(Geo3x3.decode("W28644"));
 </script>
 ```
 
-in JavaScript (Deno)
+### in JavaScript (Deno)
 ```
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
@@ -52,7 +52,7 @@ to run (JavaScript)
 deno run -A simple_geo3x3.mjs
 ```
 
-in JavaScript (Node.js)
+### in JavaScript (Node.js)
 ```
 import { Geo3x3 } from "./Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
@@ -62,7 +62,7 @@ to run (TypeScript)
 node simple_geo3x3.mjs
 ```
 
-in TypeScript (Deno)
+### in TypeScript (Deno)
 ```
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.ts";
 console.log(Geo3x3.decode("W28644"));
@@ -72,7 +72,7 @@ to run (TypeScript)
 deno run simple_geo3x3.ts
 ```
 
-in Python
+### in Python
 ```
 import geo3x3
 ## get Geo3x3 code from latitude / longitude / level
@@ -88,7 +88,7 @@ to run (Python)
 python3 simple_geo3x3.py
 ```
 
-in Ruby
+### in Ruby
 ```
 require "./geo3x3"
 code = Geo3x3.encode(35.65858, 139.745433, 14)
@@ -102,7 +102,7 @@ to run (Ruby)
 ruby simple_geo3x3.rb
 ```
 
-in Java
+### in Java
 ```
 public class simple_geo3x3 {
     public static void main(String[] args) {
@@ -119,7 +119,7 @@ javac simple_geo3x3.java Geo3x3.java
 java simple_geo3x3
 ```
 
-in C/C++
+### in C/C++
 ```
 #include <stdio.h>
 #include "geo3x3.h"
@@ -140,7 +140,7 @@ to run (C)
 cc simple_geo3x3.c; ./a.out
 ```
 
-in C#
+### in C#
 ```
 using System;
 
@@ -159,7 +159,7 @@ mcs simple_geo3x3.cs Geo3x3.cs
 mono ./simple_geo3x3.exe
 ```
 
-in PHP
+### in PHP
 ```
 <?php
 require('Geo3x3.php');
@@ -176,7 +176,7 @@ to run (PHP)
 php simple_geo3x3.php
 ```
 
-in Swift
+### in Swift
 ```
 import Geo3x3
 
@@ -193,9 +193,7 @@ swiftc simple_geo3x3.swift Geo3x3.o -I .
 ./main
 ```
 
-
-
-## history
+## History
 ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)  
 ver 1.02 2013.2.18 write in Java, lincense CC BY-ND -> CC BY  
 ver 1.01 2012.1.15 change coding  
