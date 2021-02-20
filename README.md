@@ -1,4 +1,4 @@
-Geo3x3 ver 1.02
+Geo3x3
 ======
 
 what is Geo3x3  
@@ -11,8 +11,8 @@ creator
 	http://fukuno.jig.jp/2012/geo3x3  
 
 licence  
-	CC BY 3.0  
-	http://creativecommons.org/licenses/by/3.0/  
+	CC BY 4.0  
+	https://creativecommons.org/licenses/by/4.0/
 
 doc  
 	recursive divisiton 3x3(9th)  
@@ -31,3 +31,8 @@ history
 	ver 1.02 2013.2.18 write in Java, lincense CC BY-ND -> CC BY  
 	ver 1.01 2012.1.15 change coding  
 	ver 1.00 2012.1.15 first release  
+
+## related
+Geo3x3 Ruby gem  
+https://github.com/kitak/geo3x3  
+
