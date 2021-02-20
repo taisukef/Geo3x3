@@ -11,7 +11,7 @@ http://fukuno.jig.jp/205
 http://fukuno.jig.jp/2012/geo3x3  
 
 ## licence
-CC0 BY 3.0  
+CC0  
 https://creativecommons.jp/sciencecommons/aboutcc0/  
 
 ## doc
@@ -28,7 +28,7 @@ divide the earth to two (West or East)
 	longer is more in detail  
 
 ## history
-ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)
+ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)  
 ver 1.02 2013.2.18 write in Java, lincense CC BY-ND -> CC BY  
 ver 1.01 2012.1.15 change coding  
 ver 1.00 2012.1.15 first release  
