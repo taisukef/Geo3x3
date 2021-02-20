@@ -47,17 +47,29 @@ in JavaScript (Deno)
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
 ```
+to run (JavaScript)
+```
+deno run -A simple_geo3x3.mjs
+```
 
 in JavaScript (Node.js)
 ```
 import { Geo3x3 } from "./Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
 ```
+to run (TypeScript)
+```
+node simple_geo3x3.mjs
+```
 
 in TypeScript (Deno)
 ```
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.ts";
 console.log(Geo3x3.decode("W28644"));
+```
+to run (TypeScript)
+```
+deno run simple_geo3x3.ts
 ```
 
 in Python
@@ -71,6 +83,10 @@ print(code) # E3793653391822
 pos = geo3x3.decode('E3793653391822')
 print(pos) # (35.658633790016204, 139.74546563023935, 14, 0.00011290058538953522)
 ```
+to run (Python)
+```
+python3 simple_geo3x3.py
+```
 
 in Ruby
 ```
@@ -80,6 +96,10 @@ p code # "E3793653391822"
 
 pos = Geo3x3.decode('E3793653391822')
 p pos # [35.658633790016204, 139.74546563023935, 14, 0.00011290058538953522]
+```
+to run (Ruby)
+```
+ruby simple_geo3x3.rb
 ```
 
 in Java
@@ -92,6 +112,11 @@ public class simple_geo3x3 {
         System.out.println(res[0] + " " + res[1] + " " + res[2] + " " + res[3]);
     }
 }
+```
+to run (Java)
+```
+javac simple_geo3x3.java Geo3x3.java
+java simple_geo3x3
 ```
 
 in C/C++
@@ -110,9 +135,28 @@ int main() {
     return 0;
 }
 ```
-to compile (Swift)
+to run (C)
 ```
 cc simple_geo3x3.c; ./a.out
+```
+
+in C#
+```
+using System;
+
+public class HelloWorld {
+    static public void Main() {
+        String code = Geo3x3.encode(35.65858, 139.745433, 14);
+        Console.WriteLine(code);
+        double[] res = Geo3x3.decode("E3793653391822");
+        Console.WriteLine(res[0] + " " + res[1] + " " + res[2] + " " + res[3]);
+    }
+}
+```
+to run (C#)
+```
+mcs simple_geo3x3.cs Geo3x3.cs
+mono ./simple_geo3x3.exe
 ```
 
 in PHP
@@ -127,6 +171,10 @@ $pos = Geo3x3::decode('E3793653391822');
 echo $pos[0] . " " . $pos[1] . " " . $pos[2] . " " . $pos[3] . "\n";
 ?>
 ```
+to run (PHP)
+```
+php simple_geo3x3.php
+```
 
 in Swift
 ```
@@ -137,7 +185,7 @@ print(code)
 let pos = Geo3x3.decode(code: "E3793653391822")
 print(pos)
 ```
-to compile (Swift)
+to run (Swift)
 ```
 swiftc -emit-module -parse-as-library Geo3x3.swift -module-name Geo3x3
 swiftc -emit-object -parse-as-library Geo3x3.swift -module-name Geo3x3
