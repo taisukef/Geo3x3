@@ -1,4 +1,4 @@
-require "minitest/unit"
+#require "minitest/unit"
 require "minitest/autorun"
 require "./geo_3x3"
 
