@@ -3,7 +3,7 @@ Geo3x3 ver 1.03
 
 ## what is Geo3x3
 geo zone encoding  
-(JavaScript / Java / Python / Ruby)  
+(JavaScript / Java / Python / Ruby / C / C++)  
 
 ## sample app
 https://taisukef.github.io/Geo3x3/  
@@ -74,6 +74,35 @@ p code # "E3793653391822"
 
 pos = Geo3x3.decode('E3793653391822')
 p pos # [35.658633790016204, 139.74546563023935, 14, 0.00011290058538953522]
+```
+
+in Java
+```
+public class simple_geo3x3 {
+    public static void main(String[] args) {
+        String code = Geo3x3.encode(35.65858, 139.745433, 14);
+        System.out.println(code);
+        double[] res = Geo3x3.decode("E3793653391822");
+        System.out.println(res[0] + " " + res[1] + " " + res[2] + " " + res[3]);
+    }
+}
+```
+
+in C/C++
+```
+#include <stdio.h>
+#include "geo3x3.h"
+
+int main() {
+    char buf[30];
+    Geo3x3_encode(35.65858, 139.745433, 14, buf);
+    printf("%s\n", buf); // E3793653391822
+
+    double res[4];
+    Geo3x3_decode("E3793653391822", res);
+    printf("%f %f %f %f\n", res[0], res[1], res[2], res[3]); // 35.658634 139.745466 14.000000 0.000113
+    return 0;
+}
 ```
 
 ## history
