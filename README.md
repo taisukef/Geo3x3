@@ -16,10 +16,10 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 |       | 4 | 5 | 6 | 4 | 5 | 6 |  
 | South | 7 | 8 | 9 | 7 | 8 | 9 |  
 
-	(0 = dummy)  
-	origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
 	W5555555 = level 8  
 	E1384700 = level 6  
+	(0 = dummy)  
+	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
 
 ## Sample app
 https://taisukef.github.io/Geo3x3/  
