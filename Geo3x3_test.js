@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.69.0/testing/asserts.ts";
-import { Geo3x3 } from "./Geo3x3.js";
+import { Geo3x3 } from "./Geo3x3.mjs";
 
 Deno.test("decode", () => {
 	assertEquals(Geo3x3.decode("W28644"), { lat: 40, lng: -86.2962962962963, level: 6, unit: 0.7407407407407408 });
