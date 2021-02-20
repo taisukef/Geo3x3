@@ -2,7 +2,8 @@ Geo3x3 ver 1.03
 ======
 
 ## what is Geo3x3
-geo zone encoding
+geo zone encoding  
+(JavaScript / Java / Python / Ruby)  
 
 ## sample app
 https://taisukef.github.io/Geo3x3/  
@@ -53,6 +54,27 @@ import { Geo3x3 } from "./Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
 ```
 
+in Python
+```
+import geo3x3
+## get Geo3x3 code from latitude / longitude / level
+code = geo3x3.encode(35.65858, 139.745433, 14)
+print(code) # E3793653391822
+
+## get location from Geo3x3 code
+pos = geo3x3.decode('E3793653391822')
+print(pos) # (35.658633790016204, 139.74546563023935, 14, 0.00011290058538953522)
+```
+
+in Ruby
+```
+require "./geo3x3"
+code = Geo3x3.encode(35.65858, 139.745433, 14)
+p code # "E3793653391822"
+
+pos = Geo3x3.decode('E3793653391822')
+p pos # [35.658633790016204, 139.74546563023935, 14, 0.00011290058538953522]
+```
 
 ## history
 ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)  

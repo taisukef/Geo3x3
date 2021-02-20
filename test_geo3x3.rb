@@ -1,6 +1,6 @@
 #require "minitest/unit"
 require "minitest/autorun"
-require "./geo_3x3"
+require "./geo3x3"
 
 class TestGeo3x3 < MiniTest::Unit::TestCase
   include Geo3x3
