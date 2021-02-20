@@ -4,11 +4,15 @@ Geo3x3 ver 1.03
 ## what is Geo3x3
 geo zone encoding
 
+## sample app
+https://taisukef.github.io/Geo3x3/  
+
 ## creator
 Taisuke Fukuno  
 http://twitter.com/taisukef  
+http://fukuno.jig.jp/139  
 http://fukuno.jig.jp/205  
-http://fukuno.jig.jp/2012/geo3x3  
+https://fukuno.jig.jp/3131  
 
 ## licence
 CC0  
