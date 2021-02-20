@@ -2,3 +2,8 @@
 __pycache__
 a.out
 *.exe
+main
+*.o
+*.swiftsourceinfo
+*.swiftmodule
+*.swiftdoc

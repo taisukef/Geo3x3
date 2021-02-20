@@ -3,7 +3,7 @@ Geo3x3 ver 1.03
 
 ## what is Geo3x3
 geo zone encoding  
-(JavaScript / TypeScript / Java / Python / Ruby / C / C++ / PHP)  
+(JavaScript / TypeScript / C / C++ / Swift / Java / Python / Ruby / PHP)  
 
 ## sample app
 https://taisukef.github.io/Geo3x3/  
@@ -110,6 +110,10 @@ int main() {
     return 0;
 }
 ```
+to compile (Swift)
+```
+cc simple_geo3x3.c; ./a.out
+```
 
 in PHP
 ```
@@ -123,6 +127,25 @@ $pos = Geo3x3::decode('E3793653391822');
 echo $pos[0] . " " . $pos[1] . " " . $pos[2] . " " . $pos[3] . "\n";
 ?>
 ```
+
+in Swift
+```
+import Geo3x3
+
+let code = Geo3x3.encode(lat: 35.65858, lng: 139.745433, level: 14)
+print(code)
+let pos = Geo3x3.decode(code: "E3793653391822")
+print(pos)
+```
+to compile (Swift)
+```
+swiftc -emit-module -parse-as-library Geo3x3.swift -module-name Geo3x3
+swiftc -emit-object -parse-as-library Geo3x3.swift -module-name Geo3x3
+swiftc simple_geo3x3.swift Geo3x3.o -I .
+./main
+```
+
+
 
 ## history
 ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)  
