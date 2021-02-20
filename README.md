@@ -2,8 +2,24 @@ Geo3x3 ver 1.03
 ======
 
 ## What is Geo3x3
-geo zone encoding  
+Geo3x3 is simple geo-coding system  
+Geo3x3はシンプルなジオコーディングです  
 (JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP/ Go / Kotlin / Dart / Rust)  
+
+## Doc
+divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is more in detail.  
+まずは地球を東と西に分けて、再帰的に3x3の9エリアで分割していきます。長くなるほど精度が上がります。  
+
+|       |  | East | | |  West | |  
+|-------|--|------|-|-|-------|-|
+| North | 1 | 2 | 3 | 1 | 2 | 3 |  
+|       | 4 | 5 | 6 | 4 | 5 | 6 |  
+| South | 7 | 8 | 9 | 7 | 8 | 9 |  
+
+	(0 = dummy)  
+	origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
+	W5555555 = level 8  
+	E1384700 = level 6  
 
 ## Sample app
 https://taisukef.github.io/Geo3x3/  
@@ -16,24 +32,10 @@ http://fukuno.jig.jp/205
 https://fukuno.jig.jp/3131  
 
 ## Licence
-CC0  
+CC0 (Public Domain)  
+ライセンスはCC0（パブリックドメイン）です  
 https://creativecommons.jp/sciencecommons/aboutcc0/  
 
-## Doc
-recursive divisiton 3x3(9th)  
-
-|       |  | East | | |  West | |  
-|-------|--|------|-|-|-------|-|
-| North | 1 | 2 | 3 | 1 | 2 | 3 |  
-|       | 4 | 5 | 6 | 4 | 5 | 6 |  
-| South | 7 | 8 | 9 | 7 | 8 | 9 |  
-
-	(0 = dummy)  
-	origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
-divide the earth to two (West or East)  
-	W5555555 = level 8  
-	E1384700 = level 6  
-	longer is more in detail  
 
 ## How to use
 
