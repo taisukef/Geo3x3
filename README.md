@@ -37,9 +37,15 @@ console.log(Geo3x3.decode("W28644"));
 </script>
 ```
 
-in Deno / Node.js
+in Deno
 ```
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
+console.log(Geo3x3.decode("W28644"));
+```
+
+in Node.js
+```
+import { Geo3x3 } from "./Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
 ```
 
