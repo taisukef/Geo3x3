@@ -7,3 +7,5 @@ main
 *.swiftsourceinfo
 *.swiftmodule
 *.swiftdoc
+META-INF/
+*.jar

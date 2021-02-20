@@ -3,7 +3,7 @@ Geo3x3 ver 1.03
 
 ## What is Geo3x3
 geo zone encoding  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP)  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP/ Go / Kotlin)  
 
 ## Sample app
 https://taisukef.github.io/Geo3x3/  
@@ -191,6 +191,45 @@ swiftc -emit-module -parse-as-library Geo3x3.swift -module-name Geo3x3
 swiftc -emit-object -parse-as-library Geo3x3.swift -module-name Geo3x3
 swiftc simple_geo3x3.swift Geo3x3.o -I .
 ./main
+```
+
+## in Go
+```
+package main
+
+import "fmt"
+import "./geo3x3"
+
+func main() {
+    code := geo3x3.Encode(35.65858, 139.745433, 14)
+    fmt.Printf("%s\n", code) // E3793653391822
+    
+    pos := geo3x3.Decode("E3793653391822")
+    fmt.Printf("%f %f %f %f\n", pos[0], pos[1], pos[2], pos[3]); // 35.658634 139.745466 14.000000 0.000113
+}
+```
+to run
+```
+go build simple_geo3x3.go
+./simple_geo3x3
+```
+
+kotlinc simple_geo3x3.kt -include-runtime -d simple_geo3x3.jar
+kotlin simple_geo3x3.jar
+
+### in Kotlin
+```
+fun main(args: Array<String>) { 
+  var code = Geo3x3.encode(35.65858, 139.745433, 14)
+  println(code)
+  var res = Geo3x3.decode("E3793653391822")
+  println("${res[0]} ${res[1]} ${res[2]} ${res[3]}")
+}
+```
+to run
+```
+kotlinc simple_geo3x3.kt Geo3x3.kt -include-runtime -d simple_geo3x3.jar
+kotlin simple_geo3x3.jar
 ```
 
 ## History
