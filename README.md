@@ -23,9 +23,10 @@ https://creativecommons.jp/sciencecommons/aboutcc0/
 recursive divisiton 3x3(9th)  
 
 |       |  | East | | |  West | |  
-| North | 1 | 2 | 3 | 1 | 2 | 3 |
-|       | 4 | 5 | 6 | 4 | 5 | 6 |
-| South | 7 | 8 | 9 | 7 | 8 | 9 |
+|-------|--|------|-|-|-------|-|
+| North | 1 | 2 | 3 | 1 | 2 | 3 |  
+|       | 4 | 5 | 6 | 4 | 5 | 6 |  
+| South | 7 | 8 | 9 | 7 | 8 | 9 |  
 
 	(0 = dummy)  
 	origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
