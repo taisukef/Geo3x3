@@ -1,6 +1,3 @@
-# coding=utf-8
-import math
-
 def encode(lat: float, lng: float, level: int):
     if level < 1:
         return null
@@ -52,4 +49,3 @@ def decode(code):
     if flg:
         lng -= 180
     return (lat, lng, level, unit)
-    #return { "lat": lat, "lng": lng, "level": level, "unit": unit }
