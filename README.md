@@ -214,9 +214,6 @@ go build simple_geo3x3.go
 ./simple_geo3x3
 ```
 
-kotlinc simple_geo3x3.kt -include-runtime -d simple_geo3x3.jar
-kotlin simple_geo3x3.jar
-
 ### in Kotlin
 ```
 fun main(args: Array<String>) { 
