@@ -42,7 +42,7 @@ https://creativecommons.jp/sciencecommons/aboutcc0/
 ## How to use
 
 ### in HTML
-```
+```html
 <script type=module>
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
@@ -50,37 +50,43 @@ console.log(Geo3x3.decode("W28644"));
 ```
 
 ### in JavaScript (Deno)
-```
+```mjs
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
 ```
-to run (JavaScript)
-```
-deno run -A simple_geo3x3.mjs
+
+to run:
+
+```bash
+$ deno run -A simple_geo3x3.mjs
 ```
 
 ### in JavaScript (Node.js)
-```
+```js
 import { Geo3x3 } from "./Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
 ```
-to run (TypeScript)
-```
-node simple_geo3x3.mjs
+
+to run:
+
+```bash
+$ node simple_geo3x3.mjs
 ```
 
 ### in TypeScript (Deno)
-```
+```ts
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.ts";
 console.log(Geo3x3.decode("W28644"));
 ```
-to run (TypeScript)
-```
-deno run simple_geo3x3.ts
+
+to run:
+
+```bash
+$ deno run simple_geo3x3.ts
 ```
 
 ### in Python
-```
+```py
 import geo3x3
 ## get Geo3x3 code from latitude / longitude / level
 code = geo3x3.encode(35.65858, 139.745433, 14)
@@ -90,13 +96,15 @@ print(code) # E3793653391822
 pos = geo3x3.decode('E3793653391822')
 print(pos) # (35.658633790016204, 139.74546563023935, 14, 0.00011290058538953522)
 ```
-to run (Python)
-```
-python3 simple_geo3x3.py
+
+to run:
+
+```bash
+$ python3 simple_geo3x3.py
 ```
 
 ### in Ruby
-```
+```ruby
 require "./geo3x3"
 code = Geo3x3.encode(35.65858, 139.745433, 14)
 p code # "E3793653391822"
@@ -104,13 +112,15 @@ p code # "E3793653391822"
 pos = Geo3x3.decode('E3793653391822')
 p pos # [35.658633790016204, 139.74546563023935, 14, 0.00011290058538953522]
 ```
-to run (Ruby)
-```
-ruby simple_geo3x3.rb
+
+to run:
+
+```bash
+$ ruby simple_geo3x3.rb
 ```
 
 ### in Java
-```
+```java
 public class simple_geo3x3 {
     public static void main(String[] args) {
         String code = Geo3x3.encode(35.65858, 139.745433, 14);
@@ -120,10 +130,12 @@ public class simple_geo3x3 {
     }
 }
 ```
-to run (Java)
-```
-javac simple_geo3x3.java Geo3x3.java
-java simple_geo3x3
+
+to run:
+
+```bash
+$ javac simple_geo3x3.java Geo3x3.java
+$ java simple_geo3x3
 ```
 
 ### in C/C++
@@ -142,13 +154,15 @@ int main() {
     return 0;
 }
 ```
-to run (C)
-```
-cc simple_geo3x3.c; ./a.out
+
+to run:
+
+```bash
+$ cc simple_geo3x3.c; ./a.out
 ```
 
 ### in C#
-```
+```c#
 using System;
 
 public class HelloWorld {
@@ -160,14 +174,16 @@ public class HelloWorld {
     }
 }
 ```
-to run (C#)
-```
-mcs simple_geo3x3.cs Geo3x3.cs
-mono ./simple_geo3x3.exe
+
+to run:
+
+```bash
+$ mcs simple_geo3x3.cs Geo3x3.cs
+$ mono ./simple_geo3x3.exe
 ```
 
 ### in PHP
-```
+```php
 <?php
 require('Geo3x3.php');
 
@@ -178,13 +194,15 @@ $pos = Geo3x3::decode('E3793653391822');
 echo $pos[0] . " " . $pos[1] . " " . $pos[2] . " " . $pos[3] . "\n";
 ?>
 ```
-to run (PHP)
-```
-php simple_geo3x3.php
+
+to run:
+
+```bash
+$ php simple_geo3x3.php
 ```
 
 ### in Swift
-```
+```swift
 import Geo3x3
 
 let code = Geo3x3.encode(lat: 35.65858, lng: 139.745433, level: 14)
@@ -192,16 +210,19 @@ print(code)
 let pos = Geo3x3.decode(code: "E3793653391822")
 print(pos)
 ```
+
 to run (Swift)
-```
-swiftc -emit-module -parse-as-library Geo3x3.swift -module-name Geo3x3
-swiftc -emit-object -parse-as-library Geo3x3.swift -module-name Geo3x3
-swiftc simple_geo3x3.swift Geo3x3.o -I .
-./main
+
+```bash
+$ swiftc -emit-module -parse-as-library Geo3x3.swift -module-name Geo3x3
+$ swiftc -emit-object -parse-as-library Geo3x3.swift -module-name Geo3x3
+$ swiftc simple_geo3x3.swift Geo3x3.o -I .
+$ ./main
 ```
 
 ## in Go
-```
+
+```go
 package main
 
 import "fmt"
@@ -215,14 +236,17 @@ func main() {
     fmt.Printf("%f %f %f %f\n", pos[0], pos[1], pos[2], pos[3]); // 35.658634 139.745466 14.000000 0.000113
 }
 ```
-to run
-```
-go build simple_geo3x3.go
-./simple_geo3x3
+
+to run:
+
+```bash
+$ go build simple_geo3x3.go
+$ ./simple_geo3x3
 ```
 
 ### in Kotlin
-```
+
+```kotlin
 fun main(args: Array<String>) { 
   var code = Geo3x3.encode(35.65858, 139.745433, 14)
   println(code)
@@ -230,14 +254,17 @@ fun main(args: Array<String>) {
   println("${res[0]} ${res[1]} ${res[2]} ${res[3]}")
 }
 ```
-to run
-```
-kotlinc simple_geo3x3.kt Geo3x3.kt -include-runtime -d simple_geo3x3.jar
-kotlin simple_geo3x3.jar
+
+to run:
+
+```bash
+$ kotlinc simple_geo3x3.kt Geo3x3.kt -include-runtime -d simple_geo3x3.jar
+$ kotlin simple_geo3x3.jar
 ```
 
 ## in Dart
-```
+
+```dart
 import "./Geo3x3.dart";
 
 main() {
@@ -247,13 +274,15 @@ main() {
   print("${res[0]} ${res[1]} ${res[2]} ${res[3]}");
 }
 ```
-to run
-```
-dart simple_geo3x3.dart
+
+to run:
+
+```bash
+$ dart simple_geo3x3.dart
 ```
 
 ## in Rust
-```
+```rust
 mod geo3x3;
 
 fn main() {
@@ -264,10 +293,12 @@ fn main() {
     println!("{} {} {} {}", pos.0, pos.1, pos.2, pos.3); // 35.658634 139.745466 14.000000 0.000113
 }
 ```
-to run
-```
-rustc simple_geo3x3.rs
-./simple_geo3x3
+
+to run:
+
+```bash
+$ rustc simple_geo3x3.rs
+$ ./simple_geo3x3
 ```
 
 ## History
