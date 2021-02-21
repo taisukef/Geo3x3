@@ -75,7 +75,7 @@ decode' code = State.execState f (0.0, 0.0, 0, 0.0)
           lat' = lat + unit / 2
           lng' = lng + unit / 2
           lat'' = 90 - lat'
-          lng'' = if flg then lng -180 else lng
+          lng'' = if flg then lng' -180 else lng'
         State.put (lat'',lng'',level,unit)
 
 
