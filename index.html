@@ -168,7 +168,7 @@ window.onload = function() {
 		const pos = Geo3x3.decode(s);
 		if (pos != null) {
 			output.value = s;
-			drawZonePolygon(map, s);
+			bkpolygon = drawZonePolygon(map, s);
 			moveZone(map, s);
 			return true;
 		}
