@@ -4,9 +4,9 @@ Geo3x3 ver 1.03
 ## What is Geo3x3
 Geo3x3 is simple geo-coding system  
 Geo3x3はシンプルなジオコーディングです  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP/ Go / Kotlin / Dart / Rust)  
-14 languages supported now  
-現在14言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP/ Go / Kotlin / Dart / Rust / Haskell)  
+15 languages supported now  
+現在15言語対応しています  
 
 ## Doc
 divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is more in detail.  
@@ -268,6 +268,22 @@ to run
 ```
 rustc simple_geo3x3.rs
 ./simple_geo3x3
+```
+
+## in Haskell (GHC 8.4.x or later)
+```
+import Geo3x3
+
+main :: IO ()
+main = do
+  let code = Geo3x3.encode 35.65858 139.745433 14
+  putStrLn code
+  let res = Geo3x3.decode "E3793653391822"
+  print res
+```
+to run
+```
+runghc simple_geo3x3.hs
 ```
 
 ## History
