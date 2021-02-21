@@ -15,11 +15,16 @@ body {
 	width: 4em;
 }
 #geo3x3 {
-	font-size: 30px;
+	font-size: 3vw;
 }
-#geo3x3 input {
-	font-size: 30px;
-	width: 100%;
+#output {
+	font-size: 3vw;
+	width: 60vw;
+}
+#outputlv {
+	font-size: 3vw;;
+	display: inline-block;
+	width: 3em;
 }
 #unit {
 	width: 12em;
@@ -39,7 +44,7 @@ body {
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
 
 window.onload = function() {
-	for (let i = 1; i <= 20; i++) {
+	for (let i = 1; i <= 30; i++) {
 		const opt = document.createElement("option");
 		opt.textContent = i;
 		level.appendChild(opt);
@@ -56,7 +61,13 @@ window.onload = function() {
 
 
 	const getZonePaths = function(zone) {
+		if (!zone.length) {
+			return null;
+		}
 		const coords = Geo3x3.getCoords(zone);
+		if (!coords) {
+			return null;
+		}
 		const len = coords.length
 		const gcoords = new Array(len);
 		for (let i = 0; i < len; i++) {
@@ -70,6 +81,9 @@ window.onload = function() {
 		if (fillcolor == null)
 			fillcolor = 'red';
 		const paths = getZonePaths(zone);
+		if (!paths) {
+			return;
+		}
 		const p = new google.maps.Polygon({
 			paths: paths,
 			strokeColor: linecolor,
@@ -80,11 +94,13 @@ window.onload = function() {
 		});
 		google.maps.event.addListener(p, 'click', function(e) {
 			p.setMap(null);
+			// その位置を表示
 		});
 		p.setMap(map);
 		const size = Geo3x3.getMeshSize(zone);
 		const tos = (n) => n > 100 ? Math.floor(n) : (n > 1 ?  n.toFixed(2) : n.toFixed(3));
 		unit.value = tos(size.x) + "m x " + tos(size.y) + "m";
+		p.zone = zone;
 		return p;
 	};
 	const moveZone = function(map, zone) {
@@ -100,32 +116,47 @@ window.onload = function() {
 		const nlevel = [ 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 9, 10, 11, 11, 12, 12, 13, 14, 15 ][map.getZoom()];
 		level.value = nlevel;
 	});
+	let bkpolygon = null;
 	google.maps.event.addListener(map, 'click', function(evt) {
 		const pos = evt.latLng;
 		const nlevel = parseInt(level.value);
 		const zone = Geo3x3.encode(pos.lat(), pos.lng(), nlevel);
+		if (!zone) {
+			return;
+		}
 		latlng.value = pos.lat() + "," + pos.lng();
 		output.value = zone;
 		if (zone == null) {
 			return;
 		}
 		
-		drawZonePolygon(map, zone);
 		save();
 		if (false) {
-			for (const i = 0; i < 9; i++) {
-				drawZonePolygon(map, zone + i, 'white', 'blue');
+			for (let i = 0; i < 9; i++) {
+				//drawZonePolygon(map, zone + i, 'white', 'blue');
+				drawZonePolygon(map, zone + i);
 			}
+		} else {
+			if (bkpolygon) {
+				bkpolygon.setMap(null);
+			}
+			bkpolygon = drawZonePolygon(map, zone);
 		}
 	});
 	output.onkeyup = function(e) {
 		const key = e.keyCode;
-		if (key == 13) {
+		if (true) { // key == 13) {
 			const zone = output.value;
-			drawZonePolygon(map, zone);
-			moveZone(map, zone);
-			save();
+			if (zone.length) {
+				if (bkpolygon) {
+					bkpolygon.setMap(null);
+				}
+				bkpolygon = drawZonePolygon(map, zone);
+				moveZone(map, zone);
+				save();
+			}
 		}
+		outputlv.textContent = this.value.length;
 	};
 	const load = function() {
 		let s = document.location.hash;
@@ -162,7 +193,9 @@ window.onload = function() {
 </head>
 <body>
 
-<div id='geo3x3'>Geo3x3: <input type="text" id="output"></div>
+<h1>Geo3x3</h1>
+
+<div id='geo3x3'>Geo3x3: <input type="text" id="output"> level: <span id="outputlv"></span></div>
 <div id="divmap"></div>
 <div>
 level: <select id="level"></select>
