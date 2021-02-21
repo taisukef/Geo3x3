@@ -62,10 +62,10 @@ decode' code = State.execState f (0, 0, 0, 0)
             !lat = 0
             !lng = 0
             !level = 1
-            clean = B8.length code
+            clen = B8.length code
         State.put $! (lat,lng,level,unit)
         let loop = \i -> do
-            when (i < clean) $ do
+            when (i < clen) $ do
               let n = digitToInt $ B8.index code i
               when (n > 0) $ do
                 State.modify' $ \(lat,lng,level,unit) ->
