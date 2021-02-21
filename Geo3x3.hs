@@ -1,3 +1,5 @@
+{-# LANGUAGE BangPatterns #-}
+
 module Geo3x3
     ( encode'
     , decode'
@@ -23,23 +25,25 @@ encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (lat,l
     f = if level < 1 then error "invalid level"
         else do
           if lng >= 0
-            then RWS.tell $ Builder.char7 'E'
+            then RWS.tell $! Builder.char7 'E'
             else do
-              RWS.tell $ Builder.char7 'W'
-              RWS.modify' $ \(lat,lng,unit) -> (lat,lng+180,unit)
+              RWS.tell $! Builder.char7 'W'
+              RWS.modify' $ \(lat,lng,unit) ->
+                let !lng' = lng + 180
+                in (lat,lng',unit)
           RWS.modify' $ \(lat,lng,_) ->
-            let lat' = 90 - lat -- lat 0:the North Pole,  180:the South Pole
-                unit' = 180
+            let !lat' = 90 - lat -- lat 0:the North Pole,  180:the South Pole
+                !unit' = 180
             in (lat',lng,unit')
           forM_ [1..level-1] $ \_ -> do
             (lat,lng,unit) <- RWS.get
-            let unit' = unit / 3
+            let !unit' = unit / 3
                 x = truncate $ lng / unit'
                 y = truncate $ lat / unit'
-            RWS.tell $ Builder.char7 $ toEnum $ fromEnum '0' + x + y * 3 + 1
-            let lng' = lng - (fromIntegral x) * unit'
-                lat' = lat - (fromIntegral y) * unit'
-            RWS.put (lat',lng',unit')
+            RWS.tell $! Builder.char7 $! toEnum $ fromEnum '0' + x + y * 3 + 1
+            let !lng' = lng - (fromIntegral x) * unit'
+                !lat' = lat - (fromIntegral y) * unit'
+            RWS.put $! (lat',lng',unit')
 
 
 decode' :: B8.ByteString -> (Double, Double, Int, Double)
