@@ -1,3 +1,11 @@
+#ifndef GEO3X3_H
+#define GEO3X3_H
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 int Geo3x3_encode(double lat, double lng, int level, char* res) {
   if (level < 1) {
     return 0;
@@ -58,3 +66,9 @@ int Geo3x3_decode(const char* code, double* res) {
   res[3] = unit;
   return 1;
 }
+
+#ifdef __cplusplus
+} //X:E extern "C"
+#endif
+
+#endif //X:E GEO3X3_H
