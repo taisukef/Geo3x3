@@ -2,11 +2,11 @@ Geo3x3 ver 1.03
 ======
 
 ## What is Geo3x3
-Geo3x3 is simple geo-coding system  
+Geo3x3 is a simple geo-coding system  
 Geo3x3はシンプルなジオコーディングです  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP/ Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala)  
-17 languages supported now  
-現在17言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP/ Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R)  
+18 languages supported now  
+現在18言語対応しています  
 
 ## Doc
 divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is more in detail.  
@@ -45,7 +45,7 @@ CC0 (Public Domain)
 https://creativecommons.jp/sciencecommons/aboutcc0/  
 
 
-## How to use
+## How to use (encode / decode)
 
 ### in HTML
 ```html
@@ -345,6 +345,21 @@ def main(args: Array[String]): Unit = {
 to run
 ```bash
 $ scala Geo3x3.scala
+```
+
+## in R
+```R
+source("Geo3x3.R")
+
+code <- Geo3x3_encode(35.65858, 139.745433, 14)
+print(code)
+
+pos <- Geo3x3_decode("E3793653391822")
+print(pos)
+```
+to run
+```bash
+$ r --no-save < simple_geo3x3.R
 ```
 
 ## History

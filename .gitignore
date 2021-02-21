@@ -11,3 +11,4 @@ META-INF/
 *.jar
 simple_geo3x3
 *.hi
+.Rhistory
