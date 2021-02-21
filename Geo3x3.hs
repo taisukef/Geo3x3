@@ -71,7 +71,7 @@ decode' code = State.execState f (0, 0, 0, 0)
                       lat' = lat + (fromIntegral $ n' `div` 3) * unit'
                       level' = level +1
                   in (lat',lng',level',unit')
-              loop $ i + 1
+                loop $ i + 1
         loop begin
         State.modify' $ \(lat,lng,level,unit) ->
           let
