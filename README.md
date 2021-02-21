@@ -39,13 +39,6 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 ## Sample app
 https://taisukef.github.io/Geo3x3/  
 
-## Creator
-Taisuke Fukuno  
-http://twitter.com/taisukef  
-http://fukuno.jig.jp/139  
-http://fukuno.jig.jp/205  
-https://fukuno.jig.jp/3131  
-
 ## Licence
 CC0 (Public Domain)  
 ライセンスはCC0（パブリックドメイン）です  
@@ -359,3 +352,10 @@ ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)
 ver 1.02 2013.2.18 write in Java, lincense CC BY-ND -> CC BY  
 ver 1.01 2012.1.15 change coding  
 ver 1.00 2012.1.15 first release  
+
+## Creator
+Taisuke Fukuno  
+https://twitter.com/taisukef  
+https://fukuno.jig.jp/139  
+https://fukuno.jig.jp/205  
+https://fukuno.jig.jp/3131  
