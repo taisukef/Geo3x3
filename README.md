@@ -23,6 +23,17 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 	(0 = dummy)  
 	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
 
+## Sample code
+
+| 日本 | E37 |
+| 中部 | E3792 |
+| 福井県 | E37924 |
+| 福井県鯖江市 | E3792198 |
+| 鯖江市西山公園 | E379219883 |
+| 鯖江市西山公園のトイレ | E379219883294 |
+
+※範囲が狭くなるほどコードが長くなり、範囲が含まれるかどうか前方一致で分かります
+
 ## Sample app
 https://taisukef.github.io/Geo3x3/  
 
@@ -315,6 +326,16 @@ main = do
 to run
 ```
 runghc simple_geo3x3.hs
+```
+
+## in OpenVBS
+```vbs
+WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
+WScript.Echo Geo3x3_decode("E3793653391822")
+```
+to run
+```bash
+$ oscript Geo3x3.obs
 ```
 
 ## History
