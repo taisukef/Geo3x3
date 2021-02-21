@@ -58,22 +58,22 @@ decode' code = State.execState f (0, 0, 0, 0)
               _ | c == '-' || c == 'W' -> (1,True)
               _ | c == '+' || c == 'E' -> (1,False)
               _ -> (0,False)
-            unit = 180
-            lat = 0
-            lng = 0
-            level = 1
+            !unit = 180
+            !lat = 0
+            !lng = 0
+            !level = 1
             clean = B8.length code
-        State.put (lat,lng,level,unit)
+        State.put $! (lat,lng,level,unit)
         let loop = \i -> do
             when (i < clean) $ do
               let n = digitToInt $ B8.index code i
               when (n > 0) $ do
                 State.modify' $ \(lat,lng,level,unit) ->
-                  let unit' = unit / 3
+                  let !unit' = unit / 3
                       n' = n - 1
-                      lng' = lng + (fromIntegral $ n' `mod` 3) * unit'
-                      lat' = lat + (fromIntegral $ n' `div` 3) * unit'
-                      level' = level +1
+                      !lng' = lng + (fromIntegral $ n' `mod` 3) * unit'
+                      !lat' = lat + (fromIntegral $ n' `div` 3) * unit'
+                      !level' = level +1
                   in (lat',lng',level',unit')
                 loop $ i + 1
         loop begin
@@ -81,8 +81,8 @@ decode' code = State.execState f (0, 0, 0, 0)
           let
             lat' = lat + unit / 2
             lng' = lng + unit / 2
-            lat'' = 90 - lat'
-            lng'' = if flg then lng' -180 else lng'
+            !lat'' = 90 - lat'
+            !lng'' = if flg then lng' -180 else lng'
           in (lat'',lng'',level,unit)
 
 
