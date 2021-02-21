@@ -27,9 +27,10 @@ encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (lat,l
             else do
               RWS.tell $ Builder.char7 'W'
               RWS.modify' $ \(lat,lng,unit) -> (lat,lng+180,unit)
-          (lat,lng,unit)<-RWS.get
-          let lat' = 90 - lat  -- 0:the North Pole,  180:the South Pole
-          RWS.put (lat',lng,180)
+          RWS.modify' $ \(lat,lng,_) ->
+            let lat' = 90 - lat -- lat 0:the North Pole,  180:the South Pole
+                unit' = 180
+            in (lat',lng,unit')
           forM_ [1..level-1] $ \_ -> do
             (lat,lng,unit) <- RWS.get
             let unit' = unit / 3
@@ -42,7 +43,7 @@ encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (lat,l
 
 
 decode' :: B8.ByteString -> (Double, Double, Int, Double)
-decode' code = State.execState f (0.0, 0.0, 0, 0.0)
+decode' code = State.execState f (0, 0, 0, 0)
   where
     f :: Decoder ()
     f = do
@@ -63,22 +64,22 @@ decode' code = State.execState f (0.0, 0.0, 0, 0.0)
             when (i < clean) $ do
               let n = digitToInt $ B8.index code i
               when (n > 0) $ do
-                (lat,lng,level,unit) <- State.get
-                let unit' = unit / 3
-                    n' = n - 1
-                    lng' = lng + (fromIntegral $ n' `mod` 3) * unit'
-                    lat' = lat + (fromIntegral $ n' `div` 3) * unit'
-                    level' = level +1
-                State.put (lat',lng',level',unit')
+                State.modify' $ \(lat,lng,level,unit) ->
+                  let unit' = unit / 3
+                      n' = n - 1
+                      lng' = lng + (fromIntegral $ n' `mod` 3) * unit'
+                      lat' = lat + (fromIntegral $ n' `div` 3) * unit'
+                      level' = level +1
+                  in (lat',lng',level',unit')
               loop $ i + 1
         loop begin
-        (lat,lng,level,unit) <- State.get 
-        let
-          lat' = lat + unit / 2
-          lng' = lng + unit / 2
-          lat'' = 90 - lat'
-          lng'' = if flg then lng' -180 else lng'
-        State.put (lat'',lng'',level,unit)
+        State.modify' $ \(lat,lng,level,unit) ->
+          let
+            lat' = lat + unit / 2
+            lng' = lng + unit / 2
+            lat'' = 90 - lat'
+            lng'' = if flg then lng' -180 else lng'
+          in (lat'',lng'',level,unit)
 
 
 encode :: Double -> Double -> Int -> String
