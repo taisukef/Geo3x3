@@ -4,7 +4,7 @@ Geo3x3 ver 1.03
 ## What is Geo3x3
 Geo3x3 is a simple geo-coding system  
 Geo3x3はシンプルなジオコーディングです  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP/ Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim)  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim)  
 20 languages supported now  
 現在20言語対応しています  
 
