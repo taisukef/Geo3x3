@@ -145,17 +145,31 @@ $ java simple_geo3x3
 
 ### in C
 ```c
-#include <stdio.h>
+#include <stdio.h> /**< printf */
+#include <stdlib.h> /**< exit */
 #include "geo3x3.h"
 
 int main() {
-    char buf[30];
-    Geo3x3_encode(35.65858, 139.745433, 14, buf);
-    printf("%s\n", buf); // E3793653391822
+    enum GEO3X3_RES err;
 
-    double res[4];
-    Geo3x3_decode("E3793653391822", res);
-    printf("%f %f %f %f\n", res[0], res[1], res[2], res[3]); // 35.658634 139.745466 14.000000 0.000113
+    char enc_buf[16];
+    struct geo3x3_wgs84 res;
+
+    if ((err = geo3x3_from_wgs84_str(35.36053512254623, 138.72724901129274, 9, enc_buf, sizeof(enc_buf)))) {
+      // handle errors
+      exit(1);
+    }
+    
+    printf("geo3x3: %s\n", enc_buf); // geo3x3: E37935738
+
+    if ((err = geo3x3_to_wgs84_str(enc_buf, &res))) {
+      // handle errors
+      exit(1);
+    }
+
+    // wgs84: 35.363512 138.724280 9 0.027435
+    printf(" wgs84: %f %f %u %f\n", res.lat, res.lng, res.level, res.unit);
+
     return 0;
 }
 ```
@@ -173,17 +187,37 @@ $ cc simple_geo3x3.c; ./a.out
 using namespace std;
 
 int main() {
-    char buf[30];
-    Geo3x3_encode(35.65858, 139.745433, 14, buf);
-    cout << buf << endl;
+    enum GEO3X3_RES err;
 
-    double res[4];
-    Geo3x3_decode("E3793653391822", res);
-    cout << res[0] << " " << res[1] << " " << res[2] << " " << res[3] << endl;
+    char enc_buf[16];
+    struct geo3x3_wgs84 res;
+
+    if ((err = geo3x3_from_wgs84_str(
+         35.36053512254623,
+         138.72724901129274,
+         9,
+         enc_buf,
+         sizeof(enc_buf)
+       ))) {
+      // handle errors
+      exit(1);
+    }
+
+    cout << enc_buf << endl;
+
+    if ((err = geo3x3_to_wgs84_str(enc_buf, &res))) {
+      // handle errors
+      exit(1);
+    }
+
+    cout << res.lat << " " << res.lng << " " << +res.level << " " << res.unit << endl;
+
     return 0;
 }
 ```
+
 to run:
+
 ```bash
 $ g++ simple_geo3x3.cpp
 ```
