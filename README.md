@@ -46,7 +46,7 @@ These codes are licensed under CC0 (Public Domain)
 
 ## How to use (encode / decode)
 
-### in HTML
+### in JavaScript (HTML)
 ```html
 <script type=module>
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
