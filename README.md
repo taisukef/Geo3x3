@@ -18,9 +18,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 	E1384700 = level 6 (postfix 0 = dummy)  
 	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
 
-25 programming languages supported now  
-現在25のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D)  
+26 programming languages supported now  
+現在26のプログラミング言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia)  
 
 ## Sample code
 
@@ -513,13 +513,32 @@ void main() {
 }
 ```
 setup:
-```
+```bash
 $ brew install dmd
 ```
 to run:
-```
+```bash
 $ dmd simple_geo3x3.d Geo3x3.d
 $ ./simple_geo3x3
+```
+
+### in Julia
+```Julia
+include("Geo3x3.jl")
+
+code = Geo3x3.encode(35.65858, 139.745433, 14)
+println(code)
+
+pos = Geo3x3.decode("E3793653391822")
+println(pos)
+```
+setup:
+```bash
+$ brew install julia
+```
+to run:
+```bash
+$ julia simple_geo3x3.jl
 ```
 
 ## History
