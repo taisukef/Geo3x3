@@ -403,6 +403,19 @@ to run:
 $ nim r simple_geo3x3.nim
 ```
 
+## in Elixir
+```elixir
+Code.require_file("geo3x3.ex")
+
+Geo3x3.encode(35.65858, 139.745433, 14) |> IO.inspect()
+Geo3x3.decode("E3793653391822") |> IO.inspect() 
+```
+
+to run:
+```bash
+$ elixir simple_geo3x3.exs
+```
+
 ## History
 ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)  
 ver 1.02 2013.2.18 write in Java, lincense CC BY-ND -> CC BY  
