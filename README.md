@@ -307,7 +307,7 @@ $ ./simple_geo3x3
 ```
 
 ## in Haskell (GHC 8.4.x or later)
-```
+```haskell
 import Geo3x3
 
 main :: IO ()
@@ -318,8 +318,8 @@ main = do
   print res
 ```
 to run
-```
-runghc simple_geo3x3.hs
+```bash
+$ runghc simple_geo3x3.hs
 ```
 
 ## in OpenVBS
