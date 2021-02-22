@@ -4,11 +4,7 @@ Geo3x3 ver 1.03
 ## What is Geo3x3
 Geo3x3 is a simple geo-coding system  
 Geo3x3はシンプルなジオコーディングです  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim)  
-20 languages supported now  
-現在20言語対応しています  
 
-## Doc
 divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is more in detail.  
 まずは地球を東と西に分けて、再帰的に3x3の9エリアで分割していきます。長くなるほど精度が上がります。  
 
@@ -19,9 +15,12 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 | South | 7 | 8 | 9 | 7 | 8 | 9 |  
 
 	W5555555 = level 8  
-	E1384700 = level 6  
-	(0 = dummy)  
+	E1384700 = level 6 (postfix 0 = dummy)  
 	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
+
+20 languages supported now  
+現在20言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim)  
 
 ## Sample code
 
