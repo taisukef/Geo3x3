@@ -2,7 +2,7 @@ class Geo3x3 {
 	static encode(lat, lng, level) {
 		if (level < 1)
 			return null
-		StringBuilder res = new StringBuilder()
+		final res = new StringBuilder()
 		if (lng >= 0) {
 			res.append('E')
 		} else {
@@ -37,7 +37,7 @@ class Geo3x3 {
 		def lat = 0
 		def lng = 0
 		def level = 1
-		def clen = code.length()
+		final clen = code.length()
 		for (i in begin .. clen - 1) {
 			def n = "0123456789".indexOf(code[i])
 			if (n <= 0)
