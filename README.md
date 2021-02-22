@@ -18,9 +18,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 	E1384700 = level 6 (postfix 0 = dummy)  
 	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
 
-24 programming languages supported now  
-現在24のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy)  
+25 programming languages supported now  
+現在25のプログラミング言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D)  
 
 ## Sample code
 
@@ -464,7 +464,7 @@ to run:
 $ lua simple_geo3x3.lua
 ```
 
-## in Perl
+### in Perl
 ```perl
 #!/usr/bin/perl
  
@@ -482,7 +482,7 @@ to run:
 $ perl simple_geo3x3.pl
 ```
 
-## in Groovy
+### in Groovy
 ```groovy
 final code = Geo3x3.encode(35.65858, 139.745433, 14)
 println code
@@ -493,6 +493,33 @@ println(res[0] + " " + res[1] + " " + res[2] + " " + res[3])
 to run:
 ```bash
 $ groovy simple_geo3x3.groovy
+```
+
+### in D
+```D
+import std.stdio;
+import Geo3x3;
+
+void main() {
+    // get Geo3x3 code from latitude / longitude / level
+    char[14] code;
+    if (Geo3x3.encode(35.65858, 139.745433, 14, code)) {
+        writeln(code);
+    }
+
+    // get location from Geo3x3 code
+    auto pos = Geo3x3.decode("E3793653391822");
+    writeln(pos);
+}
+```
+setup:
+```
+$ brew install dmd
+```
+to run:
+```
+$ dmd simple_geo3x3.d Geo3x3.d
+$ ./simple_geo3x3
 ```
 
 ## History
