@@ -18,9 +18,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 	E1384700 = level 6 (postfix 0 = dummy)  
 	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
 
-20 programming languages supported now  
-現在20のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim)  
+21 programming languages supported now  
+現在21のプログラミング言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua)  
 
 ## Sample code
 
@@ -247,7 +247,7 @@ $ swiftc simple_geo3x3.swift Geo3x3.o -I .
 $ ./main
 ```
 
-## in Go
+### in Go
 
 ```go
 package main
@@ -289,7 +289,7 @@ $ kotlinc simple_geo3x3.kt Geo3x3.kt -include-runtime -d simple_geo3x3.jar
 $ kotlin simple_geo3x3.jar
 ```
 
-## in Dart
+### in Dart
 
 ```dart
 import "./Geo3x3.dart";
@@ -308,7 +308,7 @@ to run:
 $ dart simple_geo3x3.dart
 ```
 
-## in Rust
+### in Rust
 ```rust
 mod geo3x3;
 
@@ -328,7 +328,7 @@ $ rustc simple_geo3x3.rs
 $ ./simple_geo3x3
 ```
 
-## in Haskell (GHC 8.4.x or later)
+### in Haskell (GHC 8.4.x or later)
 ```haskell
 import Geo3x3
 
@@ -344,7 +344,7 @@ to run:
 runghc simple_geo3x3.hs
 ```
 
-## in OpenVBS
+### in OpenVBS
 ```vbs
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
 WScript.Echo Geo3x3_decode("E3793653391822")
@@ -354,7 +354,7 @@ to run:
 $ oscript Geo3x3.obs
 ```
 
-## in Scala
+### in Scala
 ```scala
 def main(args: Array[String]): Unit = {
 	val code = encode(35.65858, 139.745433, 14)
@@ -368,7 +368,7 @@ to run:
 $ scala Geo3x3.scala
 ```
 
-## in R
+### in R
 ```R
 source("Geo3x3.R")
 
@@ -383,7 +383,7 @@ to run:
 $ r --no-save < simple_geo3x3.R
 ```
 
-## in GAS (Google App Script)
+### in GAS (Google App Script)
 ```js
 function myFunction() {
   Logger.log(Geo3x3.encode(35.65858, 139.745433, 14));
@@ -391,7 +391,7 @@ function myFunction() {
 }
 ```
 
-## in Nim
+### in Nim
 ```nim
 import geo3x3
 
@@ -401,6 +401,20 @@ echo geo3x3.decode("E3793653391822")
 to run:
 ```bash
 $ nim r simple_geo3x3.nim
+```
+
+### in Lua
+```lua
+local geo3x3 = require("geo3x3")
+
+print(geo3x3.encode(35.65858, 139.745433, 14))
+
+pos = geo3x3.decode("E3793653391822")
+print(pos[1], pos[2], pos[3], pos[4])
+```
+to run:
+```
+$ lua simple_geo3x3.lua
 ```
 
 ## History
