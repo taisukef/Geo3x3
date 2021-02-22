@@ -18,9 +18,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 	E1384700 = level 6 (postfix 0 = dummy)  
 	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
 
-22 programming languages supported now  
-現在22のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl)  
+23 programming languages supported now  
+現在23のプログラミング言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir)  
 
 ## Sample code
 
