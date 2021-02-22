@@ -2,8 +2,8 @@ Geo3x3 ver 1.04
 ======
 
 ## What is Geo3x3
-Geo3x3 is a simple geo-coding system for WGS84.  
-Geo3x3はシンプルなWGS84向けジオコーディングです。  
+Geo3x3 is a simple geo-coding system  
+Geo3x3はシンプルなWGS84ジオコーディングです  
 
 divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is more in detail.  
 地球を東(E)と西(W)に分け、再帰的に3x3の9エリアで分割します。長いほど精度が上がります。  
@@ -18,9 +18,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 	E1384700 = level 6 (postfix 0 = dummy)  
 	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
 
-23 programming languages supported now  
-現在23のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir)  
+22 programming languages supported now  
+現在22のプログラミング言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl)  
 
 ## Sample code
 
@@ -401,6 +401,19 @@ echo geo3x3.decode("E3793653391822")
 to run:
 ```bash
 $ nim r simple_geo3x3.nim
+```
+
+## in Elixir
+```elixir
+Code.require_file("geo3x3.ex")
+
+Geo3x3.encode(35.65858, 139.745433, 14) |> IO.inspect()
+Geo3x3.decode("E3793653391822") |> IO.inspect() 
+```
+
+to run:
+```bash
+$ elixir simple_geo3x3.exs
 ```
 
 ### in Lua
