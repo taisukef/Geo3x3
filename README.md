@@ -379,7 +379,7 @@ echo geo3x3.decode("E3793653391822")
 ```
 to run
 ```bash
-nim r simple_geo3x3.nim
+$ nim r simple_geo3x3.nim
 ```
 
 ## History
