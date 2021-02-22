@@ -143,8 +143,8 @@ $ javac simple_geo3x3.java Geo3x3.java
 $ java simple_geo3x3
 ```
 
-### in C/C++
-```
+### in C
+```c
 #include <stdio.h>
 #include "geo3x3.h"
 
@@ -164,6 +164,28 @@ to run:
 
 ```bash
 $ cc simple_geo3x3.c; ./a.out
+```
+
+### in C++
+```c++
+#include <iostream>
+#include "geo3x3.h"
+using namespace std;
+
+int main() {
+    char buf[30];
+    Geo3x3_encode(35.65858, 139.745433, 14, buf);
+    cout << buf << endl;
+
+    double res[4];
+    Geo3x3_decode("E3793653391822", res);
+    cout << res[0] << " " << res[1] << " " << res[2] << " " << res[3] << endl;
+    return 0;
+}
+```
+to run:
+```bash
+$ g++ simple_geo3x3.cpp
 ```
 
 ### in C#
@@ -216,7 +238,7 @@ let pos = Geo3x3.decode(code: "E3793653391822")
 print(pos)
 ```
 
-to run (Swift)
+to run: (Swift)
 
 ```bash
 $ swiftc -emit-module -parse-as-library Geo3x3.swift -module-name Geo3x3
@@ -317,7 +339,7 @@ main = do
   let res = Geo3x3.decode "E3793653391822"
   print res
 ```
-to run
+to run:
 ```
 runghc simple_geo3x3.hs
 ```
@@ -327,7 +349,7 @@ runghc simple_geo3x3.hs
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
 WScript.Echo Geo3x3_decode("E3793653391822")
 ```
-to run
+to run:
 ```bash
 $ oscript Geo3x3.obs
 ```
@@ -341,7 +363,7 @@ def main(args: Array[String]): Unit = {
 	println(s"${lat} ${lng} ${level} ${unit}")
 }
 ```
-to run
+to run:
 ```bash
 $ scala Geo3x3.scala
 ```
@@ -356,7 +378,7 @@ print(code)
 pos <- Geo3x3_decode("E3793653391822")
 print(pos)
 ```
-to run
+to run:
 ```bash
 $ r --no-save < simple_geo3x3.R
 ```
@@ -376,7 +398,7 @@ import geo3x3
 echo geo3x3.encode(35.65858, 139.745433, 14)
 echo geo3x3.decode("E3793653391822")
 ```
-to run
+to run:
 ```bash
 $ nim r simple_geo3x3.nim
 ```
