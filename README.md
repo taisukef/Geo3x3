@@ -403,6 +403,18 @@ to run:
 $ nim r simple_geo3x3.nim
 ```
 
+## in Elixir
+```elixir
+Code.require_file("geo3x3.ex")
+
+Geo3x3.encode(35.65858, 139.745433, 14) |> IO.inspect()
+Geo3x3.decode("E3793653391822") |> IO.inspect() 
+```
+
+to run:
+```bash
+$ elixir simple_geo3x3.exs
+=======
 ### in Lua
 ```lua
 local geo3x3 = require("geo3x3")
