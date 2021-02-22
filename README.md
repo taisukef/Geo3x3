@@ -1,9 +1,9 @@
-Geo3x3 ver 1.03
+Geo3x3 ver 1.04
 ======
 
 ## What is Geo3x3
 Geo3x3 is a simple geo-coding system  
-Geo3x3はシンプルなジオコーディングです  
+Geo3x3はシンプルなWGS84ジオコーディングです  
 
 divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is more in detail.  
 地球を東(E)と西(W)に分け、再帰的に3x3の9エリアで分割します。長いほど精度が上がります。  
@@ -436,6 +436,7 @@ $ perl simple_geo3x3.pl
 ```
 
 ## History
+ver 1.04 2021.2.22 fixed WGS84  
 ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)  
 ver 1.02 2013.2.18 write in Java, lincense CC BY-ND -> CC BY  
 ver 1.01 2012.1.15 change coding  
