@@ -92,6 +92,4 @@ class Geo3x3 {
 	}
 }
 Geo3x3.R2_EARTH = 12756274; // m from https://ja.wikipedia.org/wiki/%E5%9C%B0%E7%90%83
-Geo3x3.RPI_EARTH = Geo3x3.R2_EARTH * Math.PI / 2 / 180;
-
-export { Geo3x3 };
+Geo3x3.RPI_EARTH = this.R2_EARTH * Math.PI / 2 / 180;
