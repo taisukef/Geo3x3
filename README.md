@@ -40,9 +40,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://taisukef.github.io/Geo3x3/  
 
 ## Licence
-CC0 (Public Domain)  
+These codes are licensed under CC0 (Public Domain)  
 ライセンスはCC0（パブリックドメイン）です  
-https://creativecommons.jp/sciencecommons/aboutcc0/  
+[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/deed.ja)  
 
 
 ## How to use (encode / decode)
