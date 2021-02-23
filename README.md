@@ -554,6 +554,10 @@ $ julia simple_geo3x3.jl
 ;"E3793653391822"
 ;'(35.658633790016204 139.7454656302393 14 0.00011290058538953525)
 ```
+setup:
+```bash
+$ brew install racket
+```
 to run:
 ```bash
 $ racket simple_geo3x3.rkt
