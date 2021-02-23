@@ -18,9 +18,14 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 	E1384700 = level 6 (postfix 0 = dummy)  
 	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
 
+## Sample app
+https://taisukef.github.io/Geo3x3/  
+
+## Supported Languages
 26 programming languages supported now  
 現在26のプログラミング言語対応しています  
 (JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia)  
+https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
 
@@ -34,9 +39,6 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 | 鯖江市西山公園のトイレ | E379219883294 |  
 
 ※範囲が狭くなるほどコードが長くなり、範囲が含まれるかどうか前方一致で分かります
-
-## Sample app
-https://taisukef.github.io/Geo3x3/  
 
 ## Licence
 These codes are licensed under CC0 (Public Domain)  

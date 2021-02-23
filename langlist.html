@@ -1,0 +1,50 @@
+
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<title>Geo3x3 Programming Language List - Geo3x3対応プログラミング言語一覧</title>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:image"  content="https://code4sabae.github.io/opendataaward/opendataaward.png">
+<meta name="twitter:image" content="https://code4sabae.github.io/opendataaward/opendataaward.png">
+</head><body>
+<h1 class="my-3 mx-3">Geo3x3 Programming Language List</h1>
+
+<div id="main" class="table-responsive">
+</div>
+
+<script type="module">
+import { CSV } from "https://code4sabae.github.io/js/CSV.js";
+
+const filtered = (csv) => {
+  const year = document.location.hash.substring(1);
+  if (!year) {
+    return csv;
+  }
+  const res = [];
+  res.push(csv[0]);
+  csv.filter(line => line[0] == year).forEach(line => res.push(line));
+  return res;
+}
+
+(async () => {
+  const url = "./langlist.csv";
+  const csv = await CSV.fetch(url);
+  const csv2 = filtered(csv);
+  const tbl = CSV.makeTable(csv2);
+  tbl.className = "table table-hover";
+  main.appendChild(tbl);
+})();
+</script>
+
+<footer class="text-muted">
+  <div class="container my-4 mx-0">
+    <p>Design: <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a></p>
+    <p>Data: C0 <a href="https://taisukef.github.io/Geo3x3/langlist.csv">langlist.csv</a> - <a href="https://github.com/taisukef/Geo3x3/">Geo3x3</a><br>
+    <p>App: CC BY <a href="https://fukuno.jig.jp/3134">@taisukef</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
