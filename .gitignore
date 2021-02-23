@@ -12,3 +12,5 @@ META-INF/
 simple_geo3x3
 *.hi
 .Rhistory
+*.cmx
+*.cmi

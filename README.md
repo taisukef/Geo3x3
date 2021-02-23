@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://taisukef.github.io/Geo3x3/  
 
 ## Supported Languages
-27 programming languages supported now  
-現在27のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket)  
+28 programming languages supported now  
+現在28のプログラミング言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket / Ocaml)  
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
@@ -360,8 +360,7 @@ fn main() {
 to run:
 
 ```bash
-$ rustc simple_geo3x3.rs
-$ ./simple_geo3x3
+$ rustc simple_geo3x3.rs; ./simple_geo3x3
 ```
 
 ### in Haskell (GHC 8.4.x or later)
@@ -561,6 +560,25 @@ $ brew install racket
 to run:
 ```bash
 $ racket simple_geo3x3.rkt
+```
+
+### in Ocaml
+```Ocaml
+open String;;
+
+let code = Geo3x3.encode 35.65858 139.745433 14;;
+print_endline code;;
+
+let (lat, lng, level, unit) = Geo3x3.decode "E3793653391822";;
+print_endline (String.concat " " [string_of_float lat; string_of_float lng; string_of_int level; string_of_float unit]);;
+```
+setup:
+```bash
+$ brew install ocaml
+```
+to run:
+```bash
+$ ocamlopt -c geo3x3.ml; ocamlopt -c simple_geo3x3.ml; ocamlopt -o a.out geo3x3.cmx simple_geo3x3.cmx; ./a.out
 ```
 
 ## History
