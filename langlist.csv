@@ -27,3 +27,4 @@ D,d,blackets,auto,const,compile,https://github.com/taisukef/Geo3x3/blob/master/G
 Julia,jl,begin/end,none,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.jl
 Racket,rkt,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rkt
 Ocaml,ml,blackets,none,let,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ml
+Erlang,erl,begin/end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.erl

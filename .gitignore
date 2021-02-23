@@ -14,3 +14,5 @@ simple_geo3x3
 .Rhistory
 *.cmx
 *.cmi
+*.beam
+*.dump

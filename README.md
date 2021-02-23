@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://taisukef.github.io/Geo3x3/  
 
 ## Supported Languages
-28 programming languages supported now  
-現在28のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket / Ocaml)  
+29 programming languages supported now  
+現在29のプログラミング言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket / Ocaml / Erlang)  
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
@@ -579,6 +579,25 @@ $ brew install ocaml
 to run:
 ```bash
 $ ocamlopt -c geo3x3.ml; ocamlopt -c simple_geo3x3.ml; ocamlopt -o a.out geo3x3.cmx simple_geo3x3.cmx; ./a.out
+```
+
+### in Erlang
+```Erlang
+-module(simple_geo3x3).
+-export([main/0]).
+
+main() ->
+    io:format("~s~n", [geo3x3:encode(35.65858, 139.745433, 14)]),
+    {Lat, Lng, Level, Unit} = geo3x3:decode("E3793653391822"),
+    io:format("~w ~w ~w ~w~n", [Lat, Lng, Level, Unit]).
+```
+setup:
+```bash
+$ brew install erlang
+```
+to run:
+```bash
+$ erlc simple_geo3x3.erl geo3x3.erl; erl -noshell -noinput -s simple_geo3x3 main -s init stop
 ```
 
 ## History
