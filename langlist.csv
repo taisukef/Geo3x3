@@ -19,7 +19,7 @@ Scala,scala,blackets,var,val,JVM,https://github.com/taisukef/Geo3x3/blob/master/
 R,R,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.R
 GAS,gs,blackets,let,const,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.gs
 Nim,nim,tab,var,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nim
-Lua,lua,begin/end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.lua
+Lua,lua,begin/end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lua
 Perl,"pl,pm",blackets,my,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pm
 Elixir,"ex,exs",begin/end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.ex
 Groovy,groovy,blackets,def,final,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.groovy
