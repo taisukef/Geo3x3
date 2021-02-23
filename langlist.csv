@@ -13,7 +13,7 @@ Go,go,blackets,var,const,compile,https://github.com/taisukef/Geo3x3/blob/master/
 Kotlin,kt,blackets,var,val,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.kt
 Dart,dart,blackets,var,"final,const",script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.dart
 Rust,rs,blackets,let mut,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rs
-Haskell,hs,tab,type,let,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hs
+Haskell,hs,tab,none,let,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hs
 OpenVBS,obs,begin/end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.obs
 Scala,scala,blackets,var,val,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.scala
 R,R,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.R
