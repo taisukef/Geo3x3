@@ -120,3 +120,9 @@
 (define (decode code)
   (decode-bytes (string->bytes/utf-8 code))
   )
+
+
+(provide encode-bytes)
+(provide decode-bytes)
+(provide encode)
+(provide decode)
