@@ -15,8 +15,8 @@ class Geo3x3 {
 		var unit = 180.0;
 		for (int i = 1; i < level; i++) {
 			unit /= 3;
-			var x = (lng2 / unit).toInt();
-			var y = (lat2 / unit).toInt();
+			final x = (lng2 / unit).toInt();
+			final y = (lat2 / unit).toInt();
 			res += (x + y * 3 + 1).toString();
 			lng2 -= x * unit;
 			lat2 -= y * unit;
@@ -38,7 +38,7 @@ class Geo3x3 {
 		} else if (c == '+' || c == 'E') {
 			begin = 1;
 		}
-		var clen = code.length;
+		final clen = code.length;
 		for (int i = begin; i < clen; i++) {
 			var n = "0123456789".indexOf(code[i]);
 			if (n <= 0)

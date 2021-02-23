@@ -13,8 +13,8 @@ class Geo3x3 {
 		def unit = 180
 		for (i in 1 .. level - 1) {
 			unit /= 3
-			def x = (int)Math.floor(lng / unit)
-			def y = (int)Math.floor(lat / unit)
+			final x = (int)Math.floor(lng / unit)
+			final y = (int)Math.floor(lat / unit)
 			res.append((char)((int)'0' + x + y * 3 + 1))
 			lng -= x * unit
 			lat -= y * unit

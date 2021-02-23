@@ -308,10 +308,10 @@ $ ./simple_geo3x3
 ### in Kotlin
 
 ```kotlin
-fun main(args: Array<String>) { 
-  var code = Geo3x3.encode(35.65858, 139.745433, 14)
+fun main() {
+  val code = Geo3x3.encode(35.65858, 139.745433, 14)
   println(code)
-  var res = Geo3x3.decode("E3793653391822")
+  val res = Geo3x3.decode("E3793653391822")
   println("${res[0]} ${res[1]} ${res[2]} ${res[3]}")
 }
 ```
@@ -329,9 +329,9 @@ $ kotlin simple_geo3x3.jar
 import "./Geo3x3.dart";
 
 main() {
-  var code = Geo3x3.encode(35.65858, 139.745433, 14);
+  final code = Geo3x3.encode(35.65858, 139.745433, 14);
   print(code);
-  var res = Geo3x3.decode("E3793653391822");
+  final res = Geo3x3.decode("E3793653391822");
   print("${res[0]} ${res[1]} ${res[2]} ${res[3]}");
 }
 ```

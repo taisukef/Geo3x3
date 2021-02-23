@@ -1,3 +1,0 @@
-// LoadScript "Geo3x3.obs"
-
-WScript.Echo Geo3x3.encode()

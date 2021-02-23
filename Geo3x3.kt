@@ -4,7 +4,7 @@ class Geo3x3 {
 			if (level < 1) {
 				return ""
 			}
-			var res = StringBuilder()
+			val res = StringBuilder()
 			var lng2 = lng
 			if (lng >= 0) {
 				res.append('E');
@@ -17,8 +17,8 @@ class Geo3x3 {
 			var unit = 180.0;
 			for (i in 1 until level) {
 				unit /= 3;
-				var x = (lng2 / unit).toInt();
-				var y = (lat2 / unit).toInt();
+				val x = (lng2 / unit).toInt();
+				val y = (lat2 / unit).toInt();
 				res.append(('0' + x + y * 3 + 1).toChar());
 				lng2 -= x * unit;
 				lat2 -= y * unit;
@@ -40,7 +40,7 @@ class Geo3x3 {
 			} else if (c == '+' || c == 'E') {
 				begin = 1;
 			}
-			var clen = code.length
+			val clen = code.length
 			for (i in begin until clen) {
 				var n = "0123456789".indexOf(code[i]) // .charAt(i));
 				if (n <= 0)
