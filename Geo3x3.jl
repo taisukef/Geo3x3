@@ -1,26 +1,26 @@
 module Geo3x3
   function encode(lat, lng, level)
-		if level < 1
-			return null
+    if level < 1
+      return null
     end
-		res = ""
+    res = ""
     if lng >= 0
-    	res = "E"
+      res = "E"
     else
-    	res = "W"
+      res = "W"
       lng += 180
-		end
-		lat = 90 - lat # 0:the North Pole,  180:the South Pole
-		unit = 180
-		for i = 1:level - 1
-    	unit /= 3
-			x = Int(floor(lng / unit))
-			y = Int(floor(lat / unit))
-			res = string(res, x + y * 3 + 1)
-			lng -= x * unit
-			lat -= y * unit
-		end
-		return res
+    end
+    lat = 90 - lat # 0:the North Pole,  180:the South Pole
+    unit = 180
+    for i = 1:level - 1
+      unit /= 3
+      x = Int(floor(lng / unit))
+      y = Int(floor(lat / unit))
+      res = string(res, x + y * 3 + 1)
+      lng -= x * unit
+      lat -= y * unit
+    end
+    return res
   end
 
   function decode(code)
