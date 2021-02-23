@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://taisukef.github.io/Geo3x3/  
 
 ## Supported Languages
-26 programming languages supported now  
-現在26のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia)  
+27 programming languages supported now  
+現在27のプログラミング言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket)
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
@@ -376,8 +376,8 @@ main = do
   print res
 ```
 to run:
-```
-runghc simple_geo3x3.hs
+```bash
+$ runghc simple_geo3x3.hs
 ```
 
 ### in OpenVBS
@@ -541,6 +541,22 @@ $ brew install julia
 to run:
 ```bash
 $ julia simple_geo3x3.jl
+```
+
+### in Racket
+```racket
+#lang racket
+
+(require "geo3x3.rkt")
+(encode 35.65858 139.745433 14)
+(decode "E3793653391822")
+
+;"E3793653391822"
+;'(35.658633790016204 139.7454656302393 14 0.00011290058538953525)
+```
+to run:
+```bash
+$ racket simple_geo3x3.rkt
 ```
 
 ## History
