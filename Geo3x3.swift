@@ -43,7 +43,7 @@ public struct Geo3x3 {
 			let c = code[code.index(code.startIndex, offsetBy: i)]
 			if let idx = num.firstIndex(of : c) {
 				let n = num.distance(from: num.startIndex, to: idx) - 1
-				if (n >= 0) {
+				if n >= 0 {
 					unit /= 3
 					lng += Double(n % 3) * unit
 					lat += Double(n / 3) * unit
