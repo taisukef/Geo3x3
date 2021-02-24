@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://taisukef.github.io/Geo3x3/  
 
 ## Supported Languages
-31 programming languages supported now  
-現在31のプログラミング言語対応しています  
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-(Google-App-Script)) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F))  
+32 programming languages supported now  
+現在32のプログラミング言語対応しています  
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-(Google-App-Script)) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe))  
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
@@ -695,6 +695,28 @@ printfn "%f %f %d %f" lat lng level unit
 to run:
 ```
 $ dotnet fsi Geo3x3.fs simple_geo3x3.fs
+```
+
+### in Haxe
+[Geo3x3.hx](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hx),
+[Simple_geo3x3.hx](https://github.com/taisukef/Geo3x3/blob/master/Simple_geo3x3.hx)
+```Haxe
+class Simple_geo3x3 {
+    static public function main(): Void {
+        final code = Geo3x3.encode(35.65858, 139.745433, 14);
+        Sys.println(code);
+        final pos = Geo3x3.decode("E3793653391822");
+        Sys.println(pos);
+    }
+}
+```
+setup:
+```bash
+$ brew install haxe
+```
+to run:
+```bash
+$ haxe -main Simple_geo3x3.hx --interp
 ```
 
 ## History
