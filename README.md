@@ -24,7 +24,7 @@ https://taisukef.github.io/Geo3x3/
 ## Supported Languages
 30 programming languages supported now  
 現在30のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket / Ocaml / Erlang / Clojure)  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket / Ocaml / Erlang / [Clojure](#in-Clojure))  
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
