@@ -50,33 +50,26 @@
   (cond
     [(or (not (bytes? code)) (= (bytes-length code) 0)) (error "trying to decode empty data")]
     [else
-      (let ([begin empty]
-            [is-west empty])
-
-        (let ([c (integer->char (bytes-ref code 0))])
-          (cond
-             [(or (eq? c #\-) (eq? c #\W))
-              (set! is-west #t)
-              (set! begin 1)
-             ]
-             [(or (eq? c #\+) (eq? c #\E))
-	      (set! is-west #f)
-              (set! begin 1)
-             ]
-             [else
-              (set! is-west #f)
-              (set! begin 0)
-             ]
-          )
+      (let ([begin 0]
+            [is-west #f])
+        (
+	  (lambda (c)
+            (cond
+               [(or (eq? c #\-) (eq? c #\W))
+                (set! begin 1)
+                (set! is-west #t)]
+               [(or (eq? c #\+) (eq? c #\E))
+                (set! begin 1)
+	        (set! is-west #f)]
+            )
+          ) (integer->char (bytes-ref code 0))
         )
 
         (let ([unit 180]
               [lat 0]
               [lng 0]
-              [level 1]
-              [clen (bytes-length code)])
-
-          (define (loop i)
+              [level 1])
+          (define (loop clen i)
             (when (< i clen)
               (
                 (lambda (n)
@@ -85,13 +78,13 @@
                         (set! lng (+ lng (* (remainder (- n 1) 3) unit)))
                         (set! lat (+ lat (* (quotient  (- n 1) 3) unit)))
                         (set! level (+ level 1))
-                        (loop (+ i 1))
+                        (loop clen (+ i 1))
                   )
                 ) (- (bytes-ref code i) (char->integer #\0))
               )
 	    )
           )
-          (loop begin)
+          (loop (bytes-length code) begin)
 
           (list
             (exact->inexact ( (lambda(lat)             (- 90  lat)     ) (+ lat (/ unit 2)) ))
