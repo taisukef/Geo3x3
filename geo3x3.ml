@@ -30,9 +30,9 @@ let decode code = (* (35., 135., 14, 0.1);; *)
     else
         let c = code.[0] in
         let (flg, beg) =
-            if c = '-' || c == 'W' then
+            if c = '-' || c = 'W' then
                 (true, 1)
-            else if c == '+' || c == 'E' then
+            else if c = '+' || c = 'E' then
                 (false, 1)
             else
                 (false, 0) in

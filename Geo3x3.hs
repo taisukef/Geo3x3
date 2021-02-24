@@ -33,10 +33,10 @@ encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (0,0,0
 
           let (!c,!lng') = if lng >= 0
                            then ('E',lng)
-                           else ('W',lng+180)
+                           else ('W',lng + 180)
               !lat' = 90 - lat
               !unit = 180
-           in do RWS.put $! (lat',lng',unit)
+           in do RWS.put $! (lat',lng',unit) -- ignore initial state
                  RWS.tell $! Builder.char7 c
 
           forM_ [1..level-1] $ \_ -> do
@@ -52,7 +52,7 @@ encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (0,0,0
 
 
 decode' :: B8.ByteString -> (Lat,Lng,Level,Unit)
-decode' code = State.execState f (0,0,0,0) -- (lat,lng,level,unit)
+decode' code = State.execState f (0,0,1,180) -- (lat,lng,level,unit)
   where
     f :: Decoder ()
     f = do
@@ -65,35 +65,28 @@ decode' code = State.execState f (0,0,0,0) -- (lat,lng,level,unit)
                 c | c == '+' || c == 'E' -> (1,False)
                 _ -> (0,False)
 
-        State.modify' $ \(_,_,_,_) -> -- ignore initial state
-          let !unit = 180
-              !lat = 0
-              !lng = 0
-              !level = 1
-           in (lat,lng,level,unit)
-
         let loop = \i ->
               when (i < B8.length code) $
                 let n = digitToInt $ B8.index code i
                  in when (n > 0) $ do
                    State.modify' $ \(lat,lng,level,unit) ->
                      let !unit' = unit / 3
-                         (!lng',!lat') = n-1 & \n ->
+                         (!lng',!lat') = n - 1 & \n ->
                            (lng + (fromIntegral $ n `mod` 3) * unit',
                             lat + (fromIntegral $ n `div` 3) * unit')
-                         !level' = level +1
+                         !level' = level + 1
                       in (lat',lng',level',unit')
                    loop $ i + 1
          in loop begin
 
         State.modify' $ \(lat,lng,level,unit) ->
-          let !lat' = 90 - (lat + unit / 2)
+          let !lat' = lat + unit / 2 & \lat -> 90 - lat
               !lng' = lng + unit / 2 & \lng -> if isWest then lng - 180 else lng
            in (lat',lng',level,unit)
 
 
 encode :: Double -> Double -> Int -> String
-encode lat lng level =  LB8.unpack $ encode' lat lng level
+encode lat lng level = LB8.unpack $ encode' lat lng level
 
 decode :: String -> (Double, Double, Int, Double)
 decode = decode' . B8.pack
