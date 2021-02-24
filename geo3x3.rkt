@@ -73,41 +73,29 @@
         (let ([unit 180]
               [lat 0]
               [lng 0]
-              [level 1])
+              [level 1]
+              [clen (bytes-length code)])
 
-          (define (loop clen i)
+          (define (loop i)
             (when (< i clen)
-              (let ([n (- (bytes-ref code i) (char->integer #\0)) ])
-                (when (> n 0)
-                      (set! unit (/ unit 3))
-                      (set! lng (+ lng (* (remainder (- n 1) 3) unit)))
-                      (set! lat (+ lat (* (quotient  (- n 1) 3) unit)))
-                      (set! level (+ level 1))
-                      (loop clen (+ i 1))
-                )
+              (
+                (lambda (n)
+                  (when (> n 0)
+                        (set! unit (/ unit 3))
+                        (set! lng (+ lng (* (remainder (- n 1) 3) unit)))
+                        (set! lat (+ lat (* (quotient  (- n 1) 3) unit)))
+                        (set! level (+ level 1))
+                        (loop (+ i 1))
+                  )
+                ) (- (bytes-ref code i) (char->integer #\0))
               )
-;              (lambda (n)
-;                (when (> n 0)
-;                      (set! unit (/ unit 3))
-;                      (set! lng (+ lng (* (remainder (- n 1) 3) unit)))
-;                      (set! lat (+ lat (* (quotient  (- n 1) 3) unit)))
-;                      (set! level (+ level 1))
-;                      (loop clen (+ i 1))
-;                )
-;              )((- (bytes-ref code i) (char->integer #\0)))
-
 	    )
           )
-          (loop (bytes-length code) begin)
-
-          (set! lat (+ lat (/ unit 2)))
-          (set! lng (+ lng (/ unit 2)))
-          (set! lat (- 90 lat))
-          (when is-west (set! lng (- lng 180)))
+          (loop begin)
 
           (list
-            (exact->inexact lat)
-            (exact->inexact lng)
+            (exact->inexact ( (lambda(lat)             (- 90  lat)     ) (+ lat (/ unit 2)) ))
+            (exact->inexact ( (lambda(lng) (if is-west (- lng 180) lng)) (+ lng (/ unit 2)) ))
             level
             (exact->inexact unit)
           )
