@@ -14,76 +14,82 @@ import qualified Control.Monad.RWS as RWS
 import qualified Control.Monad.State as State
 import Control.Monad (forM_, when)
 import Data.Char (digitToInt)
+import Data.Function ((&))
 
-type Encoder =  RWS.RWS () Builder.Builder (Double,Double,Double) -- (lat,lng,unit)
-type Decoder = State.State (Double,Double,Int,Double) -- (lat,lng,level,unit)
+type Lat = Double
+type Lng = Double
+type Level = Int
+type Unit = Double
 
-encode' :: Double -> Double -> Int -> LB8.ByteString
-encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (lat,lng,0)
+type Encoder =  RWS.RWS () Builder.Builder (Lat,Lng,Unit)
+type Decoder = State.State (Lat,Lng,Level,Unit)
+
+encode' :: Lat -> Lng -> Level -> LB8.ByteString
+encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (0,0,0) -- (lat,lng,unit)
   where
     f :: Encoder ()
-    f = if level < 1 then error "invalid level"
+    f = if level < 1 then fail "invalid level"
         else do
-          if lng >= 0
-            then RWS.tell $! Builder.char7 'E'
-            else do
-              RWS.tell $! Builder.char7 'W'
-              RWS.modify' $ \(lat,lng,unit) ->
-                let !lng' = lng + 180
-                in (lat,lng',unit)
-          RWS.modify' $ \(lat,lng,_) ->
-            let !lat' = 90 - lat -- lat 0:the North Pole,  180:the South Pole
-                !unit' = 180
-            in (lat',lng,unit')
+
+          let (!c,!lng') = if lng >= 0
+                           then ('E',lng)
+                           else ('W',lng+180)
+              !lat' = 90 - lat
+              !unit = 180
+           in do RWS.put $! (lat',lng',unit)
+                 RWS.tell $! Builder.char7 c
+
           forM_ [1..level-1] $ \_ -> do
             (lat,lng,unit) <- RWS.get
             let !unit' = unit / 3
                 x = truncate $ lng / unit'
                 y = truncate $ lat / unit'
-            RWS.tell $! Builder.char7 $! toEnum $ fromEnum '0' + x + y * 3 + 1
-            let !lng' = lng - (fromIntegral x) * unit'
+                !c = toEnum $ fromEnum '0' + x + y * 3 + 1
+                !lng' = lng - (fromIntegral x) * unit'
                 !lat' = lat - (fromIntegral y) * unit'
-            RWS.put $! (lat',lng',unit')
+              in do RWS.put $! (lat',lng',unit')
+                    RWS.tell $! Builder.char7 c 
 
 
-decode' :: B8.ByteString -> (Double, Double, Int, Double)
-decode' code = State.execState f (0, 0, 0, 0)
+decode' :: B8.ByteString -> (Lat,Lng,Level,Unit)
+decode' code = State.execState f (0,0,0,0) -- (lat,lng,level,unit)
   where
     f :: Decoder ()
     f = do
-      if B8.null code then error "trying to decode empty data"
+      if B8.null code then fail "trying to decode empty data"
       else do
-        let c = B8.index code 0
-            (begin,flg) = case c of
-              _ | c == '-' || c == 'W' -> (1,True)
-              _ | c == '+' || c == 'E' -> (1,False)
-              _ -> (0,False)
-            !unit = 180
-            !lat = 0
-            !lng = 0
-            !level = 1
-            clen = B8.length code
-        State.put $! (lat,lng,level,unit)
-        let loop = \i -> do
-            when (i < clen) $ do
-              let n = digitToInt $ B8.index code i
-              when (n > 0) $ do
-                State.modify' $ \(lat,lng,level,unit) ->
-                  let !unit' = unit / 3
-                      n' = n - 1
-                      !lng' = lng + (fromIntegral $ n' `mod` 3) * unit'
-                      !lat' = lat + (fromIntegral $ n' `div` 3) * unit'
-                      !level' = level +1
-                  in (lat',lng',level',unit')
-                loop $ i + 1
-        loop begin
+
+        let (begin,isWest) =
+              case B8.index code 0 of
+                c | c == '-' || c == 'W' -> (1,True)
+                c | c == '+' || c == 'E' -> (1,False)
+                _ -> (0,False)
+
+        State.modify' $ \(_,_,_,_) -> -- ignore initial state
+          let !unit = 180
+              !lat = 0
+              !lng = 0
+              !level = 1
+           in (lat,lng,level,unit)
+
+        let loop = \i ->
+              when (i < B8.length code) $
+                let n = digitToInt $ B8.index code i
+                 in when (n > 0) $ do
+                   State.modify' $ \(lat,lng,level,unit) ->
+                     let !unit' = unit / 3
+                         (!lng',!lat') = n-1 & \n ->
+                           (lng + (fromIntegral $ n `mod` 3) * unit',
+                            lat + (fromIntegral $ n `div` 3) * unit')
+                         !level' = level +1
+                      in (lat',lng',level',unit')
+                   loop $ i + 1
+         in loop begin
+
         State.modify' $ \(lat,lng,level,unit) ->
-          let
-            lat' = lat + unit / 2
-            lng' = lng + unit / 2
-            !lat'' = 90 - lat'
-            !lng'' = if flg then lng' -180 else lng'
-          in (lat'',lng'',level,unit)
+          let !lat' = 90 - (lat + unit / 2)
+              !lng' = lng + unit / 2 & \lng -> if isWest then lng - 180 else lng
+           in (lat',lng',level,unit)
 
 
 encode :: Double -> Double -> Int -> String
