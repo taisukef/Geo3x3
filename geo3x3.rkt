@@ -48,64 +48,75 @@
 
 (define (decode-bytes code)
   (cond
-   [(or (not (bytes? code)) (= (bytes-length code) 0 )) (error "trying to decode empty data")]
-   [else
-    (let ([lat 0]
-	  [lng 0]
-	  [level 0]
-	  [unit 0]
-	  [begin 0]
-          [flg #f]
-	  [c (bytes-ref code 0)]
-          [clen (bytes-length code)]
-	  )
-      (cond
-       [(or (= c (char->integer #\-)) (= c (char->integer #\W)))
-	(set! flg #t)
-	(set! begin 1)
-	]
-       [(or (= c (char->integer #\+)) (= c (char->integer #\E)))
-	(set! begin 1)
-	]
-       )
-      (set! unit 180)
-      (set! lat 0)
-      (set! lng 0)
-      (set! level 1)
+    [(or (not (bytes? code)) (= (bytes-length code) 0)) (error "trying to decode empty data")]
+    [else
+      (let ([begin empty]
+            [is-west empty])
 
-      (define (loop i)
-	(cond [(< i clen)
-	       (let ([n (- (bytes-ref code i) (char->integer #\0)) ]
-		     )
-		 (cond [(> n 0)
-			(set! unit (/ unit 3))
-			(set! n (- n 1))
-			(set! lng (+ lng (* (remainder n 3) unit)))
-			(set! lat (+ lat (* (quotient n 3) unit)))
-			(set! level (+ level 1))
-			(loop (+ i 1))
-			])
-		 )
-	       ]
-	      )
-	)
-      (loop begin)
+        (let ([c (integer->char (bytes-ref code 0))])
+          (cond
+             [(or (eq? c #\-) (eq? c #\W))
+              (set! is-west #t)
+              (set! begin 1)
+             ]
+             [(or (eq? c #\+) (eq? c #\E))
+	      (set! is-west #f)
+              (set! begin 1)
+             ]
+             [else
+              (set! is-west #f)
+              (set! begin 0)
+             ]
+          )
+        )
 
-      (set! lat (+ lat (/ unit 2)))
-      (set! lng (+ lng (/ unit 2)))
-      (set! lat (- 90 lat))
-      (cond [flg (set! lng (- lng 180))])
+        (let ([unit 180]
+              [lat 0]
+              [lng 0]
+              [level 1])
 
-      (list
-       (exact->inexact lat)
-       (exact->inexact lng)
-       level
-       (exact->inexact unit)
-       )
+          (define (loop clen i)
+            (when (< i clen)
+              (let ([n (- (bytes-ref code i) (char->integer #\0)) ])
+                (when (> n 0)
+                      (set! unit (/ unit 3))
+                      (set! lng (+ lng (* (remainder (- n 1) 3) unit)))
+                      (set! lat (+ lat (* (quotient  (- n 1) 3) unit)))
+                      (set! level (+ level 1))
+                      (loop clen (+ i 1))
+                )
+              )
+;              (lambda (n)
+;                (when (> n 0)
+;                      (set! unit (/ unit 3))
+;                      (set! lng (+ lng (* (remainder (- n 1) 3) unit)))
+;                      (set! lat (+ lat (* (quotient  (- n 1) 3) unit)))
+;                      (set! level (+ level 1))
+;                      (loop clen (+ i 1))
+;                )
+;              )((- (bytes-ref code i) (char->integer #\0)))
+
+	    )
+          )
+          (loop (bytes-length code) begin)
+
+          (set! lat (+ lat (/ unit 2)))
+          (set! lng (+ lng (/ unit 2)))
+          (set! lat (- 90 lat))
+          (when is-west (set! lng (- lng 180)))
+
+          (list
+            (exact->inexact lat)
+            (exact->inexact lng)
+            level
+            (exact->inexact unit)
+          )
+        )
+
       )
     ]
-   )
   )
+)
 
 
 ;(encode 35.65858 139.745433 14)
