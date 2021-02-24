@@ -16,3 +16,4 @@ simple_geo3x3
 *.cmi
 *.beam
 *.dump
+target/

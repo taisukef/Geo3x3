@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://taisukef.github.io/Geo3x3/  
 
 ## Supported Languages
-29 programming languages supported now  
-現在29のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket / Ocaml / Erlang)  
+30 programming languages supported now  
+現在30のプログラミング言語対応しています  
+(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket / Ocaml / Erlang / Clojure)  
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
@@ -49,6 +49,8 @@ These codes are licensed under CC0 (Public Domain)
 ## How to use (encode / decode)
 
 ### in JavaScript (HTML)
+[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mjs),
+[simple_geo3x3.html](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.html)
 ```html
 <script type=module>
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
@@ -57,6 +59,8 @@ console.log(Geo3x3.decode("W28644"));
 ```
 
 ### in JavaScript (Deno)
+[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mjs),
+[simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
 ```mjs
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
@@ -69,6 +73,8 @@ $ deno run -A simple_geo3x3.mjs
 ```
 
 ### in JavaScript (Node.js)
+[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mjs),
+[simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
 ```js
 import { Geo3x3 } from "./Geo3x3.mjs";
 console.log(Geo3x3.decode("W28644"));
@@ -81,6 +87,8 @@ $ node simple_geo3x3.mjs
 ```
 
 ### in TypeScript (Deno)
+[Geo3x3.ts](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ts),
+[simple_geo3x3.ts](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.ts)
 ```ts
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.ts";
 console.log(Geo3x3.decode("W28644"));
@@ -93,6 +101,8 @@ $ deno run simple_geo3x3.ts
 ```
 
 ### in Python
+[geo3x3.py](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.py),
+[simple_geo3x3.py](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.py)
 ```py
 import geo3x3
 ## get Geo3x3 code from latitude / longitude / level
@@ -111,6 +121,8 @@ $ python3 simple_geo3x3.py
 ```
 
 ### in Ruby
+[geo3x3.rb](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rb),
+[simple_geo3x3.rb](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.rb)
 ```ruby
 require "./geo3x3"
 code = Geo3x3.encode(35.65858, 139.745433, 14)
@@ -146,6 +158,8 @@ $ java simple_geo3x3
 ```
 
 ### in C
+[geo3x3.h](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.h),
+[simple_geo3x3.c](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.c)
 ```c
 #include <stdio.h> /**< printf */
 #include <stdlib.h> /**< exit */
@@ -183,6 +197,8 @@ $ cc simple_geo3x3.c; ./a.out
 ```
 
 ### in C++
+[geo3x3.h](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.h),
+[simple_geo3x3.cpp](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.cpp)
 ```c++
 #include <iostream>
 #include "geo3x3.h"
@@ -225,6 +241,8 @@ $ g++ simple_geo3x3.cpp
 ```
 
 ### in C#
+[Geo3x3.cs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.cs),
+[simple_geo3x3.cs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.cs)
 ```c#
 using System;
 
@@ -246,6 +264,8 @@ $ mono ./simple_geo3x3.exe
 ```
 
 ### in PHP
+[Geo3x3.php](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.php),
+[simple_geo3x3.php](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.php)
 ```php
 <?php
 require('Geo3x3.php');
@@ -265,6 +285,8 @@ $ php simple_geo3x3.php
 ```
 
 ### in Swift
+[Geo3x3.swift](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.swift),
+[simple_geo3x3.swift](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.swift)
 ```swift
 import Geo3x3
 
@@ -284,6 +306,8 @@ $ ./main
 ```
 
 ### in Go
+[Geo3x3.go](https://github.com/taisukef/Geo3x3/blob/master/geo3x3/Geo3x3.go),
+[simple_geo3x3.go](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.go)
 
 ```go
 package main
@@ -308,6 +332,8 @@ $ ./simple_geo3x3
 ```
 
 ### in Kotlin
+[Geo3x3.kt](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.kt),
+[simple_geo3x3.kt](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.kt)
 
 ```kotlin
 fun main() {
@@ -326,7 +352,8 @@ $ kotlin simple_geo3x3.jar
 ```
 
 ### in Dart
-
+[Geo3x3.dart](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.dart),
+[simple_geo3x3.dart](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.dart)
 ```dart
 import "./Geo3x3.dart";
 
@@ -345,6 +372,8 @@ $ dart simple_geo3x3.dart
 ```
 
 ### in Rust
+[geo3x3.rs](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rs),
+[simple_geo3x3.rs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.rs)
 ```rust
 mod geo3x3;
 
@@ -364,6 +393,8 @@ $ rustc simple_geo3x3.rs; ./simple_geo3x3
 ```
 
 ### in Haskell (GHC 8.4.x or later)
+[Geo3x3.hs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hs),
+[simple_geo3x3.hs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.hs)
 ```haskell
 import Geo3x3
 
@@ -380,6 +411,7 @@ $ runghc simple_geo3x3.hs
 ```
 
 ### in OpenVBS
+[Geo3x3.obs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.obs),
 ```vbs
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
 WScript.Echo Geo3x3_decode("E3793653391822")
@@ -390,6 +422,8 @@ $ oscript Geo3x3.obs
 ```
 
 ### in Scala
+[Geo3x3.scala](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.scala),
+[simple_geo3x3.scala](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.scala)
 ```scala
 def main(args: Array[String]): Unit = {
 	val code = encode(35.65858, 139.745433, 14)
@@ -404,6 +438,8 @@ $ scala Geo3x3.scala
 ```
 
 ### in R
+[Geo3x3.R](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.R),
+[simple_geo3x3.R](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.R)
 ```R
 source("Geo3x3.R")
 
@@ -419,6 +455,8 @@ $ r --no-save < simple_geo3x3.R
 ```
 
 ### in GAS (Google App Script)
+[Geo3x3.gs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.gs),
+[simple_geo3x3.gs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.gs)
 ```js
 function myFunction() {
   Logger.log(Geo3x3.encode(35.65858, 139.745433, 14));
@@ -427,6 +465,8 @@ function myFunction() {
 ```
 
 ### in Nim
+[geo3x3.nim](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nim),
+[simple_geo3x3.nim](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.nim)
 ```nim
 import geo3x3
 
@@ -439,6 +479,8 @@ $ nim r simple_geo3x3.nim
 ```
 
 ## in Elixir
+[geo3x3.ex](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ex),
+[simple_geo3x3.exs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.exs)
 ```elixir
 Code.require_file("geo3x3.ex")
 
@@ -452,6 +494,8 @@ $ elixir simple_geo3x3.exs
 ```
 
 ### in Lua
+[geo3x3.lua](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lua),
+[simple_geo3x3.lua](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.lua)
 ```lua
 local geo3x3 = require("geo3x3")
 
@@ -466,6 +510,8 @@ $ lua simple_geo3x3.lua
 ```
 
 ### in Perl
+[geo3x3.pm](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pm),
+[simple_geo3x3.pl](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.pl)
 ```perl
 #!/usr/bin/perl
  
@@ -484,6 +530,8 @@ $ perl simple_geo3x3.pl
 ```
 
 ### in Groovy
+[Geo3x3.groovy](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.groovy),
+[simple_geo3x3.groovy](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.groovy)
 ```groovy
 final code = Geo3x3.encode(35.65858, 139.745433, 14)
 println code
@@ -497,6 +545,8 @@ $ groovy simple_geo3x3.groovy
 ```
 
 ### in D
+[Geo3x3.d](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.d),
+[simple_geo3x3.d](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.d)
 ```D
 import std.stdio;
 import Geo3x3;
@@ -524,6 +574,8 @@ $ ./simple_geo3x3
 ```
 
 ### in Julia
+[Geo3x3.jl](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.jl),
+[simple_geo3x3.jl](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.jl)
 ```Julia
 include("Geo3x3.jl")
 
@@ -543,6 +595,8 @@ $ julia simple_geo3x3.jl
 ```
 
 ### in Racket
+[geo3x3.rkt](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rkt),
+[simple_geo3x3.rkt](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.rkt)
 ```racket
 #lang racket
 
@@ -563,6 +617,8 @@ $ racket simple_geo3x3.rkt
 ```
 
 ### in Ocaml
+[geo3x3.ml](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ml),
+[simple_geo3x3.ml](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.ml)
 ```Ocaml
 open String;;
 
@@ -582,6 +638,8 @@ $ ocamlopt -c geo3x3.ml; ocamlopt -c simple_geo3x3.ml; ocamlopt -o a.out geo3x3.
 ```
 
 ### in Erlang
+[geo3x3.erl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.erl),
+[simple_geo3x3.erl](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.erl)
 ```Erlang
 -module(simple_geo3x3).
 -export([main/0]).
@@ -598,6 +656,27 @@ $ brew install erlang
 to run:
 ```bash
 $ erlc simple_geo3x3.erl geo3x3.erl; erl -noshell -noinput -s simple_geo3x3 main -s init stop
+```
+
+### in Clojure
+[geo3x3.clj](https://github.com/taisukef/Geo3x3/blob/master/src/geo3x3.clj),
+[simple_geo3x3.clj](https://github.com/taisukef/Geo3x3/blob/master/src/simple_geo3x3.clj)
+```Clojure
+(ns simple_geo3x3
+  (:require [geo3x3])
+)
+(defn -main []
+  (println (geo3x3/encode 35.65858 139.745433 14))
+  (println (geo3x3/decode "E3793653391822"))
+)
+```
+setup:
+```bash
+$ brew install leiningen
+```
+to run:
+```bash
+$ lein run
 ```
 
 ## History
