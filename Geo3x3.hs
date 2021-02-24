@@ -28,7 +28,7 @@ encode' :: Lat -> Lng -> Level -> LB8.ByteString
 encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (0,0,0) -- (lat,lng,unit)
   where
     f :: Encoder ()
-    f = if level < 1 then fail "invalid level"
+    f = if level < 1 then error "invalid level"
         else do
 
           let (!c,!lng') = if lng >= 0
@@ -56,7 +56,7 @@ decode' code = State.execState f (0,0,0,0) -- (lat,lng,level,unit)
   where
     f :: Decoder ()
     f = do
-      if B8.null code then fail "trying to decode empty data"
+      if B8.null code then error "trying to decode empty data"
       else do
 
         let (begin,isWest) =
