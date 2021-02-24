@@ -24,7 +24,7 @@ https://taisukef.github.io/Geo3x3/
 ## Supported Languages
 30 programming languages supported now  
 現在30のプログラミング言語対応しています  
-(JavaScript / TypeScript / C / C++ / C# / Swift / Java / Python / Ruby / PHP / Go / Kotlin / Dart / Rust / Haskell / OpenVBS / Scala / R / GAS / Nim / Lua / Perl / Elixir / Groovy / D / Julia / Racket / Ocaml / Erlang / [Clojure](#in-Clojure))  
+([JavaScript](#in-JavaScript-(HTML)) / [TypeScript](#in-TypeScript-(Deno)) / [C](#in-C) / [C++](#in-C++) / [C#](#in-C#) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-Haskell-(GHC-8.4.x-or-later)) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-(Google-App-Script)) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [Ocaml](#in-Ocaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure))  
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
