@@ -87,8 +87,10 @@
           (loop (bytes-length code) begin)
 
           (list
-            (exact->inexact ( (lambda(lat)             (- 90  lat)     ) (+ lat (/ unit 2)) ))
-            (exact->inexact ( (lambda(lng) (if is-west (- lng 180) lng)) (+ lng (/ unit 2)) ))
+            (exact->inexact ( (lambda (lat) (- 90 lat)
+                              ) (+ lat (/ unit 2)) ))
+            (exact->inexact ( (lambda (lng) (if is-west (- lng 180) lng)
+                              ) (+ lng (/ unit 2)) ))
             level
             (exact->inexact unit)
           )
