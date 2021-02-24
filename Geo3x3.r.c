@@ -1,7 +1,3 @@
-#include <stdio.h>
-
-
-
 // Encode
 static
 char* encode_(double lat, double lng, double prec, char* ps, char* pe){
@@ -44,7 +40,7 @@ int decode_(char* ps, double prec, double* plat, double* plng, int level){
 
 int Geo3x3_decode(char* ps, double* plat, double* plng){
   *plat = 90.0;
-  *plng = 0.0;
+  *plng = (*ps == 'W') ? -180.0 : 0.0;
   return decode_(ps+1, 180.0/3, plat, plng, 1);
 }
 
