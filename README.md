@@ -24,7 +24,7 @@ https://taisukef.github.io/Geo3x3/
 ## Supported Languages
 32 programming languages supported now  
 現在32のプログラミング言語対応しています  
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-(Google-App-Script)) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe))  
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-(Google-App-Script)) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-(R6RS)))  
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
@@ -697,6 +697,30 @@ $ brew install haxe
 to run:
 ```bash
 $ haxe -main Simple_geo3x3.hx --interp
+```
+
+### in Scheme (R6RS)
+[geo3x3.sls](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sls),
+[simple_geo3x3.scm](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.scm),
+```Scheme
+#!r6rs
+(import (rnrs)
+        (geo3x3))
+
+(write (encode 35.65858 139.745433 14))
+(newline)
+
+(let-values ((result (decode "E3793653391822")))
+  (write result))
+(newline)
+```
+setup:
+```bash
+$ brew install chezscheme
+```
+to run:
+```
+$ chez --program simple_geo3x3.scm
 ```
 
 ## History
