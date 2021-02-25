@@ -32,3 +32,4 @@ Clojure,clj,blackets,none,none,JVM,https://github.com/taisukef/Geo3x3/blob/maste
 F#,fs,indent,none,let,Mono,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.fs
 Haxe,hx,blackets,var,final,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hx
 Scheme,"sls,scm",blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sls
+Common Lisp,lisp,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lisp
