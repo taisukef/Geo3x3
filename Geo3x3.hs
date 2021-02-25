@@ -65,8 +65,8 @@ decode' code = State.execState f (0,0,1,180) -- (lat,lng,level,unit)
   
           let loop = \i ->
                 when (i < B8.length code) $
-                  let n = digitToInt $ B8.index code i
-                   in when (n > 0) $ do
+                  let n = digitToInt $ B8.index code i -- includes hex digits
+                   in when (1 <= n && n <= 9) $ do -- [todo] fail when overflow
                      State.modify' $ \(lat,lng,level,unit) ->
                        let !unit' = unit / 3
                            (!lng',!lat') = n - 1 & \n ->
