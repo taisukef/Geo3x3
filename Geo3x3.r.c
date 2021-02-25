@@ -1,26 +1,26 @@
 // Encode
 static
-char* encode_(double lat, double lng, double prec, char* ps, char* pe){
-  if(ps == pe){
-    *ps = '\0';
-  }else{
+char* encode_(double lat, double lng, double prec, char* code, unsigned remain){
+  if(remain){
     int x = lng / prec;
     int y = lat / prec;
-    *ps = '1' + (3*y) + x;
-    encode_(lat-prec*y, lng-prec*x, prec/3, ps+1, pe);
+    *code = '1' + (3*y) + x;
+    encode_(lat-prec*y, lng-prec*x, prec/3, code+1, remain-1);
+  }else{
+    *code = '\0';
   }
-  return ps;
+  return code;
 }
 
-char* Geo3x3_encode(double lat, double lng, char* ps, char* pe){
+char* Geo3x3_encode(double lat, double lng, char* code, unsigned remain){
   if(lng < 0.0){
-    *ps = 'W';
-    encode_(90.0-lat, lng+180.0, 180.0/3, ps+1, pe);
+    *code = 'W';
+    encode_(90.0-lat, lng+180.0, 180.0/3, code+1, remain-1);
   }else{
-    *ps = 'E';
-    encode_(90.0-lat, lng,       180.0/3, ps+1, pe);
+    *code = 'E';
+    encode_(90.0-lat, lng,       180.0/3, code+1, remain-1);
   }
-  return ps;
+  return code;
 }
 
 // Decode
@@ -43,7 +43,5 @@ int Geo3x3_decode(char* ps, double* plat, double* plng){
   *plng = (*ps == 'W') ? -180.0 : 0.0;
   return decode_(ps+1, 180.0/3, plat, plng, 1);
 }
-
-
 
 
