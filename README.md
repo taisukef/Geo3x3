@@ -701,7 +701,7 @@ $ haxe -main Simple_geo3x3.hx --interp
 
 ### in Scheme (R6RS)
 [geo3x3.sls](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sls),
-[simple_geo3x3.scm](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.scm),
+[simple_geo3x3.scm](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.scm)
 ```Scheme
 #!r6rs
 (import (rnrs)
