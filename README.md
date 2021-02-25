@@ -197,38 +197,18 @@ $ cc simple_geo3x3.c; ./a.out
 ```
 
 ### in C++
-[geo3x3.h](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.h),
-[simple_geo3x3.cpp](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.cpp)
+[geo3x3.r.hpp](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.r.hpp),
+[simple_geo3x3.r.cpp](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.r.cpp)
 ```c++
-#include <iostream>
-#include "geo3x3.h"
-using namespace std;
+#include <stdio.h>
+#include "geo3x3.r.hpp"
 
 int main() {
-    enum GEO3X3_RES err;
+    Geo3x3::Encoder<14> enc(35.65858, 139.745433);
+    printf("%s\n", (const char*)enc);
 
-    char enc_buf[16];
-    struct geo3x3_wgs84 res;
-
-    if ((err = geo3x3_from_wgs84_str(
-         35.36053512254623,
-         138.72724901129274,
-         9,
-         enc_buf,
-         sizeof(enc_buf)
-       ))) {
-      // handle errors
-      exit(1);
-    }
-
-    cout << enc_buf << endl;
-
-    if ((err = geo3x3_to_wgs84_str(enc_buf, &res))) {
-      // handle errors
-      exit(1);
-    }
-
-    cout << res.lat << " " << res.lng << " " << +res.level << " " << res.unit << endl;
+    Geo3x3::Decoder dec("E3793653391822");
+    printf("%f %f (%d)\n", dec.lat(), dec.lng(), dec.level());
 
     return 0;
 }
