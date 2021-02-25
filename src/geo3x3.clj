@@ -28,7 +28,7 @@
     )
 )
 
-(defn is_1to9[c]
+(defn is_1to9 [c]
     (and (>= (int c) (int \1)) (<= (int c) (int \9)))
 )
 
