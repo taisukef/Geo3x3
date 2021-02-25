@@ -56,13 +56,13 @@ decode' code = State.execState f (0,0,1,180) -- (lat,lng,level,unit)
     f :: Decoder ()
     f = if B8.null code then error "trying to decode empty data"
         else do
-  
+
           let (begin,isWest) =
                 case B8.index code 0 of
                   c | c == '-' || c == 'W' -> (1,True)
                   c | c == '+' || c == 'E' -> (1,False)
                   _ -> (0,False)
-  
+
           let loop = \i ->
                 when (i < B8.length code) $
                   let n = digitToInt $ B8.index code i -- includes hex digits
@@ -76,7 +76,7 @@ decode' code = State.execState f (0,0,1,180) -- (lat,lng,level,unit)
                         in (lat',lng',level',unit')
                      loop $ i + 1
            in loop begin
-  
+
           State.modify' $ \(lat,lng,level,unit) ->
             let !lat' = lat + unit / 2 & \lat -> 90 - lat
                 !lng' = lng + unit / 2 & \lng -> if isWest then lng - 180 else lng
