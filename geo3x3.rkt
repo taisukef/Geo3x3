@@ -59,10 +59,10 @@
                 (set! is-west #t)]
                [(or (eq? c #\+) (eq? c #\E))
                 (set! begin 1)
-	        (set! is-west #f)]
+                (set! is-west #f)]
                [else
                 (set! begin 0)
-	        (set! is-west #f)]
+                (set! is-west #f)]
             )
           ) (integer->char (bytes-ref code 0))
         )
