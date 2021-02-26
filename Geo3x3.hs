@@ -41,8 +41,8 @@ encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (0,0,0
           forM_ [1..level-1] $ \_ -> do
             (lat,lng,unit) <- RWS.get
             let !unit' = unit / 3
-                x = truncate $ lng / unit'
-                y = truncate $ lat / unit'
+                x = floor $ lng / unit'
+                y = floor $ lat / unit'
                 !c = toEnum $ fromEnum '0' + x + y * 3 + 1
                 !lng' = lng - (fromIntegral x) * unit'
                 !lat' = lat - (fromIntegral y) * unit'
