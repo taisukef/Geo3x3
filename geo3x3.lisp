@@ -28,6 +28,7 @@
         )
     )
 )
+
 (defun is_1to9 (c)
     (and (>= (char-code c) (char-code #\1)) (<= (char-code c) (char-code #\9)))
 )
