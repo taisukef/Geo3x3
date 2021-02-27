@@ -5,18 +5,18 @@
    [(< level 1) (error "invalid level")]
    [else
     (let (
-          [unit 0]
-          [res (make-bytes 0)]
-          )
+	  [unit 0]
+	  [res (make-bytes 0)]
+	  )
 
       (cond
        [(>= lng 0)
-        (set! res (bytes-append res (bytes (char->integer #\E))))
-        ]
+	(set! res (bytes-append res (bytes (char->integer #\E))))
+	]
        [else
-        (set! res (bytes-append res (bytes (char->integer #\W))))
-        (set! lng (+ lng 180))
-        ]
+	(set! res (bytes-append res (bytes (char->integer #\W))))
+	(set! lng (+ lng 180))
+	]
        )
 
       (set! lat (- 90 lat))
@@ -24,18 +24,18 @@
 
       (for-each
        (lambda (_)
-         (set! unit (/ unit 3))
-         (let ([x (exact-floor (/ lng unit))]
-               [y (exact-floor (/ lat unit))])
-           (set! res (bytes-append
-                      res
-                      (bytes (+ (char->integer #\0) x (* y 3) 1))
-                      )
-                 )
-           (set! lng (- lng (* x unit)))
-           (set! lat (- lat (* y unit)))
-           )
-         )
+	 (set! unit (/ unit 3))
+	 (let ([x (exact-floor (/ lng unit))]
+	       [y (exact-floor (/ lat unit))])
+	   (set! res (bytes-append
+		      res
+		      (bytes (+ (char->integer #\0) x (* y 3) 1))
+		      )
+		 )
+	   (set! lng (- lng (* x unit)))
+	   (set! lat (- lat (* y unit)))
+	   )
+	 )
        (range 1 level)
        )
 
@@ -53,14 +53,14 @@
       (let ([begin 0]
             [is-west #f])
         (
-          (lambda (c)
+	  (lambda (c)
             (cond
                [(or (eq? c #\-) (eq? c #\W))
                 (set! begin 1)
                 (set! is-west #t)]
                [(or (eq? c #\+) (eq? c #\E))
                 (set! begin 1)
-                (set! is-west #f)]
+	        (set! is-west #f)]
             )
           ) (integer->char (bytes-ref code 0))
         )
@@ -82,7 +82,7 @@
                   )
                 ) (- (bytes-ref code i) (char->integer #\0))
               )
-            )
+	    )
           )
           (loop (bytes-length code) begin)
 
