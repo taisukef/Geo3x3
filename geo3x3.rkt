@@ -5,18 +5,19 @@
          [else
              (let*-values ([(res) (make-bytes 0)]
                            [(display) (lambda (c) (set! res (bytes-append res (bytes (char->integer c)))))]
-			   [(lat lng unit) (values lat lng 0)])
-		 (let-values([(c lng) (if (>= lng 0) (values #\E lng)
-                                                     (values #\W (+ lng 180)))])
+                           [(lat lng unit) (values lat lng 0)])
+                 (let-values([(c lng0) (if (>= lng 0) (values #\E lng)
+                                                      (values #\W (+ lng 180)))])
                               (display c)
-		              (set!-values (lat lng unit) (values (- 90 lat) lng 180)))
+		              (set!-values (lat lng unit) (values (- 90 lat) lng0 180)))
                  (for-each (lambda (_)
                           (let*-values ([(unit1) (/ unit 3)]
                                         [(x y) (values (exact-floor (/ lng unit1))
                                                        (exact-floor (/ lat unit1)))]
                                         [(c) (integer->char (+ (char->integer #\0) x (* y 3) 1))]
                                         [(lng1 lat1) (values (- lng (* x unit1))
-					                     (- lat (* y unit1)))])
+                                                             (- lat (* y unit1)))])
+;                             (printf "go lng:~a la:~a unit:~a unit1:~a x:~a y:~a x:~a\n" lng lat unit unit1 x y c)
                               (display c)
                               (set!-values (lat lng unit) (values lat1 lng1 unit1))))
                       (range 1 level))
