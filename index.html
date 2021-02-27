@@ -110,6 +110,7 @@ window.onload = function() {
 			new google.maps.LatLng(pos.lat - pos.unit / 2, pos.lng - pos.unit / 2),
 			new google.maps.LatLng(pos.lat + pos.unit / 2, pos.lng + pos.unit / 2)
 		));
+		latlng.value = pos.lat + "," + pos.lng;
 	}
 	google.maps.event.addListener(map, 	'zoom_changed', function(evt) {
 //		zoom.value = map.getZoom(); // 0 - 21
