@@ -3,13 +3,12 @@
 (define (encode-bytes lat lng level)
    (cond [(< level 1) (error "invalid level")]
          [else
-             (let*-values ([(res) (make-bytes 0)]
-                           [(display) (lambda (c) (set! res (bytes-append res (bytes (char->integer c)))))]
-                           [(lat lng unit) (values lat lng 0)])
-                 (let-values([(c lng0) (if (>= lng 0) (values #\E lng)
+             (let-values ([(res) (open-output-bytes)]
+                          [(lat lng unit) (values lat lng 0)])
+                 (let-values([(c lng1) (if (>= lng 0) (values #\E lng)
                                                       (values #\W (+ lng 180)))])
-                              (display c)
-		              (set!-values (lat lng unit) (values (+ lat 90) lng0 180)))
+                              (display c res)
+		              (set!-values (lat lng unit) (values (+ lat 90) lng1 180)))
                  (for-each (lambda (_)
                           (let*-values ([(unit1) (/ unit 3)]
                                         [(x y) (values (exact-floor (/ lng unit1))
@@ -17,11 +16,11 @@
                                         [(c) (integer->char (+ (char->integer #\0) x (* y 3) 1))]
                                         [(lng1 lat1) (values (- lng (* x unit1))
                                                              (- lat (* y unit1)))])
-;                             (printf "go lng:~a la:~a unit:~a unit1:~a x:~a y:~a x:~a\n" lng lat unit unit1 x y c)
-                              (display c)
+;                             (printf "lng:~a la:~a unit:~a unit1:~a x:~a y:~a x:~a\n" lng lat unit unit1 x y c)
+                              (display c res)
                               (set!-values (lat lng unit) (values lat1 lng1 unit1))))
                       (range 1 level))
-                 res)]))
+                 (get-output-bytes res))]))
 
 (define (decode-bytes code)
    (cond [(or (not (bytes? code)) (= (bytes-length code) 0)) (error "trying to decode empty data")]
