@@ -34,3 +34,4 @@ Haxe,hx,blackets,var,final,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3
 Scheme,"sls,scm",blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sls
 Common Lisp,lisp,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lisp
 Elm,elm,blackets,none,none,script.https://github.com/taisukef/Geo3x3/blob/master/elm/src/Geo3x3.elm
+Hack,hack,blackets,none,none,HHVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hack
