@@ -17,3 +17,4 @@ simple_geo3x3
 *.beam
 *.dump
 target/
+elm-stuff/
