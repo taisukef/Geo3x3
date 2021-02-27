@@ -1,7 +1,7 @@
 <?php
 
 class Geo3x3 {
-  public static function encode(float $lat, float $lng, int $level) {
+  public static function encode(float $lat, float $lng, int $level): string {
     if ($level < 1) {
       return "";
     }
@@ -23,7 +23,7 @@ class Geo3x3 {
     }
     return $res;
   }
-  public static function decode(string $code) {
+  public static function decode(string $code): array {
     $c = $code[0];
     $begin = 0;
     $flg = false;
