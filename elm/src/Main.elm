@@ -1,9 +1,9 @@
-module Main exposing (..)
+module Main exposing (main)
 
 import Geo3x3 exposing (decode, encode)
-import Html exposing (div, text)
+import Html exposing (Html, div, text)
 
-
+main : Html msg
 main =
     div []
         [

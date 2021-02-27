@@ -749,12 +749,12 @@ $ ros simple_geo3x3.lisp
 [Geo3x3.elm](https://github.com/taisukef/Geo3x3/blob/master/elm/src/Geo3x3.elm),
 [Mail.elm](https://github.com/taisukef/Geo3x3/blob/master/elm/src/Main.elm)
 ```Elm
-module Main exposing (..)
+module Main exposing (main)
 
 import Geo3x3 exposing (decode, encode)
-import Html exposing (div, text)
+import Html exposing (Html, div, text)
 
-
+main : Html msg
 main =
     div []
         [
