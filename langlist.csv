@@ -2,7 +2,7 @@
 JavaScript,"js,mjs",blackets,let,const,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mjs
 TypeScript,ts,blackets,let,const,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.ts
 C,"c,h",blackets,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.h
-C++,"cpp,h",blackets,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.h
+C++,"cpp,hpp",blackets,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.r.hpp
 C#,cs,blackets,type,const int,Mono,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.cs
 Swift,swift,blackets,var,let,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.swift
 Java,java,blackets,type,final int,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.java
@@ -31,3 +31,5 @@ Erlang,erl,begin/end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/mast
 Clojure,clj,blackets,none,none,JVM,https://github.com/taisukef/Geo3x3/blob/master/src/geo3x3.clj
 F#,fs,indent,none,let,Mono,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.fs
 Haxe,hx,blackets,var,final,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hx
+Scheme,"sls,scm",blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sls
+Common Lisp,lisp,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lisp

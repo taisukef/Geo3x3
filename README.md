@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://taisukef.github.io/Geo3x3/  
 
 ## Supported Languages
-32 programming languages supported now  
-現在32のプログラミング言語対応しています  
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-(Google-App-Script)) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe))  
+34 programming languages supported now  
+現在34のプログラミング言語対応しています  
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp))  
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
@@ -197,38 +197,18 @@ $ cc simple_geo3x3.c; ./a.out
 ```
 
 ### in C++
-[geo3x3.h](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.h),
-[simple_geo3x3.cpp](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.cpp)
+[geo3x3.r.hpp](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.r.hpp),
+[simple_geo3x3.r.cpp](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.r.cpp)
 ```c++
-#include <iostream>
-#include "geo3x3.h"
-using namespace std;
+#include <stdio.h>
+#include "geo3x3.r.hpp"
 
 int main() {
-    enum GEO3X3_RES err;
+    Geo3x3::Encoder<14> enc(35.65858, 139.745433);
+    printf("%s\n", (const char*)enc);
 
-    char enc_buf[16];
-    struct geo3x3_wgs84 res;
-
-    if ((err = geo3x3_from_wgs84_str(
-         35.36053512254623,
-         138.72724901129274,
-         9,
-         enc_buf,
-         sizeof(enc_buf)
-       ))) {
-      // handle errors
-      exit(1);
-    }
-
-    cout << enc_buf << endl;
-
-    if ((err = geo3x3_to_wgs84_str(enc_buf, &res))) {
-      // handle errors
-      exit(1);
-    }
-
-    cout << res.lat << " " << res.lng << " " << +res.level << " " << res.unit << endl;
+    Geo3x3::Decoder dec("E3793653391822");
+    printf("%f %f (%d)\n", dec.lat(), dec.lng(), dec.level());
 
     return 0;
 }
@@ -717,6 +697,52 @@ $ brew install haxe
 to run:
 ```bash
 $ haxe -main Simple_geo3x3.hx --interp
+```
+
+### in Scheme (R6RS)
+[geo3x3.sls](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sls),
+[simple_geo3x3.scm](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.scm)
+```Scheme
+#!r6rs
+(import (rnrs)
+        (geo3x3))
+
+(write (encode 35.65858 139.745433 14))
+(newline)
+
+(let-values ((result (decode "E3793653391822")))
+  (write result))
+(newline)
+```
+setup:
+```bash
+$ brew install chezscheme
+```
+to run:
+```
+$ chez --program simple_geo3x3.scm
+```
+
+### in Common Lisp
+[geo3x3.lisp](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lisp),
+[simple_geo3x3.lisp](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.lisp)
+```Lisp
+(load "geo3x3.lisp")
+
+(defun main ()
+  (progn
+    (print (geo3x3::encode 35.65858 139.745433 14))
+    (print (geo3x3::decode "E3793653391822"))
+  )
+)
+```
+setup:
+```bash
+$ brew install roswell
+```
+to run:
+```
+$ ros simple_geo3x3.lisp
 ```
 
 ## History
