@@ -3,6 +3,12 @@ class Geo3x3 {
 		if (level < 1) {
 			return "";
 		}
+        if (typeof lat == "string") {
+			lat = parseFloat(lat);
+		}
+		if (typeof lng == "string") {
+			lng = parseFloat(lng);
+		}
 		let res = "E";
 		if (lng < 0) {
 			res = "W";

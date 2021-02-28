@@ -3,16 +3,22 @@ class Geo3x3 {
 		if (level < 1) {
 			return "";
 		}
+        if (typeof lat == "string") {
+			lat = parseFloat(lat);
+		}
+		if (typeof lng == "string") {
+			lng = parseFloat(lng);
+		}
 		let res = "E";
-		if (lng < 0) {
+		if (lng < 0.0) {
 			res = "W";
-			lng += 180;
+			lng += 180.0;
 		}
 		//lat = 90 - lat; // 0:the North Pole,  180:the South Pole
-		lat += 90.; // 180:the North Pole,  0:the South Pole
-		let unit = 180;
+		lat += 90.0; // 180:the North Pole,  0:the South Pole
+		let unit = 180.0;
 		for (let i = 1; i < level; i++) {
-			unit /= 3;
+			unit /= 3.0;
 			const x = Math.floor(lng / unit);
 			const y = Math.floor(lat / unit);
 			res += x + y * 3 + 1;
