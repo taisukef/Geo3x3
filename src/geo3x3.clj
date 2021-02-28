@@ -34,7 +34,7 @@
 
 (defn decode_fn [code lat lng level unit]
     (if (or (= (count code) 0) (not (is_1to9 (first code))))
-        [(- 90.0 (+ lat (/ unit 2.0))) (+ lng (/ unit 2.0)) level unit]
+        [(- 90.0 (+ lat (/ (* unit 3.0) 2.0))) (+ lng (/ (* unit 3.0) 2.0)) level (* unit 3.0)]
         (let [n (- (int (first code)) 49)]
             (decode_fn
                 (rest code)
