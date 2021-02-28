@@ -30,10 +30,10 @@ OCaml,ml,blackets,none,let,script,https://github.com/taisukef/Geo3x3/blob/master
 Erlang,erl,begin/end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.erl
 Clojure,clj,blackets,none,none,JVM,https://github.com/taisukef/Geo3x3/blob/master/src/geo3x3.clj
 F#,fs,indent,none,let,Mono,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.fs
-Haxe,hx,blackets,var,final,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hx
+Haxe,hx,blackets,var,final,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hx
 Scheme,"sls,scm",blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sls
 Common Lisp,lisp,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lisp
-Elm,elm,blackets,none,none,script.https://github.com/taisukef/Geo3x3/blob/master/elm/src/Geo3x3.elm
+Elm,elm,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/elm/src/Geo3x3.elm
 Hack,hack,blackets,none,none,HHVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hack
 PureScript,purs,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/purs/src/Geo3x3.purs
 CoffeScript,coffee,tab,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.coffee
