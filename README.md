@@ -899,7 +899,9 @@ $ curl https://github.com/Frege/frege/releases/download/3.24public/frege3.24.405
 ```
 to run:
 ```
-$ java -Xss1m -jar frege/frege.jar -d frege/build Geo3x3.fr simple_geo3x3.fr
+$ mkdir frege/build
+$ java -Xss1m -jar frege/frege.jar -d frege/build Geo3x3.fr
+$ java -Xss1m -jar frege/frege.jar -d frege/build simple_geo3x3.fr
 $ java -Xss1m -cp frege/build:frege/frege.jar Main
 ```
 
