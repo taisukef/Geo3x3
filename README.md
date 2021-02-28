@@ -892,14 +892,15 @@ main _ = do putStrLn $ encode 35.65858 139.745433 14
             print level >> print '\n'
             print unit  >> print '\n'
 ```
-to build:
+setup:
 ```
-$ java -Xss1m -jar frege/frege3.24.405.jar -d frege/build Geo3x3.fr
-$ java -Xss1m -jar frege/frege3.24.405.jar -d frege/build simple_geo3x3.fr
+$ mkdir frege
+$ curl https://github.com/Frege/frege/releases/download/3.24public/frege3.24.405.jar -L --output frege/frege.jar
 ```
 to run:
 ```
-$ java -Xss1m -cp frege/build:frege/frege3.24.405.jar Main
+$ java -Xss1m -jar frege/frege.jar -d frege/build Geo3x3.fr simple_geo3x3.fr
+$ java -Xss1m -cp frege/build:frege/frege.jar Main
 ```
 
 
