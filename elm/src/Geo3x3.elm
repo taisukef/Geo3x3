@@ -40,7 +40,10 @@ decode_fn code lat lng level unit =
         c = Maybe.withDefault '0' (List.head code)
     in
     if not (is_1to9 c) then
-        { lat = 90.0 - (lat + unit / 2.0), lng = lng + unit / 2.0, level = level, unit = unit }
+        let
+            unit0 = unit * 3.0
+        in
+            { lat = 90.0 - (lat + unit0 / 2.0), lng = lng + unit0 / 2.0, level = level, unit = unit0 }
     else
         let
             n = Char.toCode c - 49

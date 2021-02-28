@@ -4463,7 +4463,8 @@ var $author$project$Geo3x3$decode_fn = F5(
 				_Utils_chr('0'),
 				$elm$core$List$head(code));
 			if (!$author$project$Geo3x3$is_1to9(c)) {
-				return {lat: 90.0 - (lat + (unit / 2.0)), level: level, lng: lng + (unit / 2.0), unit: unit};
+				var unit0 = unit * 3.0;
+				return {lat: 90.0 - (lat + (unit0 / 2.0)), level: level, lng: lng + (unit0 / 2.0), unit: unit0};
 			} else {
 				var n = $elm$core$Char$toCode(c) - 49;
 				var $temp$code = A2(
