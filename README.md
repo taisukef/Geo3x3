@@ -886,11 +886,11 @@ $ clang -framework Foundation simple_geo3x3.m Geo3x3.m -o a.out; ./a.out
 import Geo3x3
 
 main _ = do putStrLn $ encode 35.65858 139.745433 14
-            let (lat,lng,level,unit) = decode "E3793653391822"
-            print lat   >> print '\n'
-            print lng   >> print '\n'
-            print level >> print '\n'
-            print unit  >> print '\n'
+    let (lat,lng,level,unit) = decode "E3793653391822"
+    print lat   >> print '\n'
+    print lng   >> print '\n'
+    print level >> print '\n'
+    print unit  >> print '\n'
 ```
 setup:
 ```

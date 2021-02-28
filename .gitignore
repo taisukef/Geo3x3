@@ -22,3 +22,4 @@ out/
 !frege/frege3.24.405.jar
 frege/build
 .jar
+.keep
