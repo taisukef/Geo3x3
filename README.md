@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://taisukef.github.io/Geo3x3/  
 
 ## Supported Languages
-39 programming languages supported now  
-現在39のプログラミング言語対応しています  
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C))  
+40 programming languages supported now  
+現在40のプログラミング言語対応しています  
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege))
 https://taisukef.github.io/Geo3x3/langlist.html  
 
 ## Sample code
@@ -877,6 +877,30 @@ $ brew install llvm
 to run:
 ```
 $ clang -framework Foundation simple_geo3x3.m Geo3x3.m -o a.out; ./a.out
+```
+
+### in Frege
+[Geo3x3.fr](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.fr),
+[simple_geo3x3.fr](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.fr)
+```Frege
+import Geo3x3
+
+main _ = do putStrLn $ encode 35.65858 139.745433 14
+            let (lat,lng,level,unit) = decode "E3793653391822"
+            print lat   >> print '\n'
+            print lng   >> print '\n'
+            print level >> print '\n'
+            print unit  >> print '\n'
+```
+setup:
+```
+$ mkdir frege
+$ curl https://github.com/Frege/frege/releases/download/3.24public/frege3.24.405.jar -L --output frege/frege.jar
+```
+to run:
+```
+$ java -Xss1m -jar frege/frege.jar -d frege/build Geo3x3.fr simple_geo3x3.fr
+$ java -Xss1m -cp frege/build:frege/frege.jar Main
 ```
 
 

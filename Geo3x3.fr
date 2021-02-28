@@ -1,0 +1,84 @@
+module Geo3x3 where
+
+import Java.Lang (StringBuffer(append,toString))
+import Prelude.PreludeIO (Ref(new,put,get,modify))
+import Prelude.Math (floor)
+
+
+type Lat = Double
+type Lng = Double
+type Level = Long
+type Unit = Double
+
+type Encoder s = ST s String
+type Decoder s = ST s (Lat,Lng,Level,Unit)
+
+encode :: Lat -> Lng -> Level -> String
+encode lat lng level = ST.run (f lat lng level)
+  where
+    f :: Lat -> Lng -> Level -> Encoder s
+    f lat lng level = if level < 1 then return ""
+                      else do
+                        refState <- new (0.0,0.0,0)
+                        refRes <- StringBuffer.new ""
+
+                        let (!c,!lng') = if lng >= 0
+                                         then ('E',lng)
+                                         else ('W',lng + 180)
+                            !lat' = 90 - lat
+                            !unit = 180
+                          in do put refState (lat',lng',unit)
+                                append refRes c
+
+                        forM_ [1..level-1] $ \_ -> do
+                          (lat,lng,unit) <- get refState
+                          let !unit' = unit / 3
+                              x = Double.long $ floor $ lng / unit'
+                              y = Double.long $ floor $ lat / unit'
+                              c = Char.from $ Long.int $ 48 + x + y * 3 + 1
+                              !lng' = lng - (fromIntegral x) * unit'
+                              !lat' = lat - (fromIntegral y) * unit'
+                            in do put refState (lat',lng',unit')
+                                  append refRes c
+
+                        toString refRes
+
+
+decode :: String -> (Lat,Lng,Level,Unit)
+decode code = ST.run (f code)
+  where
+    f :: String -> Decoder s
+    f code = if String.length code == 0 then return (0,0,0,0)
+             else do
+                     refState <- new (0,0,1,180)
+
+                     let (begin,isWest) =
+                           case String.charAt code 0 of
+                             c | c == '-' || c == 'W' -> (1,True)
+                             c | c == '+' || c == 'E' -> (1,False)
+                             _ -> (0,False)
+                         clen = String.length code
+
+                     let loop = \i ->
+                           when (i < clen) $ do
+                             let n = Char.digit (String.charAt code i) 10
+                               in when (1 <= n && n <= 9) $ do
+                                    modify refState $ \(lat,lng,level,unit) ->
+                                      let !unit' = unit / 3
+                                          n' = n -1
+                                          !lng' = lng + (fromIntegral $ n' `mod` 3) * unit'
+                                          !lat' = lat + (fromIntegral $ n' `div` 3) * unit'
+                                          !level' = level + 1
+                                        in (lat',lng',level',unit')
+                                    loop $ i + 1
+                     loop begin
+
+                     modify refState $ \(lat,lng,level,unit) ->
+                       let !lat' = 90- (lat + unit / 2)
+                           !lng' = lng + unit / 2
+                           !lng'' = if isWest then lng' -180 else lng'
+                         in (lat',lng'',level,unit)
+
+                     get refState
+
+
