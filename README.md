@@ -19,7 +19,7 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 	* origin = lat -90, lng 0 -> lat 90, lng -90(W) 90(E)  
 
 ## Sample app
-https://taisukef.github.io/Geo3x3/  
+https://code4sabae.github.io/geo3x3-map/  
 
 ## Supported Languages
 40 programming languages supported now  
