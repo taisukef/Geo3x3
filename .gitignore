@@ -18,3 +18,4 @@ simple_geo3x3
 *.dump
 target/
 elm-stuff/
+out/
