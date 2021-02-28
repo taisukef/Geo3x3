@@ -57,7 +57,7 @@ These codes are licensed under CC0 (Public Domain)
 ```html
 <script type=module>
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
-console.log(Geo3x3.decode("W28644"));
+console.log(Geo3x3.decode("E9139659937288"));
 </script>
 ```
 
@@ -66,7 +66,7 @@ console.log(Geo3x3.decode("W28644"));
 [simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
 ```mjs
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
-console.log(Geo3x3.decode("W28644"));
+console.log(Geo3x3.decode("E9139659937288"));
 ```
 
 to run:
@@ -80,7 +80,7 @@ $ deno run -A simple_geo3x3.mjs
 [simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
 ```js
 import { Geo3x3 } from "./Geo3x3.mjs";
-console.log(Geo3x3.decode("W28644"));
+console.log(Geo3x3.decode("E9139659937288"));
 ```
 
 to run:
@@ -94,7 +94,7 @@ $ node simple_geo3x3.mjs
 [simple_geo3x3.ts](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.ts)
 ```ts
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.ts";
-console.log(Geo3x3.decode("W28644"));
+console.log(Geo3x3.decode("E9139659937288"));
 ```
 
 to run:
