@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include "Geo3x3.r.h"
-
-
+#include "geo3x3.r.h"
 
 int main(){
   char g3x3[14+1];
@@ -9,11 +7,8 @@ int main(){
   printf("%s\n", g3x3);
 
   double lat, lng;
-  int level = Geo3x3_decode("E3793653391822", &lat, &lng);
+  int level = Geo3x3_decode("E9139659937288", &lat, &lng);
   printf("%f %f (%d)\n", lat, lng, level);
 
   return 0;
 }
-
-
-

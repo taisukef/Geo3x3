@@ -10,7 +10,7 @@ let encode lat lng level =
             else
                 ("W", lng +. 180.0) in
         let lng2 = lng1 in
-        let lat2 = (90.0 -. lat) in (* 0:the North Pole,  180:the South Pole *)
+        let lat2 = lat +. 90.0 in (* 180:the North Pole,  0:the South Pole *)
         let rec loop i lat lng unit =
             if i >= level then
                 ""
@@ -48,6 +48,6 @@ let decode code = (* (35., 135., 14, 0.1);; *)
         let (lat, lng, level, unit) = loop beg 0.0 0.0 1 180.0 in
         let lat2 = lat +. (unit /. 2.0) in
         let lng2 = lng +. (unit /. 2.0) in
-        let lat3 = 90.0 -. lat2 in
+        let lat3 = lat2 -. 90.0 in
         let lng3 = if flg then lng2 -. 180.0 else lng2 in
         (lat3, lng3, level, unit);;

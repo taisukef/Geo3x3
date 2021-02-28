@@ -8,10 +8,10 @@ module Geo3x3
       res = "E"
     else
       res = "W"
-      lng += 180
+      lng += 180.0
     end
-    lat = 90 - lat # 0:the North Pole,  180:the South Pole
-    unit = 180
+    lat += 90.0 # 180:the North Pole,  0:the South Pole
+    unit = 180.0
     for i = 1:level - 1
       unit /= 3
       x = Int(floor(lng / unit))
@@ -54,7 +54,7 @@ module Geo3x3
     end
     lat += unit / 2.0
     lng += unit / 2.0
-    lat = 90.0 - lat
+    lat -= 90.0
     if flg
       lng -= 180.0
     end

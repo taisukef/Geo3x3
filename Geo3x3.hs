@@ -33,7 +33,7 @@ encode' lat lng level = Builder.toLazyByteString $ snd $ RWS.evalRWS f () (0,0,0
           let (!c,!lng') = if lng >= 0
                            then ('E',lng)
                            else ('W',lng + 180)
-              !lat' = 90 - lat
+              !lat' = lat + 90
               !unit = 180
            in do RWS.put $! (lat',lng',unit) -- ignore initial state
                  RWS.tell $! Builder.char7 c
@@ -79,7 +79,7 @@ decode' code = State.execState f (0,0,1,180) -- (lat,lng,level,unit)
            in loop begin
 
           State.modify' $ \(lat,lng,level,unit) ->
-            let !lat' = lat + unit / 2 & \lat -> 90 - lat
+            let !lat' = lat + unit / 2 & \lat -> lat - 90
                 !lng' = lng + unit / 2 & \lng -> if isWest then lng - 180 else lng
              in (lat',lng',level,unit)
 

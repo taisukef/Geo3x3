@@ -32,7 +32,7 @@ encode lat lng level =
             (if lng >= 0.0 then "E" else "W")
             level
             1
-            (90.0 - lat)
+            (lat + 90.0)
             (if lng >= 0.0 then lng else lng + 180.0)
             (180.0 / 3.0)
 
@@ -50,7 +50,7 @@ decode_fn code lat lng level unit =
         let
             unit0 = unit * 3.0
         in
-            { lat: 90.0 - (lat + unit0 / 2.0), lng: lng + unit0 / 2.0, level: level, unit: unit0 }
+            { lat:  (lat + unit0 / 2.0) - 90.0, lng: lng + unit0 / 2.0, level: level, unit: unit0 }
     else
         let
             n = c2 - 49

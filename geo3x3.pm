@@ -22,7 +22,7 @@ sub encode {
     $res = "W";
     $lng += 180.0;
   }
-  $lat = 90.0 - $lat;
+  $lat += 90.0;
   my $unit = 180.0;
   for (my $i = 1; $i < $level; $i++) {
     $unit /= 3;
@@ -66,7 +66,7 @@ sub decode {
   }
   $lat += $unit / 2;
   $lng += $unit / 2;
-  $lat = 90.0 - $lat;
+  $lat -= 90.0;
   if ($flg) {
     $lng -= 180.0;
   }

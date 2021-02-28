@@ -13,7 +13,7 @@
         (display (if (>= lng 0) "E" "W") port)
         (let loop ((i 1)
                    (lng (exact (mod lng 180)))
-                   (lat (- 90 (exact lat)))
+                   (lat (+ (exact lat) 90))
                    (unit (/ 180 3)))
           (when (< i level)
             (let-values (((x xr) (div-and-mod lng unit))
@@ -37,7 +37,7 @@
                      (unit 180)
                      (ch (read-char port)))
             (cond ((eof-object? ch)
-                   (values (inexact (- 90 (+ lat (/ unit 2))))
+                   (values (inexact (- lat (/ unit 2) 90))
                            (- (inexact (+ lng (/ unit 2)))
                               (if (char=? head #\W) 180 0))
                            level

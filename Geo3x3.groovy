@@ -9,7 +9,7 @@ class Geo3x3 {
 			res.append('W')
 			lng += 180
 		}
-		lat = 90 - lat // 0:the North Pole,  180:the South Pole
+		lat += 90
 		def unit = 180
 		for (i in 1 .. level - 1) {
 			unit /= 3
@@ -50,7 +50,7 @@ class Geo3x3 {
 		}
 		lat += unit / 2.0
 		lng += unit / 2.0
-		lat = 90.0 - lat
+		lat -= 90.0
 		if (flg)
 			lng -= 180.0
 		return new double[] { lat, lng, level, unit }

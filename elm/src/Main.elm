@@ -10,7 +10,7 @@ main =
             div [] [ text (encode 35.65858 139.745433 14) ],
             div [] [ text (
                 let
-                    pos = decode "E3793653391822"
+                    pos = decode "E9139659937288"
                 in
                 (String.fromFloat pos.lat ++ " " ++ String.fromFloat pos.lng ++ " " ++ String.fromInt pos.level)
             )]

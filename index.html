@@ -41,7 +41,8 @@ body {
 }
 </style>
 <script type="module">
-import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
+//import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
+import { Geo3x3 } from "./Geo3x3.mjs";
 
 window.onload = function() {
 	for (let i = 1; i <= 30; i++) {
@@ -164,7 +165,7 @@ window.onload = function() {
 		if (s != null && s.length > 0) {
 			s = s.substring(1);
 		} else {
-			s = "E3792";
+			s = "E913";
 		}
 		const pos = Geo3x3.decode(s);
 		if (pos != null) {
@@ -212,7 +213,7 @@ Geo3x3（ジオスリーバイスリー）は、地球上の範囲を表すコ�
 <br>
 アルゴリズム<br>
 1. 地球全体を東半球(E)と西半球(W)の領域に分ける。<br>
-2. 領域（初回は緯度180度、経度180度分）を9分割し、該当位置を1～9の数値で表す（1が北西、5が中央）。<br>
+2. 領域（初回は緯度180度、経度180度分）を9分割し、該当位置を1～9の数値で表す（1が南西、5が中央のテンキー配置）。<br>
 3. 必要な領域の大きさになるまで、2を繰り返す。<br>
 というものです。<br>
 ※9分割の部分に、<a href=https://fukuno.jig.jp/2012/sanshinclk.html>3進数</a>を使いました。意外と使うものですね。<br>

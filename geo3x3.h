@@ -86,8 +86,8 @@ geo3x3_from_wgs84 (
   }
 
   idx++;
-  lat = 90.0 - lat; // 0:the North Pole, 180:the South Pole
-
+  lat += 90.0;
+  
   int x, y;
   for (int i = 1; i < level; i++) {
     unit /= 3;
@@ -181,8 +181,8 @@ geo3x3_to_wgs84 (
 
   lat += unit / 2;
   lng += unit / 2;
-  lat = 90.0 - lat;
-
+  lat -= 90.0;
+  
   switch (code[0]) {
     case 'E':
       break;

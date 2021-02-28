@@ -1,4 +1,4 @@
-Geo3x3 ver 1.04
+Geo3x3 ver 1.05
 ======
 
 ## What is Geo3x3
@@ -10,13 +10,13 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 
 |       |  | East | | |  West | |  
 |-------|--|:----:|-|-|:-----:|-|  
-| North | 1 | 2 | 3 | 1 | 2 | 3 |  
+| North | 7 | 8 | 9 | 7 | 8 | 9 |  
 |       | 4 | 5 | 6 | 4 | 5 | 6 |  
-| South | 7 | 8 | 9 | 7 | 8 | 9 |  
+| South | 1 | 2 | 3 | 1 | 2 | 3 |  
 
 	W5555555 = level 8  
 	E1384700 = level 6 (postfix 0 = dummy)  
-	* origin = lat 90, lng 0 -> lat -90, lng 90(E) -90(W)  
+	* origin = lat -90, lng 0 -> lat 90, lng -90(W) 90(E)  
 
 ## Sample app
 https://taisukef.github.io/Geo3x3/  
@@ -33,12 +33,13 @@ https://taisukef.github.io/Geo3x3/langlist.html
 
 | level | location | Geo3x3 |
 |-------|----------|--------|
-| 3     | 日本 | E37 |  
-| 5     | 中部 | E3792 |  
-| 6     | 福井県 | E37924 |  
-| 8     | 福井県鯖江市 | E3792198 |  
-| 10    | 鯖江市西山公園 | E379219883 |  
-| 13    | 鯖江市西山公園のトイレ | E379219883294 |  
+| 3     | 日本 | E91 |  
+| 5     | 中部 | E9138 |  
+| 6     | 福井県 | E91384 |  
+| 8     | 福井県鯖江市 | E9138732 |  
+| 10    | 鯖江市西山公園 | E913873229 |  
+| 13    | 鯖江市西山公園のトイレ | E9138732298349 |  
+| 16    | 鯖江市西山公園のトイレの入り口 | E913873229834833 |  
 
 ※範囲が狭くなるほどコードが長くなり、範囲が含まれるかどうか前方一致で分かります
 
@@ -109,10 +110,10 @@ $ deno run simple_geo3x3.ts
 import geo3x3
 ## get Geo3x3 code from latitude / longitude / level
 code = geo3x3.encode(35.65858, 139.745433, 14)
-print(code) # E3793653391822
+print(code) # E9139659937288
 
 ## get location from Geo3x3 code
-pos = geo3x3.decode('E3793653391822')
+pos = geo3x3.decode('E9139659937288')
 print(pos) # (35.658633790016204, 139.74546563023935, 14, 0.00011290058538953522)
 ```
 
@@ -128,9 +129,9 @@ $ python3 simple_geo3x3.py
 ```ruby
 require "./geo3x3"
 code = Geo3x3.encode(35.65858, 139.745433, 14)
-p code # "E3793653391822"
+p code # "E9139659937288"
 
-pos = Geo3x3.decode('E3793653391822')
+pos = Geo3x3.decode('E9139659937288')
 p pos # [35.658633790016204, 139.74546563023935, 14, 0.00011290058538953522]
 ```
 
@@ -146,7 +147,7 @@ public class simple_geo3x3 {
     public static void main(String[] args) {
         String code = Geo3x3.encode(35.65858, 139.745433, 14);
         System.out.println(code);
-        double[] res = Geo3x3.decode("E3793653391822");
+        double[] res = Geo3x3.decode("E9139659937288");
         System.out.println(res[0] + " " + res[1] + " " + res[2] + " " + res[3]);
     }
 }
@@ -209,7 +210,7 @@ int main() {
     Geo3x3::Encoder<14> enc(35.65858, 139.745433);
     printf("%s\n", (const char*)enc);
 
-    Geo3x3::Decoder dec("E3793653391822");
+    Geo3x3::Decoder dec("E9139659937288");
     printf("%f %f (%d)\n", dec.lat(), dec.lng(), dec.level());
 
     return 0;
@@ -219,7 +220,7 @@ int main() {
 to run:
 
 ```bash
-$ g++ simple_geo3x3.cpp
+$ g++ simple_geo3x3.cpp; ./a.out
 ```
 
 ### in C#
@@ -228,11 +229,11 @@ $ g++ simple_geo3x3.cpp
 ```c#
 using System;
 
-public class HelloWorld {
+public class simple_geo3x3 {
     static public void Main() {
         String code = Geo3x3.encode(35.65858, 139.745433, 14);
         Console.WriteLine(code);
-        double[] res = Geo3x3.decode("E3793653391822");
+        double[] res = Geo3x3.decode("E9139659937288");
         Console.WriteLine(res[0] + " " + res[1] + " " + res[2] + " " + res[3]);
     }
 }
@@ -255,7 +256,7 @@ require('Geo3x3.php');
 $code = Geo3x3::encode(35.65858, 139.745433, 14);
 echo $code . "\n";
 
-$pos = Geo3x3::decode('E3793653391822');
+$pos = Geo3x3::decode('E9139659937288');
 echo $pos[0] . " " . $pos[1] . " " . $pos[2] . " " . $pos[3] . "\n";
 ?>
 ```
@@ -274,7 +275,7 @@ import Geo3x3
 
 let code = Geo3x3.encode(lat: 35.65858, lng: 139.745433, level: 14)
 print(code)
-let pos = Geo3x3.decode(code: "E3793653391822")
+let pos = Geo3x3.decode(code: "E9139659937288")
 print(pos)
 ```
 
@@ -299,9 +300,9 @@ import "./geo3x3"
 
 func main() {
     code := geo3x3.Encode(35.65858, 139.745433, 14)
-    fmt.Printf("%s\n", code) // E3793653391822
+    fmt.Printf("%s\n", code) // E9139659937288
     
-    pos := geo3x3.Decode("E3793653391822")
+    pos := geo3x3.Decode("E9139659937288")
     fmt.Printf("%f %f %f %f\n", pos[0], pos[1], pos[2], pos[3]); // 35.658634 139.745466 14.000000 0.000113
 }
 ```
@@ -321,7 +322,7 @@ $ ./simple_geo3x3
 fun main() {
   val code = Geo3x3.encode(35.65858, 139.745433, 14)
   println(code)
-  val res = Geo3x3.decode("E3793653391822")
+  val res = Geo3x3.decode("E9139659937288")
   println("${res[0]} ${res[1]} ${res[2]} ${res[3]}")
 }
 ```
@@ -342,7 +343,7 @@ import "./Geo3x3.dart";
 main() {
   final code = Geo3x3.encode(35.65858, 139.745433, 14);
   print(code);
-  final res = Geo3x3.decode("E3793653391822");
+  final res = Geo3x3.decode("E9139659937288");
   print("${res[0]} ${res[1]} ${res[2]} ${res[3]}");
 }
 ```
@@ -363,7 +364,7 @@ fn main() {
     let res = geo3x3::encode(35.65858, 139.745433, 14);
     println!("{}", res);
 
-    let pos = geo3x3::decode("E3793653391822".to_string());
+    let pos = geo3x3::decode("E9139659937288".to_string());
     println!("{} {} {} {}", pos.0, pos.1, pos.2, pos.3); // 35.658634 139.745466 14.000000 0.000113
 }
 ```
@@ -384,7 +385,7 @@ main :: IO ()
 main = do
   let code = Geo3x3.encode 35.65858 139.745433 14
   putStrLn code
-  let res = Geo3x3.decode "E3793653391822"
+  let res = Geo3x3.decode "E9139659937288"
   print res
 ```
 to run:
@@ -396,7 +397,7 @@ $ runghc simple_geo3x3.hs
 [Geo3x3.obs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.obs),
 ```vbs
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
-WScript.Echo Geo3x3_decode("E3793653391822")
+WScript.Echo Geo3x3_decode("E9139659937288")
 ```
 to run:
 ```bash
@@ -410,7 +411,7 @@ $ oscript Geo3x3.obs
 def main(args: Array[String]): Unit = {
 	val code = encode(35.65858, 139.745433, 14)
 	println(code)
-	val (lat, lng, level, unit) = decode("E3793653391822")
+	val (lat, lng, level, unit) = decode("E9139659937288")
 	println(s"${lat} ${lng} ${level} ${unit}")
 }
 ```
@@ -428,7 +429,7 @@ source("Geo3x3.R")
 code <- Geo3x3_encode(35.65858, 139.745433, 14)
 print(code)
 
-pos <- Geo3x3_decode("E3793653391822")
+pos <- Geo3x3_decode("E9139659937288")
 print(pos)
 ```
 to run:
@@ -442,7 +443,7 @@ $ r --no-save < simple_geo3x3.R
 ```js
 function myFunction() {
   Logger.log(Geo3x3.encode(35.65858, 139.745433, 14));
-  Logger.log(Geo3x3.decode("E3793653391822"));
+  Logger.log(Geo3x3.decode("E9139659937288"));
 }
 ```
 
@@ -453,7 +454,7 @@ function myFunction() {
 import geo3x3
 
 echo geo3x3.encode(35.65858, 139.745433, 14)
-echo geo3x3.decode("E3793653391822")
+echo geo3x3.decode("E9139659937288")
 ```
 to run:
 ```bash
@@ -467,7 +468,7 @@ $ nim r simple_geo3x3.nim
 Code.require_file("geo3x3.ex")
 
 Geo3x3.encode(35.65858, 139.745433, 14) |> IO.inspect()
-Geo3x3.decode("E3793653391822") |> IO.inspect() 
+Geo3x3.decode("E9139659937288") |> IO.inspect() 
 ```
 
 to run:
@@ -483,7 +484,7 @@ local geo3x3 = require("geo3x3")
 
 print(geo3x3.encode(35.65858, 139.745433, 14))
 
-pos = geo3x3.decode("E3793653391822")
+pos = geo3x3.decode("E9139659937288")
 print(pos[1], pos[2], pos[3], pos[4])
 ```
 to run:
@@ -503,7 +504,7 @@ use geo3x3;
 my $code = geo3x3::encode(35.65858, 139.745433, 14);
 print $code . "\n";
 
-my ($lat, $lng, $level, $unit) = geo3x3::decode("E3793653391822");
+my ($lat, $lng, $level, $unit) = geo3x3::decode("E9139659937288");
 print $lat . " " . $lng . " " . $level . " " . $unit . "\n";
 ```
 to run:
@@ -518,7 +519,7 @@ $ perl simple_geo3x3.pl
 final code = Geo3x3.encode(35.65858, 139.745433, 14)
 println code
 
-final res = Geo3x3.decode("E3793653391822")
+final res = Geo3x3.decode("E9139659937288")
 println(res[0] + " " + res[1] + " " + res[2] + " " + res[3])
 ```
 to run:
@@ -541,7 +542,7 @@ void main() {
     }
 
     // get location from Geo3x3 code
-    auto pos = Geo3x3.decode("E3793653391822");
+    auto pos = Geo3x3.decode("E9139659937288");
     writeln(pos);
 }
 ```
@@ -564,7 +565,7 @@ include("Geo3x3.jl")
 code = Geo3x3.encode(35.65858, 139.745433, 14)
 println(code)
 
-pos = Geo3x3.decode("E3793653391822")
+pos = Geo3x3.decode("E9139659937288")
 println(pos)
 ```
 setup:
@@ -584,9 +585,9 @@ $ julia simple_geo3x3.jl
 
 (require "geo3x3.rkt")
 (encode 35.65858 139.745433 14)
-(decode "E3793653391822")
+(decode "E9139659937288")
 
-;"E3793653391822"
+;"E9139659937288"
 ;'(35.658633790016204 139.7454656302393 14 0.00011290058538953525)
 ```
 setup:
@@ -607,7 +608,7 @@ open String;;
 let code = Geo3x3.encode 35.65858 139.745433 14;;
 print_endline code;;
 
-let (lat, lng, level, unit) = Geo3x3.decode "E3793653391822";;
+let (lat, lng, level, unit) = Geo3x3.decode "E9139659937288";;
 print_endline (String.concat " " [string_of_float lat; string_of_float lng; string_of_int level; string_of_float unit]);;
 ```
 setup:
@@ -628,7 +629,7 @@ $ ocamlopt -c geo3x3.ml; ocamlopt -c simple_geo3x3.ml; ocamlopt -o a.out geo3x3.
 
 main() ->
     io:format("~s~n", [geo3x3:encode(35.65858, 139.745433, 14)]),
-    {Lat, Lng, Level, Unit} = geo3x3:decode("E3793653391822"),
+    {Lat, Lng, Level, Unit} = geo3x3:decode("E9139659937288"),
     io:format("~w ~w ~w ~w~n", [Lat, Lng, Level, Unit]).
 ```
 setup:
@@ -649,7 +650,7 @@ $ erlc simple_geo3x3.erl geo3x3.erl; erl -noshell -noinput -s simple_geo3x3 main
 )
 (defn -main []
   (println (geo3x3/encode 35.65858 139.745433 14))
-  (println (geo3x3/decode "E3793653391822"))
+  (println (geo3x3/decode "E9139659937288"))
 )
 ```
 setup:
@@ -671,7 +672,7 @@ open Geo3x3
 let code = Geo3x3.encode 35.65858 139.745433 14
 printfn "%s" code
 
-let (lat, lng, level, unit) = Geo3x3.decode "E3793653391822"
+let (lat, lng, level, unit) = Geo3x3.decode "E9139659937288"
 printfn "%f %f %d %f" lat lng level unit
 ```
 to run:
@@ -687,7 +688,7 @@ class Simple_geo3x3 {
     static public function main(): Void {
         final code = Geo3x3.encode(35.65858, 139.745433, 14);
         Sys.println(code);
-        final pos = Geo3x3.decode("E3793653391822");
+        final pos = Geo3x3.decode("E9139659937288");
         Sys.println(pos);
     }
 }
@@ -712,7 +713,7 @@ $ haxe -main Simple_geo3x3.hx --interp
 (write (encode 35.65858 139.745433 14))
 (newline)
 
-(let-values ((result (decode "E3793653391822")))
+(let-values ((result (decode "E9139659937288")))
   (write result))
 (newline)
 ```
@@ -734,7 +735,7 @@ $ chez --program simple_geo3x3.scm
 (defun main ()
   (progn
     (print (geo3x3::encode 35.65858 139.745433 14))
-    (print (geo3x3::decode "E3793653391822"))
+    (print (geo3x3::decode "E9139659937288"))
   )
 )
 ```
@@ -763,7 +764,7 @@ main =
             div [] [ text (encode 35.65858 139.745433 14) ],
             div [] [ text (
                 let
-                    pos = decode "E3793653391822"
+                    pos = decode "E9139659937288"
                 in
                 (String.fromFloat pos.lat ++ " " ++ String.fromFloat pos.lng ++ " " ++ String.fromInt pos.level)
             )]
@@ -776,7 +777,7 @@ $ brew install elm
 to run:
 ```
 $ cd elm
-$ elm make src/Main.elm 
+$ elm make src/Main.elm
 $ open index.html
 ```
 
@@ -791,7 +792,7 @@ function main(): void {
   $code = Geo3x3::encode(35.65858, 139.745433, 14);
   echo $code . "\n";
 
-  $pos = Geo3x3::decode('E3793653391822');
+  $pos = Geo3x3::decode('E9139659937288');
   echo $pos[0] . " " . $pos[1] . " " . $pos[2] . " " . $pos[3] . "\n";
 }
 ```
@@ -820,7 +821,7 @@ import Geo3x3 as Geo3x3
 main :: Effect Unit
 main = do
   log (Geo3x3.encode 35.65858 139.745433 14)
-  log (show (Geo3x3.decode "E3793653391822"))
+  log (show (Geo3x3.decode "E9139659937288"))
 ```
 setup:
 ```
@@ -840,7 +841,7 @@ $ spago run
 import { Geo3x3 } from "./Geo3x3.js"
 
 console.log Geo3x3.encode(35.65858, 139.745433, 14)
-console.log Geo3x3.decode("E3793653391822")
+console.log Geo3x3.decode("E9139659937288")
 ```
 setup:
 ```
@@ -864,7 +865,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSLog(@"%@", [Geo3x3 Encode:35.65858 lng:139.745433 level:14]);
 
-        NSArray* res = [Geo3x3 Decode:@"E3793653391822"];
+        NSArray* res = [Geo3x3 Decode:@"E9139659937288"];
         for (NSNumber* num in res) {
             NSLog(@"%f", num.doubleValue);
         }
@@ -888,7 +889,7 @@ $ clang -framework Foundation simple_geo3x3.m Geo3x3.m -o a.out; ./a.out
 import Geo3x3
 
 main _ = do putStrLn $ encode 35.65858 139.745433 14
-    let (lat,lng,level,unit) = decode "E3793653391822"
+    let (lat,lng,level,unit) = decode "E9139659937288"
     print lat   >> print '\n'
     print lng   >> print '\n'
     print level >> print '\n'
@@ -909,11 +910,12 @@ $ java -Xss1m -cp frege/build:frege/frege.jar Main
 
 
 ## History
-ver 1.04 2021.2.22 fixed WGS84  
-ver 1.03 2021.2.20 support int encoded, license CC BY -> CC0 (Public Domain)  
-ver 1.02 2013.2.18 write in Java, lincense CC BY-ND -> CC BY  
-ver 1.01 2012.1.15 change coding  
-ver 1.00 2012.1.15 first release  
+ver 1.05 2021-03-01 change coding (origin lat:90 lng:0 → lat:-90 lng:0)  
+ver 1.04 2021-02-22 fixed WGS84  
+ver 1.03 2021-02-20 support int encoded, license CC BY -> CC0 (Public Domain)  
+ver 1.02 2013-02-18 write in Java, lincense CC BY-ND -> CC BY  
+ver 1.01 2012-01-15 change coding  
+ver 1.00 2012-01-15 first release  
 
 ## Creator
 Taisuke Fukuno  

@@ -2,7 +2,7 @@ defmodule Geo3x3 do
   def encode(_lat, _lng, level) when level < 1, do: ""
   def encode(lat, lng, level) do
     {res, lng} = if lng >= 0, do: {"E", lng}, else: {"W", lng + 180}
-    lat = 90 - lat # 0:the North Pole,  180:the South Pole
+    lat = lat + 90 # 180:the North Pole,  0:the South Pole
     unit = 180.0
 
     {_, _, _, res} =
@@ -49,7 +49,7 @@ defmodule Geo3x3 do
       end)
 
     lat = lat + (unit / 2)
-    lat = 90 - lat
+    lat = lat - 90
 
     lng = lng + (unit / 2)
     lng = if flg, do: lng - 180.0, else: lng

@@ -8,7 +8,7 @@ class Geo3x3 {
 			res = "W";
 			lng += 180;
 		}
-		lat = 90 - lat; // 0:the North Pole,  180:the South Pole
+		lat += 90;
 		let unit = 180;
 		for (let i = 1; i < level; i++) {
 			unit /= 3;
@@ -51,7 +51,7 @@ class Geo3x3 {
 		}
 		lat += unit / 2;
 		lng += unit / 2;
-		lat = 90 - lat;
+		lat -= 90;
 		if (flg) {
 			lng -= 180;
 		}

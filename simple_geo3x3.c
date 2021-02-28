@@ -13,7 +13,7 @@ int main() {
     if ((err = geo3x3_from_wgs84_str(
          35.36053512254623,
          138.72724901129274,
-         9,
+         14,
          enc_buf,
          sizeof(enc_buf)
        ))) {
@@ -21,14 +21,14 @@ int main() {
       exit(1);
     }
     
-    printf("geo3x3: %s\n", enc_buf); // geo3x3: E37935738
+    printf("geo3x3: %s\n", enc_buf); // geo3x3: E9139519253557
 
     if ((err = geo3x3_to_wgs84_str(enc_buf, &res))) {
       // handle errors
       exit(1);
     }
 
-    // wgs84: 35.363512 138.724280 9 0.027435
+    // wgs84: 35.360576 138.727215 14 0.000113
     printf(" wgs84: %f %f %u %f\n", 
       res.lat,
       res.lng,

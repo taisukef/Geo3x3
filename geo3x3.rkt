@@ -9,7 +9,7 @@
                  (let-values([(c lng0) (if (>= lng 0) (values #\E lng)
                                                       (values #\W (+ lng 180)))])
                               (display c)
-		              (set!-values (lat lng unit) (values (- 90 lat) lng0 180)))
+		              (set!-values (lat lng unit) (values (+ lat 90) lng0 180)))
                  (for-each (lambda (_)
                           (let*-values ([(unit1) (/ unit 3)]
                                         [(x y) (values (exact-floor (/ lng unit1))
@@ -44,7 +44,7 @@
                                                    [level1 (+ level 1)])
                                                 (set!-values (lat lng level unit) (values lat1 lng1 level1 unit1))
                                                 (loop (+ i 1))))))))
-                     (list (exact->inexact (let ([lat (+ lat (/ unit 2))]) (- 90 lat) ))
+                     (list (exact->inexact (let ([lat (+ lat (/ unit 2))]) (- lat 90) ))
                            (exact->inexact (let ([lng (+ lng (/ unit 2))]) (if is-west (- lng 180) lng) ))
                            level
                            (exact->inexact unit))))]))

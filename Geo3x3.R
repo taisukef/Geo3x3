@@ -7,7 +7,7 @@ Geo3x3_encode <- function(lat, lng, level) {
     res = "W"
     lng <- lng + 180.
   }
-  lat <- 90. - lat # 0:the North Pole,  180:the South Pole
+  lat <- lat + 90. # 180:the North Pole,  0:the South Pole
   unit <- 180.
   for (i in 1:level - 1) {
     unit <- unit / 3
@@ -47,7 +47,7 @@ Geo3x3_decode <- function(code) {
   }
   lat <- lat + unit / 2
   lng <- lng + unit / 2
-  lat <- 90 - lat;
+  lat <- lat - 90
   if (flg) {
     lng <- lng - 180
   }

@@ -7,10 +7,10 @@ struct Encoder{
     Encoder(double lat, double lng){
         if(lng < 0.0){
             *m_code = 'W';
-            encode(90.0-lat, lng+180.0, 180.0/3, m_code+1, PREC-1);
+            encode(lat + 90.0, lng+180.0, 180.0/3, m_code+1, PREC-1);
         }else{
             *m_code = 'E';
-            encode(90.0-lat, lng,       180.0/3, m_code+1, PREC-1);
+            encode(lat + 90.0, lng,       180.0/3, m_code+1, PREC-1);
         }
     }
 
@@ -36,10 +36,11 @@ private:
 struct Decoder{
     Decoder(const char* code){
         if(*code){
-            m_lat = 90.0;
+            m_lat = 0;
             m_lng = (*code == 'W') ? -180.0 : 0.0;
             m_level = 1;
             decode(code+1, 180.0/3);
+            m_lat -= 90.0;
         }else{
             m_lat = 0.0;
             m_lng = 0.0;
@@ -60,7 +61,7 @@ private:
         unsigned n = *code - '1';
         if(n < 9){
             m_lng += n % 3 * prec;
-            m_lat -= n / 3 * prec;
+            m_lat += n / 3 * prec;
             ++m_level;
             decode(code+1, prec/3);
         }else{

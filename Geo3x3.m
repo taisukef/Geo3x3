@@ -13,7 +13,7 @@
         res = @"W";
         lng += 180.0;
     }
-    lat = 90.0 - lat;
+    lat += 90.0;
     double unit = 180.0;
     for (int i = 1; i < level; i++) {
         unit /= 3.0;
@@ -59,7 +59,7 @@
     }
     lat += unit / 2;
     lng += unit / 2;
-    lat = 90.0 - lat;
+    lat -= 90.0;
     if (flg) {
         lng -= 180.0;
     }

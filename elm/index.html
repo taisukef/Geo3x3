@@ -4464,7 +4464,7 @@ var $author$project$Geo3x3$decode_fn = F5(
 				$elm$core$List$head(code));
 			if (!$author$project$Geo3x3$is_1to9(c)) {
 				var unit0 = unit * 3.0;
-				return {lat: 90.0 - (lat + (unit0 / 2.0)), level: level, lng: lng + (unit0 / 2.0), unit: unit0};
+				return {lat: (lat + (unit0 / 2.0)) - 90.0, level: level, lng: lng + (unit0 / 2.0), unit: unit0};
 			} else {
 				var n = $elm$core$Char$toCode(c) - 49;
 				var $temp$code = A2(
@@ -4557,7 +4557,7 @@ var $author$project$Geo3x3$encode = F3(
 			(lng >= 0.0) ? 'E' : 'W',
 			level,
 			1,
-			90.0 - lat,
+			lat + 90.0,
 			(lng >= 0.0) ? lng : (lng + 180.0),
 			180.0 / 3.0);
 	});
@@ -4584,7 +4584,7 @@ var $author$project$Main$main = A2(
 				[
 					$elm$html$Html$text(
 					function () {
-						var pos = $author$project$Geo3x3$decode('E3793653391822');
+						var pos = $author$project$Geo3x3$decode('E9139659937288');
 						return $elm$core$String$fromFloat(pos.lat) + (' ' + ($elm$core$String$fromFloat(pos.lng) + (' ' + $elm$core$String$fromInt(pos.level))));
 					}())
 				]))

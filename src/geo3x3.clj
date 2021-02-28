@@ -21,7 +21,7 @@
             (if (>= lng 0.0) "E" "W")
             level
             1
-            (- 90.0 lat)
+            (+ lat 90.0)
             (if (>= lng 0.0) lng (+ lng 180.0))
             (/ 180.0 3.0)
         )
@@ -34,7 +34,7 @@
 
 (defn decode_fn [code lat lng level unit]
     (if (or (= (count code) 0) (not (is_1to9 (first code))))
-        [(- 90.0 (+ lat (/ (* unit 3.0) 2.0))) (+ lng (/ (* unit 3.0) 2.0)) level (* unit 3.0)]
+        [(- (+ lat (/ (* unit 3.0) 2.0)) 90.0) (+ lng (/ (* unit 3.0) 2.0)) level (* unit 3.0)]
         (let [n (- (int (first code)) 49)]
             (decode_fn
                 (rest code)

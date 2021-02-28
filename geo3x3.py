@@ -7,7 +7,7 @@ def encode(lat: float, lng: float, level: int):
     else:
         res += "W"
         lng += 180
-    lat = 90 - lat # // 0:the North Pole,  180:the South Pole
+    lat += 90 # 180:the North Pole,  0:the South Pole
     unit = 180
     for i in range(1, level):
         unit /= 3
@@ -45,7 +45,7 @@ def decode(code):
         level += 1
     lat += unit / 2
     lng += unit / 2
-    lat = 90 - lat
+    lat -= 90
     if flg:
         lng -= 180
     return (lat, lng, level, unit)

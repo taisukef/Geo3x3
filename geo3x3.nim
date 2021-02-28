@@ -8,7 +8,7 @@ proc encode*(lat: float, lng: float, level: int): string =
     else:
         res &= "W"
         lng2 += 180.0
-    var lat2 = 90.0 - lat # 0:the North Pole,  180:the South Pole
+    var lat2 = lat + 90.0 # 180:the North Pole,  0:the South Pole
     var unit = 180.0
     var i = 1
     while i < level:
@@ -50,7 +50,7 @@ proc decode*(code: string): (float, float, int, float) =
         i += 1
     lat += unit / 2.0
     lng += unit / 2.0
-    lat = 90.0 - lat
+    lat -= 90.0
     if flg:
         lng -= 180.0
     return (lat, lng, level, unit)

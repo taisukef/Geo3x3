@@ -18,7 +18,7 @@ bool encode(double lat, double lng, int level, char[] code) {
   }
 
   idx++;
-  lat = 90.0 - lat; // 0:the North Pole, 180:the South Pole
+  lat += 90.0;
   for (auto i = 1; i < level; i++) {
     unit /= 3;
     const x = cast(int)(lng / unit);
@@ -60,7 +60,7 @@ auto decode(string code) {
   }
   lat += unit / 2;
   lng += unit / 2;
-  lat = 90.0 - lat;
+  lat -= 90.0;
   if (flg) {
     lng -= 180.0;
   }

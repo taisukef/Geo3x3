@@ -13,8 +13,8 @@ module Geo3x3
       lng += 180
     end
 
-    lat = 90 - lat
-
+    lat += 90
+    
     unit = 180.0
 
     (level - 1).times do
@@ -72,7 +72,7 @@ module Geo3x3
 
     lat += unit / 2
     lng += unit / 2
-    lat = 90 - lat
+    lat -= 90
     lng -= 180.0 if flg
 
     [lat, lng, level, unit]

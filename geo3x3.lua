@@ -11,7 +11,7 @@ geo3x3.encode = function(lat, lng, level)
     res = "W"
     lng = lng + 180.0
   end
-  lat = 90.0 - lat
+  lat += 90.0
   unit = 180.0
 
   for i = 1, level - 1 do
@@ -52,7 +52,7 @@ geo3x3.decode = function(code)
   end
   lat = lat + unit / 2
   lng = lng + unit / 2
-  lat = 90.0 - lat
+  lat -= 90.0
   if flg then
     lng = lng - 180.0
   end

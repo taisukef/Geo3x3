@@ -7,9 +7,9 @@ class Geo3x3 {
       $res = "E";
     } else {
       $res = "W";
-      $lng += 180;
+      $lng += 180.0;
     }
-    $lat = 90 - $lat;
+    $lat += 90.0;
     $unit = 180.0;
     for ($i = 1; $i < $level; $i++) {
       $unit /= 3;
@@ -51,7 +51,7 @@ class Geo3x3 {
     }
     $lat += $unit / 2;
     $lng += $unit / 2;
-    $lat = 90 - $lat;
+    $lat -= 90.0;
     if ($flg) {
       $lng -= 180.0;
     }

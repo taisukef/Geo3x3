@@ -25,7 +25,7 @@ encode lat lng level = ST.run (f lat lng level)
                         let (!c,!lng') = if lng >= 0
                                          then ('E',lng)
                                          else ('W',lng + 180)
-                            !lat' = 90 - lat
+                            !lat' = lat + 90
                             !unit = 180
                           in do put refState (lat',lng',unit)
                                 append refRes c
@@ -74,7 +74,7 @@ decode code = ST.run (f code)
                      loop begin
 
                      modify refState $ \(lat,lng,level,unit) ->
-                       let !lat' = 90- (lat + unit / 2)
+                       let !lat' = (lat + unit / 2) - 90
                            !lng' = lng + unit / 2
                            !lng'' = if isWest then lng' -180 else lng'
                          in (lat',lng'',level,unit)

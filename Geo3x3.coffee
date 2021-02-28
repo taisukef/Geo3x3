@@ -6,10 +6,10 @@ export class Geo3x3
             result = "E"
         else
             result = "W"
-            lng += 180
-        lat = 90 - lat
+            lng += 180.0
+        lat += 90.0
         unit = 180.0
-        for i in [1 .. level]
+        for i in [1 .. level - 1]
             unit /= 3
             x = Math.floor(lng / unit)
             y = Math.floor(lat / unit)
@@ -45,7 +45,7 @@ export class Geo3x3
         
         lat += unit / 2
         lng += unit / 2
-        lat = 90 - lat
+        lat -= 90.0
         if flg
             lng -= 180.0
 

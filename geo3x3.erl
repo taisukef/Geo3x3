@@ -23,7 +23,7 @@ encode(Lat, Lng, Level) ->
                     true -> {"W", Lng + 180.0}
                 end,
             Lng2 = Lng1,
-            Lat2 = (90.0 - Lat), % 0:the North Pole,  180:the South Pole
+            Lat2 = (Lat + 90.0), % 0:the North Pole,  180:the South Pole
             [Res | encode_loop(Level, 1, Lat2, Lng2, 180.0 / 3.0)]
     end.
 
@@ -54,7 +54,7 @@ decode(Code) ->
             {Lat, Lng, Level, Unit} = decode_loop(Code, Clen, Beg, 0.0, 0.0, 1, 180.0),
             Lat2 = Lat + (Unit / 2.0),
             Lng2 = Lng + (Unit / 2.0),
-            Lat3 = 90.0 - Lat2,
+            Lat3 = Lat2 - 90.0,
             Lng3 = if
                     Flg -> Lng2 - 180.0;
                     true -> Lng2

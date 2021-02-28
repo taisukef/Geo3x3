@@ -2,12 +2,12 @@ import { assertEquals } from "https://deno.land/std@0.69.0/testing/asserts.ts";
 import { Geo3x3 } from "./Geo3x3.mjs";
 
 Deno.test("decode", () => {
-	assertEquals(Geo3x3.decode("W28644"), { lat: 40, lng: -86.2962962962963, level: 6, unit: 0.7407407407407408 });
-	assertEquals(Geo3x3.decode("E28644"), { lat: 40, lng: 93.7037037037037, level: 6, unit: 0.7407407407407408 });
+	assertEquals(Geo3x3.decode("W28644"), { lat: -40, lng: -86.2962962962963, level: 6, unit: 0.7407407407407408 });
+	assertEquals(Geo3x3.decode("E28644"), { lat: -40, lng: 93.7037037037037, level: 6, unit: 0.7407407407407408 });
 	assertEquals(Geo3x3.decode(null), null);
 });
 Deno.test("decode int", () => {
-	assertEquals(Geo3x3.decode(-28644), { lat: 40, lng: -86.2962962962963, level: 6, unit: 0.7407407407407408 });
+	assertEquals(Geo3x3.decode(-28644), { lat: -40, lng: -86.2962962962963, level: 6, unit: 0.7407407407407408 });
 	assertEquals(Geo3x3.decode(28644), { lat: 40, lng: 93.7037037037037, level: 6, unit: 0.7407407407407408 });
 	assertEquals(Geo3x3.decode("-28644"), { lat: 40, lng: -86.2962962962963, level: 6, unit: 0.7407407407407408 });
 	assertEquals(Geo3x3.decode("28644"), { lat: 40, lng: 93.7037037037037, level: 6, unit: 0.7407407407407408 });

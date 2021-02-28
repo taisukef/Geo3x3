@@ -1,4 +1,4 @@
 import { Geo3x3 } from "./Geo3x3.mjs";
 
 console.log(Geo3x3.encode(35.65858, 139.745433, 14));
-console.log(Geo3x3.decode("E3793653391822"));
+console.log(Geo3x3.decode("E9139659937288"));

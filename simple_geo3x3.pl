@@ -6,5 +6,5 @@ use geo3x3;
 my $code = geo3x3::encode(35.65858, 139.745433, 14);
 print $code . "\n";
 
-my ($lat, $lng, $level, $unit) = geo3x3::decode("E3793653391822");
+my ($lat, $lng, $level, $unit) = geo3x3::decode("E9139659937288");
 print $lat . " " . $lng . " " . $level . " " . $unit . "\n";

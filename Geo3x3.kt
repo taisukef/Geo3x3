@@ -13,7 +13,7 @@ class Geo3x3 {
 	//			res.append('-');
 				lng2 += 180;
 			}
-			var lat2 = 90 - lat; // 0:the North Pole,  180:the South Pole
+			var lat2 = lat + 90; // 180:the North Pole,  0:the South Pole
 			var unit = 180.0;
 			for (i in 1 until level) {
 				unit /= 3;
@@ -53,7 +53,7 @@ class Geo3x3 {
 			}
 			lat += unit / 2;
 			lng += unit / 2;
-			lat = 90 - lat;
+			lat -= 90;
 			if (flg)
 				lng -= 180.0
 			return arrayOf(lat, lng, level.toDouble(), unit);

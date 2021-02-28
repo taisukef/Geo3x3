@@ -9,6 +9,6 @@ void main() {
     }
 
     // get location from Geo3x3 code
-    auto pos = Geo3x3.decode("E3793653391822");
+    auto pos = Geo3x3.decode("E9139659937288");
     writeln(pos);
 }
