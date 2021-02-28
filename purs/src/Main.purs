@@ -1,7 +1,3 @@
-{-
-spago install integers
-spago install strings
--}
 module Main where
 
 import Prelude
