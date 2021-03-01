@@ -7,27 +7,27 @@ C#,cs,blackets,type,const int,Mono,https://github.com/taisukef/Geo3x3/blob/maste
 Swift,swift,blackets,var,let,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.swift
 Java,java,blackets,type,final int,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.java
 Python,py,indent,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.py
-Ruby,rb,begin/end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rb
+Ruby,rb,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rb
 PHP,php,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.php
 Go,go,blackets,var,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3/Geo3x3.go
 Kotlin,kt,blackets,var,val,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.kt
 Dart,dart,blackets,var,"final,const",script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.dart
 Rust,rs,blackets,let mut,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rs
 Haskell,hs,indent,none,let,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hs
-OpenVBS,obs,begin/end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.obs
+OpenVBS,obs,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.obs
 Scala,scala,blackets,var,val,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.scala
 R,R,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.R
 GAS,gs,blackets,let,const,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.gs
 Nim,nim,indent,var,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nim
-Lua,lua,begin/end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lua
+Lua,lua,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lua
 Perl,"pl,pm",blackets,my,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pm
-Elixir,"ex,exs",begin/end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.ex
+Elixir,"ex,exs",end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.ex
 Groovy,groovy,blackets,def,final,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.groovy
 D,d,blackets,auto,const,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.d
-Julia,jl,begin/end,none,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.jl
+Julia,jl,end,none,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.jl
 Racket,rkt,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rkt
 OCaml,ml,blackets,none,let,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ml
-Erlang,erl,begin/end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.erl
+Erlang,erl,end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.erl
 Clojure,clj,blackets,none,none,JVM,https://github.com/taisukef/Geo3x3/blob/master/src/geo3x3.clj
 F#,fs,indent,none,let,Mono,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.fs
 Haxe,hx,blackets,var,final,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hx
@@ -38,3 +38,4 @@ Hack,hack,blackets,none,none,HHVM,https://github.com/taisukef/Geo3x3/blob/master
 PureScript,purs,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/purs/src/Geo3x3.purs
 CoffeScript,coffee,tab,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.coffee
 Objective-C,"m,h",blackets,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.m
+Eiffel,e,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.e
