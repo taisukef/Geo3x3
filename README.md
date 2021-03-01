@@ -461,7 +461,7 @@ to run:
 $ nim r simple_geo3x3.nim
 ```
 
-## in Elixir
+### in Elixir
 [geo3x3.ex](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ex),
 [simple_geo3x3.exs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.exs)
 ```elixir
