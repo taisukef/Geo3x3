@@ -931,10 +931,15 @@ feature
         end
 end
 ```
+setup:
+```
+$ brew install 
+```
 to run:
 ```
-ec simple_geo3x3.e
-./EIFGENs/simple_geo3x3/W_code/simple_geo3x3
+$ ec simple_geo3x3.e
+$ chmod +x simple_geo3x3
+$ ./simple_geo3x3
 ```
 
 
