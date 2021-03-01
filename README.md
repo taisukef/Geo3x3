@@ -934,7 +934,7 @@ end
 ```
 setup:
 ```
-$ brew install 
+$ brew install eiffelstudio
 ```
 to run:
 ```
