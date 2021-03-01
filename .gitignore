@@ -24,3 +24,4 @@ frege/build
 .jar
 .keep
 *.ecf
+EIFGENs/
