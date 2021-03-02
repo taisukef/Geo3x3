@@ -959,6 +959,8 @@ begin
    Put_Line (Long_Float'Image(T.Lat) & " " & Long_Float'Image(T.Lng) & " " & Integer'Image(T.Level) & " " & Long_Float'Image(T.Unit));
 end Simple_Geo3x3;
 ```
+setup:  
+access [download page of AdaCore](https://www.adacore.com/download), and set PATH  
 to run:
 ```
 $ gnatmake simple_geo3x3.adb
