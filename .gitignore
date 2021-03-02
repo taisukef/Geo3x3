@@ -25,3 +25,4 @@ frege/build
 .keep
 *.ecf
 EIFGENs/
+*.ali

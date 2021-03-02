@@ -39,3 +39,4 @@ PureScript,purs,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blo
 CoffeScript,coffee,tab,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.coffee
 Objective-C,"m,h",blackets,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.m
 Eiffel,e,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.e
+Ada,adb,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.adb
