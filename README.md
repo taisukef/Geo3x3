@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://code4sabae.github.io/geo3x3-map/  
 
 ## Supported Languages
-41 programming languages supported now  
-現在41のプログラミング言語対応しています  
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel))  
+42 programming languages supported now  
+現在42のプログラミング言語対応しています  
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada))  
 
 supported languages list / サポート言語一覧  
 https://taisukef.github.io/Geo3x3/langlist.html  
@@ -940,6 +940,28 @@ to run:
 ```
 $ ec simple_geo3x3.e
 $ chmod +x simple_geo3x3
+$ ./simple_geo3x3
+```
+
+### in Ada
+[geo3x3.ads](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ads),
+[geo3x3.adb](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.adb),
+[simple_geo3x3.adb](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.adb)
+```Ada
+with Geo3x3; use Geo3x3;
+with Ada.Text_IO; use Ada.Text_IO;
+
+procedure Simple_Geo3x3 is
+   T: WGS84;
+begin
+   Put_Line(Encode(35.65858, 139.745433, 14));
+   T := Decode("E9139659937288");
+   Put_Line (Long_Float'Image(T.Lat) & " " & Long_Float'Image(T.Lng) & " " & Integer'Image(T.Level) & " " & Long_Float'Image(T.Unit));
+end Simple_Geo3x3;
+```
+to run:
+```
+$ gnatmake simple_geo3x3.adb
 $ ./simple_geo3x3
 ```
 
