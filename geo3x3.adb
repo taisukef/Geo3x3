@@ -53,7 +53,6 @@ package body Geo3x3 is
 	 Init   : Integer;
 	 IsWest : Boolean;
 	 C      : Character;
-	 CLen   : Integer;
       begin
 	 Init := 0;
 	 IsWest := False;
@@ -70,15 +69,16 @@ package body Geo3x3 is
 	 Lng   := 0.0;
 	 Level := 1;
 	 
-	 CLen := Code'Length;
 	 declare
-	    I: Integer;
-	    N: Integer;
+	    CLen : Integer;
+	    I    : Integer;
+	    N    : Integer;
 	 begin
+	    CLen := Code'Length;
 	    I := Init;
 	    loop
 	       exit when I = Clen;
-	       N := Character'Pos(Code(I+1)) - Character'Pos('0');
+	       N := Character'Pos(Code(I+Code'First)) - Character'Pos('0');
 	       if N <= 0 or 9 < N then
 		  I := Clen;
 	       else
