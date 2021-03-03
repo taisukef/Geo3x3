@@ -8,6 +8,10 @@ package body Geo3x3 is
       Lng:  Long_Float;
       Unit: Long_Float;
    begin
+      if Level < 1 then
+	 return "";
+      end if;
+
       Lng := PLng;
       Lat := PLat;
       
@@ -53,8 +57,11 @@ package body Geo3x3 is
 	 Init   : Integer;
 	 IsWest : Boolean;
 	 C      : Character;
-	 CLen   : Integer;
       begin
+	 if Code'Length = 0 then
+	    return (0.0, 0.0, 0, 0.0);
+	 end if;
+
 	 Init := 0;
 	 IsWest := False;
 	 C := Code(Code'First);
@@ -70,15 +77,16 @@ package body Geo3x3 is
 	 Lng   := 0.0;
 	 Level := 1;
 	 
-	 CLen := Code'Length;
 	 declare
-	    I: Integer;
-	    N: Integer;
+	    CLen : Integer;
+	    I    : Integer;
+	    N    : Integer;
 	 begin
+	    CLen := Code'Length;
 	    I := Init;
 	    loop
 	       exit when I = Clen;
-	       N := Character'Pos(Code(I+1)) - Character'Pos('0');
+	       N := Character'Pos(Code(I+Code'First)) - Character'Pos('0');
 	       if N <= 0 or 9 < N then
 		  I := Clen;
 	       else
