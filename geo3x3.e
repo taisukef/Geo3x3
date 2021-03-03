@@ -34,7 +34,7 @@ feature
                unit := unit / 3
                x := (lng / unit).floor
                y := (lat / unit).floor
-               res.append_character (('0' + x + y * 3 + 1).to_character_8)
+               res.append_character ((('0').code + x + y * 3 + 1).to_character_8)
                lng := lng - x * unit
                lat := lat - y * unit
                i := i + 1
@@ -78,7 +78,7 @@ feature
            until
              i = clen
            loop
-               n := code.item(i+1).code - 48
+               n := code.item(i+1).code - ('0').code
                if n <= 0 or 9 < n  then
                  i := clen
                else
