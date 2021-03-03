@@ -8,6 +8,10 @@ package body Geo3x3 is
       Lng:  Long_Float;
       Unit: Long_Float;
    begin
+      if Level < 1 then
+	 return "";
+      end if;
+
       Lng := PLng;
       Lat := PLat;
       
@@ -54,6 +58,10 @@ package body Geo3x3 is
 	 IsWest : Boolean;
 	 C      : Character;
       begin
+	 if Code'Length = 0 then
+	    return (0.0, 0.0, 0, 0.0);
+	 end if;
+
 	 Init := 0;
 	 IsWest := False;
 	 C := Code(Code'First);
