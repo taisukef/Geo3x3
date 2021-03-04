@@ -4,7 +4,7 @@
 (require rnrs/io/ports-6)
 
 (define (encode-bytes lat lng level)
-   (cond [(< level 1) (error "invalid level")]
+   (cond [(< level 1) (make-bytevector 0)]
          [else
            (call-with-bytevector-output-port (lambda (res)
              (let-values ([(lat lng unit) (values lat lng 0)])
@@ -26,7 +26,7 @@
                       (range 1 level)))))]))
 
 (define (decode-bytes code)
-   (cond [(or (not (bytevector? code)) (= (bytevector-length code) 0)) (error "trying to decode empty data")]
+   (cond [(or (not (bytevector? code)) (= (bytevector-length code) 0)) (list 0.0 0.0 0 0.0)]
          [else
             (let-values ([(begin is-west) 
                  (let ([c (integer->char (bytevector-u8-ref code 0))])
