@@ -1023,10 +1023,10 @@ $ crystal simple_geo3x3.cr
 ```
 
 ### in Forth
-[geo3x3.forth.fs](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.forth.fs),
-[simple_geo3x3.forth.fs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.forth.fs)
+[geo3x3.fth](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.fth),
+[simple_geo3x3.fth](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.fth)
 ```Forth
-INCLUDE geo3x3.forth.fs
+INCLUDE geo3x3.fth
 
 35.65858e 139.745433e 14 GEO3X3_ENCODE TYPE CR
 s" E9139659937288" GEO3X3_DECODE  f. f. . f. CR
