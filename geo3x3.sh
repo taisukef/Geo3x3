@@ -1,5 +1,3 @@
-#!/bin/bash
-
 geo3x3_encode() {
   local lat=$1
   local lng=$2

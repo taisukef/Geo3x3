@@ -1044,8 +1044,6 @@ $ gforth simple_geo3x3.fth -e bye
 [geo3x3.sh](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sh),
 [simple_geo3x3.sh](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.sh)
 ```bash
-#!/bin/bash
-
 code=`bash geo3x3.sh encode 35.65858 139.745433 14`
 echo $code
 
