@@ -45,3 +45,4 @@ Free Pascal,pas,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/ma
 Crystal,cr,end,type,none,complie,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.cr
 Forth,fth,none,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.fth
 Bash,sh,blacket/end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sh
+AWK,awk,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.awk
