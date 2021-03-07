@@ -496,8 +496,6 @@ $ lua simple_geo3x3.lua
 [geo3x3.pm](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pm),
 [simple_geo3x3.pl](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.pl)
 ```perl
-#!/usr/bin/perl
- 
 use lib qw(./);
 use geo3x3;
 
