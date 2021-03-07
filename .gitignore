@@ -27,3 +27,4 @@ frege/build
 EIFGENs/
 *.ali
 *.ppu
+*.dwarf
