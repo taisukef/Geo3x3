@@ -68,8 +68,8 @@ geo3x3_decode() {
   fi
 }
 
-code=`geo3x3_encode 35.65858 139.745433 14`
-echo $code
-
-ll=`geo3x3_decode E9139659937288`
-echo $ll
+if [ $1 = "encode" ]; then
+  echo `geo3x3_encode $2 $3 $4`
+else
+  echo `geo3x3_decode $2`
+fi

@@ -1041,19 +1041,20 @@ $ gforth simple_geo3x3.fth -e bye
 ```
 
 ### in Bash
-[geo3x3.sh](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sh)
+[geo3x3.sh](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sh),
+[simple_geo3x3.sh](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.sh)
 ```bash
 #!/bin/bash
 
-code=`geo3x3_encode 35.65858 139.745433 14`
+code=`bash geo3x3.sh encode 35.65858 139.745433 14`
 echo $code
 
-ll=`geo3x3_decode E9139659937288`
+ll=`bash geo3x3.sh decode E9139659937288`
 echo $ll
 ```
 to run:
 ```bash
-$ bash geo3x3.sh
+$ bash simple_geo3x3.sh
 ```
 
 ## History
