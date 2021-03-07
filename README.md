@@ -1037,7 +1037,7 @@ $ brew install gforth
 ```
 to run:
 ```bash
-$ gforth simple_geo3x3.forth.fs -e bye
+$ gforth simple_geo3x3.fth -e bye
 ```
 
 ## History
