@@ -40,3 +40,4 @@ CoffeScript,coffee,tab,none,none,script,https://github.com/taisukef/Geo3x3/blob/
 Objective-C,"m,h",blackets,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.m
 Eiffel,e,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.e
 Ada,"adb,ads",end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.adb
+Free Pascal,pas,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pas
