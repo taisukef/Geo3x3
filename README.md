@@ -1031,6 +1031,10 @@ INCLUDE geo3x3.forth.fs
 35.65858e 139.745433e 14 GEO3X3_ENCODE TYPE CR
 s" E9139659937288" GEO3X3_DECODE  f. f. . f. CR
 ```
+setup:
+```bash
+$ brew install gforth 
+```
 to run:
 ```bash
 $ gforth simple_geo3x3.forth.fs -e bye
