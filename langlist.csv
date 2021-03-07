@@ -38,6 +38,7 @@ Hack,hack,blackets,none,none,HHVM,https://github.com/taisukef/Geo3x3/blob/master
 PureScript,purs,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/purs/src/Geo3x3.purs
 CoffeScript,coffee,tab,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.coffee
 Objective-C,"m,h",blackets,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.m
+Frege,fr,none,type,none,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.fr
 Eiffel,e,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.e
 Ada,"adb,ads",end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.adb
 Free Pascal,pas,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pas
