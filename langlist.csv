@@ -1,6 +1,7 @@
 ﻿name,ext,struct,variable,const,type,sample
 JavaScript,"js,mjs",blacket,let,const,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mjs
 TypeScript,ts,blacket,let,const,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.ts
+Zen,zen,blacket,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.zen
 C,"c,h",blacket,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.h
 C++,"cpp,hpp",blacket,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.r.hpp
 C#,cs,blacket,type,const int,Mono,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.cs

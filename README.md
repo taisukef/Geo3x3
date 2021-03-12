@@ -52,7 +52,7 @@ These codes are licensed under CC0 (Public Domain)
 ## How to use (encode / decode)
 
 ### in JavaScript (HTML)
-[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mjs),
+[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mjs),
 [simple_geo3x3.html](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.html)
 ```html
 <script type=module>
@@ -62,7 +62,7 @@ console.log(Geo3x3.decode("E9139659937288"));
 ```
 
 ### in JavaScript (Deno)
-[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mjs),
+[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mjs),
 [simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
 ```mjs
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.mjs";
@@ -76,7 +76,7 @@ $ deno run -A simple_geo3x3.mjs
 ```
 
 ### in JavaScript (Node.js)
-[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mjs),
+[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mjs),
 [simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
 ```js
 import { Geo3x3 } from "./Geo3x3.mjs";
