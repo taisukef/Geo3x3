@@ -90,7 +90,7 @@ $ node simple_geo3x3.mjs
 ```
 
 ### in TypeScript (Deno)
-[Geo3x3.ts](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ts),
+[Geo3x3.ts](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.ts),
 [simple_geo3x3.ts](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.ts)
 ```ts
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.ts";
