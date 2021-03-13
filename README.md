@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://code4sabae.github.io/geo3x3-map/  
 
 ## Supported Languages
-50 programming languages supported now  
-現在50のプログラミング言語対応しています  
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC))
+51 programming languages supported now  
+現在51のプログラミング言語対応しています  
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL))
 
 supported languages list / サポート言語一覧  
 https://taisukef.github.io/Geo3x3/langlist.html  
@@ -1141,6 +1141,72 @@ LOAD
 10 CLV:N=20
 12 S="E9139659937288"
 RUN
+```
+
+### in GnuCOBOL
+[geo3x3_encode.cbl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.cbl),
+[geo3x3_decode.cbl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_decode.cbl),
+[simple_geo3x3.cbl](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.cbl)
+```COBOL
+       IDENTIFICATION  DIVISION.
+       PROGRAM-ID.     geo3x3_test.
+       DATA            DIVISION.
+       WORKING-STORAGE SECTION.
+       01  WK-AREA.
+         03  LAT       PIC S9(03)V9(6).
+         03  LNG       PIC S9(03)V9(6).
+         03  UNT       PIC S9(03)V9(6).
+         03  LEVEL     PIC  9(02).
+       01  RES         PIC  X(31).
+       01  COD         PIC  X(31).
+       PROCEDURE       DIVISION.
+       MAIN-01.
+           MOVE   14           TO  LEVEL.
+           MOVE   35.65858     TO  LAT.
+           MOVE  139.745433    TO  LNG.
+           MOVE    SPACE       TO  RES.
+           DISPLAY "LAT  = " LAT.
+           DISPLAY "LNG  = " LNG.
+           DISPLAY "LEVEL= " LEVEL.
+           CALL    "geo3x3_encode" USING   BY  REFERENCE   LAT
+                                           BY  REFERENCE   LNG
+                                           BY  REFERENCE   LEVEL
+                                           BY  REFERENCE   RES
+           END-CALL.
+           DISPLAY "RES = " RES.
+      *
+           MOVE    RES         TO  COD.
+           INITIALIZE              WK-AREA.
+           CALL    "geo3x3_decode" USING   BY  REFERENCE   COD
+                                           BY  REFERENCE   LAT
+                                           BY  REFERENCE   LNG
+                                           BY  REFERENCE   LEVEL
+                                           BY  REFERENCE   UNT
+           END-CALL.
+           DISPLAY "LAT  = " LAT.
+           DISPLAY "LNG  = " LNG.
+           DISPLAY "LEVEL= " LEVEL.
+           DISPLAY "UNIT = " UNT.
+      *
+           MOVE    SPACE       TO  RES.
+           CALL    "geo3x3_encode" USING   BY  REFERENCE   LAT
+                                           BY  REFERENCE   LNG
+                                           BY  REFERENCE   LEVEL
+                                           BY  REFERENCE   RES
+           END-CALL.
+           DISPLAY "RES = " RES.
+       MAIN-99.
+           STOP RUN.
+       END PROGRAM     geo3x3_test.
+```
+setup:
+```bash
+$ brew install gnu-cobol
+```
+to run:
+```bash
+$ cobc -x simple_geo3x3.cbl geo3x3_encode.cbl geo3x3_decode.cbl
+$ ./simple_geo3x3
 ```
 
 
