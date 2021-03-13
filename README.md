@@ -1103,9 +1103,9 @@ $ gawk simple_geo3x3.awk
 [geo3x3.vim](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vim),
 [simple_geo3x3.vim](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.vim)
 ```Vimscript
-:source geo3x3.vim
-:echo Geo3x3_encode(35.65858, 139.745433, 14)
-:echo Geo3x3_decode("E9139659937288")
+source geo3x3.vim
+echo Geo3x3_encode(35.65858, 139.745433, 14)
+echo Geo3x3_decode("E9139659937288")
 ```
 setup:
 ```bash
