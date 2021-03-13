@@ -1,0 +1,40 @@
+module Geo3x3m
+  def encode(lat, lng, level)
+    #raise ArgumentError if level < 1
+    #lat = lat.to_f
+    #lng = lng.to_f
+    result = ""
+    if lng >= 0.0
+      result = "E"
+    else
+      lng += 180.0
+      result = "W"
+    end
+
+    lat += 90.0
+    
+    unit = 180.0
+
+    #i = 1
+    while i < 10
+      #unit /= 3
+      x = (lng / unit)
+      y = (lat / unit)
+      result << "#{x + y * 3 + 1}"
+      lng -= x * unit
+      lat -= y * unit 
+      i += 1
+    end
+
+    result
+  end
+
+  def decode(code)
+  end
+end
+
+class Geo3x3
+  extend Geo3x3m
+end
+
+puts Geo3x3.encode(3.0,2.0,1)
