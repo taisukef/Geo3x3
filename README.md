@@ -1117,7 +1117,7 @@ $ vim
 :source simple_geo3x3.vim
 ```
 
-### in Vim script
+### in IchigoJam BASIC
 [geo3x3_encode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas),
 [geo3x3_decode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_decode.bas)
 ```IchigoJam
