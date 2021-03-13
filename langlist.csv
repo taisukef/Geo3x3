@@ -49,3 +49,5 @@ Bash,sh,blacket/end,none,none,script,https://github.com/taisukef/Geo3x3/blob/mas
 AWK,awk,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.awk
 Vim script,vim,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vim
 IchigoJam BASIC,bas,none,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas
+MariaDB SQL/PSM,sql,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.my.sql
+PL/pgSQL,sql,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.plpg.sql
