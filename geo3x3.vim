@@ -4,7 +4,7 @@
 :     let result = "E"
 :   else
 :     let result = "W"
-:     lng += 180.0
+:     let lng += 180.0
 :   en
 :   let lat = a:lat + 90.0
 :   let unit = 180.0
