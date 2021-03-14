@@ -107,3 +107,113 @@ decodeE = decodeE' . B8.pack
 
 decode :: String -> (Double,Double,Int,Double)
 decode = decode' . B8.pack
+
+
+
+
+testEncode :: IO ()
+testEncode = do
+  print $ encode 35.65858 139.745433 0
+  print $ encode  0.0  90.0 1
+  print $ encode 60.0 150.0 2
+  print $ encode 40.0 130.0 3
+  print $ encode 33.3 136.6 4
+  print $ encode 35.65858 139.745433 14
+  print $ encode 35.65858 139.745433 20
+
+  print $ encode 35.65858 (-139.745433) 0
+  print $ encode  0.0 (-  90.0) 1
+  print $ encode 60.0 (- 150.0) 2
+  print $ encode 40.0 (- 130.0) 3
+  print $ encode 33.3 (- 136.6) 4
+  print $ encode 35.65858 (-139.745433) 14
+  print $ encode 35.65858 (-139.745433) 20
+
+
+testDecode :: IO ()
+testDecode = do
+  print $ decode ""
+  print $ decode "9"
+  print $ decode "91"
+  print $ decode "913"
+  print $ decode "9139659937288"
+  print $ decode "9139659937288123677"
+
+  print $ decode "00000000000000000000"
+  print $ decode "90000000000000000000"
+  print $ decode "91000000000000000000"
+  print $ decode "91300000000000000000"
+  print $ decode "91396599372880000000"
+  print $ decode "91396599372881236770"
+
+  print $ decode "A"
+  print $ decode "9A"
+  print $ decode "91A"
+  print $ decode "913A"
+  print $ decode "9139659937288A"
+  print $ decode "9139659937288123677A"
+
+  print $ decode "E"
+  print $ decode "E9"
+  print $ decode "E91"
+  print $ decode "E913"
+  print $ decode "E9139659937288"
+  print $ decode "E9139659937288123677"
+
+  print $ decode "E00000000000000000000"
+  print $ decode "E90000000000000000000"
+  print $ decode "E91000000000000000000"
+  print $ decode "E91300000000000000000"
+  print $ decode "E91396599372880000000"
+  print $ decode "E91396599372881236770"
+
+  print $ decode "EA"
+  print $ decode "E9A"
+  print $ decode "E91A"
+  print $ decode "E913A"
+  print $ decode "E9139659937288A"
+  print $ decode "E9139659937288123677A"
+
+  print $ decode "+"
+  print $ decode "+9"
+  print $ decode "+91"
+  print $ decode "+913"
+  print $ decode "+9139659937288"
+  print $ decode "+9139659937288123677"
+
+  print $ decode "+00000000000000000000"
+  print $ decode "+90000000000000000000"
+  print $ decode "+91000000000000000000"
+  print $ decode "+91300000000000000000"
+  print $ decode "+91396599372880000000"
+  print $ decode "+91396599372881236770"
+
+  print $ decode "+A"
+  print $ decode "+9A"
+  print $ decode "+91A"
+  print $ decode "+913A"
+  print $ decode "+9139659937288A"
+  print $ decode "+9139659937288123677A"
+
+
+  print $ decode "W"
+  print $ decode "W7"
+  print $ decode "W73"
+  print $ decode "W731"
+  print $ decode "W7317457719288"
+  print $ decode "W7317457719288321499"
+
+  print $ decode "W00000000000000000000"
+  print $ decode "W70000000000000000000"
+  print $ decode "W73000000000000000000"
+  print $ decode "W73100000000000000000"
+  print $ decode "W73174577192880000000"
+  print $ decode "W73174577192883214990"
+
+  print $ decode "WA"
+  print $ decode "W7A"
+  print $ decode "W73A"
+  print $ decode "W731A"
+  print $ decode "W7317457719288A"
+  print $ decode "W7317457719288321499A"
+
