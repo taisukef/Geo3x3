@@ -51,3 +51,4 @@ Vim script,vim,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/mast
 Vim9 script,vim,end,var,consnt,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vim9.vim
 IchigoJam BASIC,bas,none,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas
 GnuCOBOL,cbl,end,pic,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.cbl
+MoonScript,moon,indent,none,none,lua,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.moon
