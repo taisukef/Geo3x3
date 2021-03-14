@@ -1121,14 +1121,6 @@ $ vim
 [geo3x3_encode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas),
 [geo3x3_decode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_decode.bas)
 ```IchigoJam
-source geo3x3.vim
-echo Geo3x3_encode(35.65858, 139.745433, 14)
-echo Geo3x3_decode("E9139659937288")
-```
-setup:
-access [IchigoJam web](https://fukuno.jig.jp/app/IchigoJam/) or launch the [IchigoJam](https://ichigojam.net/)  
-to run:
-```
 LOAD
 1 'GEO3x3 encode
 10 CLV:N=20:L=14
@@ -1142,6 +1134,8 @@ LOAD
 12 S="E9139659937288"
 RUN
 ```
+setup:
+access [IchigoJam web](https://fukuno.jig.jp/app/IchigoJam/) or launch the [IchigoJam](https://ichigojam.net/)  
 
 ### in GnuCOBOL
 [geo3x3_encode.cbl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.cbl),
