@@ -1225,7 +1225,7 @@ $ ./simple_geo3x3
 ```
 
 
-### in GnuCOBOL
+### in MoonScript
 [geo3x3.moon](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.moon),
 [simple_geo3x3.moon](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.moon)
 ```MoonScript
