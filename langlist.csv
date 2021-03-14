@@ -53,3 +53,4 @@ IchigoJam BASIC,bas,none,none,none,script,https://github.com/taisukef/Geo3x3/blo
 GnuCOBOL,cbl,end,pic,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.cbl
 MoonScript,moon,indent,none,none,lua,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.moon
 Octave,m,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.m
+Emacs Lisp,el,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.el
