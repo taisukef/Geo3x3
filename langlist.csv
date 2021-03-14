@@ -38,7 +38,7 @@ Elm,elm,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/
 Hack,hack,blacket,none,none,HHVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hack
 PureScript,purs,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/purs/src/Geo3x3.purs
 CoffeScript,coffee,tab,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.coffee
-Objective-C,"m,h",blacket,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.m
+Objective-C,"m,mm,h",blacket,type,const int,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mm
 Frege,fr,none,type,none,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.fr
 Eiffel,e,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.e
 Ada,"adb,ads",end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.adb
@@ -52,3 +52,4 @@ Vim9 script,vim,end,var,consnt,script,https://github.com/taisukef/Geo3x3/blob/ma
 IchigoJam BASIC,bas,none,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas
 GnuCOBOL,cbl,end,pic,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.cbl
 MoonScript,moon,indent,none,none,lua,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.moon
+Octave,m,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.m
