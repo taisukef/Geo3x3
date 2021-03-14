@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://code4sabae.github.io/geo3x3-map/  
 
 ## Supported Languages
-52 programming languages supported now  
-現在52のプログラミング言語対応しています  
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PL-pgSQL))
+57 programming languages supported now  
+現在57のプログラミング言語対応しています  
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PL-pgSQL))
 
 supported languages list / サポート言語一覧  
 https://taisukef.github.io/Geo3x3/langlist.html  
@@ -879,8 +879,8 @@ $ deno run -A out/simple_geo3x3.js
 
 ### in Objective-C
 [Geo3x3.objc.h](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.objc.h),
-[Geo3x3.m](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.m),
-[simple_geo3x3.m](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.m)
+[Geo3x3.mm](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mm),
+[simple_geo3x3.mm](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mm)
 ```Objective-C
 #import <Foundation/Foundation.h>
 #import "Geo3x3.objc.h"
@@ -903,7 +903,7 @@ $ brew install llvm
 ```
 to run:
 ```
-$ clang -framework Foundation simple_geo3x3.m Geo3x3.m -o a.out; ./a.out
+$ clang -framework Foundation simple_geo3x3.mm Geo3x3.mm -o a.out; ./a.out
 ```
 
 ### in Frege
@@ -1117,18 +1117,31 @@ $ vim
 :source simple_geo3x3.vim
 ```
 
-### in IchigoJam BASIC
-[geo3x3_encode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas),
-[geo3x3_decode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_decode.bas)
-```IchigoJam
-source geo3x3.vim
+### in Vim9 script
+[geo3x3.vim9.vim](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vim9.vim),
+[simple_geo3x3.vim9.vim](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.vim9.vim)
+```Vimscript
+vim9script
+source geo3x3.vim9.vim
 echo Geo3x3_encode(35.65858, 139.745433, 14)
 echo Geo3x3_decode("E9139659937288")
 ```
 setup:
-access [IchigoJam web](https://fukuno.jig.jp/app/IchigoJam/) or launch the [IchigoJam](https://ichigojam.net/)  
-to run:
+[download : vim online](https://www.vim.org/download.php)からダウンロード
+```bash
+$ make
+$ make install
 ```
+to run:
+```bash
+$ vim
+:source simple_geo3x3.vim9.vim
+```
+
+### in IchigoJam BASIC
+[geo3x3_encode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas),
+[geo3x3_decode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_decode.bas)
+```IchigoJam
 LOAD
 1 'GEO3x3 encode
 10 CLV:N=20:L=14
@@ -1141,6 +1154,138 @@ LOAD
 10 CLV:N=20
 12 S="E9139659937288"
 RUN
+```
+setup:
+access [IchigoJam web](https://fukuno.jig.jp/app/IchigoJam/) or launch the [IchigoJam](https://ichigojam.net/)  
+
+### in GnuCOBOL
+[geo3x3_encode.cbl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.cbl),
+[geo3x3_decode.cbl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_decode.cbl),
+[simple_geo3x3.cbl](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.cbl)
+```COBOL
+       IDENTIFICATION  DIVISION.
+       PROGRAM-ID.     geo3x3_test.
+       DATA            DIVISION.
+       WORKING-STORAGE SECTION.
+       01  WK-AREA.
+         03  LAT       PIC S9(03)V9(6).
+         03  LNG       PIC S9(03)V9(6).
+         03  UNT       PIC S9(03)V9(6).
+         03  LEVEL     PIC  9(02).
+       01  RES         PIC  X(31).
+       01  COD         PIC  X(31).
+       PROCEDURE       DIVISION.
+       MAIN-01.
+           MOVE   14           TO  LEVEL.
+           MOVE   35.65858     TO  LAT.
+           MOVE  139.745433    TO  LNG.
+           MOVE    SPACE       TO  RES.
+           DISPLAY "LAT  = " LAT.
+           DISPLAY "LNG  = " LNG.
+           DISPLAY "LEVEL= " LEVEL.
+           CALL    "geo3x3_encode" USING   BY  REFERENCE   LAT
+                                           BY  REFERENCE   LNG
+                                           BY  REFERENCE   LEVEL
+                                           BY  REFERENCE   RES
+           END-CALL.
+           DISPLAY "RES = " RES.
+      *
+           MOVE    RES         TO  COD.
+           INITIALIZE              WK-AREA.
+           CALL    "geo3x3_decode" USING   BY  REFERENCE   COD
+                                           BY  REFERENCE   LAT
+                                           BY  REFERENCE   LNG
+                                           BY  REFERENCE   LEVEL
+                                           BY  REFERENCE   UNT
+           END-CALL.
+           DISPLAY "LAT  = " LAT.
+           DISPLAY "LNG  = " LNG.
+           DISPLAY "LEVEL= " LEVEL.
+           DISPLAY "UNIT = " UNT.
+      *
+           MOVE    SPACE       TO  RES.
+           CALL    "geo3x3_encode" USING   BY  REFERENCE   LAT
+                                           BY  REFERENCE   LNG
+                                           BY  REFERENCE   LEVEL
+                                           BY  REFERENCE   RES
+           END-CALL.
+           DISPLAY "RES = " RES.
+       MAIN-99.
+           STOP RUN.
+       END PROGRAM     geo3x3_test.
+```
+setup:
+```bash
+$ brew install gnu-cobol
+```
+to run:
+```bash
+$ cobc -x simple_geo3x3.cbl geo3x3_encode.cbl geo3x3_decode.cbl
+$ ./simple_geo3x3
+```
+
+### in MoonScript
+[geo3x3.moon](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.moon),
+[simple_geo3x3.moon](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.moon)
+```MoonScript
+geo3x3 = require "geo3x3"
+
+print geo3x3.encode 35.65858, 139.745433, 14
+
+pos = geo3x3.decode "E9139659937288"
+print pos[1], pos[2], pos[3], pos[4]
+```
+setup:
+```bash
+$ brew install luarocks
+$ luarocks install https://luarocks.org/manifests/leafo/moonscript-dev-1.rockspec
+```
+to run:
+```bash
+$ moon simple_geo3x3.moon
+```
+
+### in Octave
+[geo3x3_encode.m](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.m),
+[geo3x3_encode.m](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_decode.m),
+[simple_geo3x3.m](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.m)
+```Octave
+disp(geo3x3_encode(35.65858, 139.745433, 14));
+
+[lat, lng, level, unit] = geo3x3_decode("E9139659937288");
+printf("%f %f %d %f", lat, lng, level, unit)
+```
+setup:
+```bash
+$ brew install octave
+```
+to run:
+```bash
+$ octave simple_geo3x3.m
+```
+
+### in Emacs Lisp
+[geo3x3.el](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.el),
+[simple_geo3x3.el](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.el)
+```Lisp
+(setq load-path nil)
+(load "geo3x3")
+
+(message (geo3x3_encode 35.65858 139.745433 14))
+
+(setq pos (geo3x3_decode "E9139659937288"))
+(message (number-to-string (nth 0 pos)))
+(message (number-to-string (nth 1 pos)))
+(message (number-to-string (nth 2 pos)))
+(message (number-to-string (nth 3 pos)))
+```
+setup:
+```bash
+$ brew install emacs
+```
+to run:
+```bash
+$ emacs --script simple_geo3x3.el
 ```
 
 ### in MariaDB SQL

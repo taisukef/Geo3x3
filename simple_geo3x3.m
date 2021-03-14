@@ -1,14 +1,4 @@
-#import <Foundation/Foundation.h>
-#import "Geo3x3.objc.h"
+disp(geo3x3_encode(35.65858, 139.745433, 14));
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        NSLog(@"%@", [Geo3x3 Encode:35.65858 lng:139.745433 level:14]);
-
-        NSArray* res = [Geo3x3 Decode:@"E9139659937288"];
-        for (NSNumber* num in res) {
-            NSLog(@"%f", num.doubleValue);
-        }
-    }
-    return 0;
-}
+[lat, lng, level, unit] = geo3x3_decode("E9139659937288");
+printf("%f %f %d %f", lat, lng, level, unit)
