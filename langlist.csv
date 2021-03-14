@@ -48,5 +48,6 @@ Forth,fth,none,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/g
 Bash,sh,blacket/end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sh
 AWK,awk,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.awk
 Vim script,vim,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vim
+Vim9 script,vim,end,var,consnt,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vim9.vim
 IchigoJam BASIC,bas,none,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas
 GnuCOBOL,cbl,end,pic,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.cbl
