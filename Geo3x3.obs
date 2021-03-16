@@ -5,12 +5,12 @@ Function Geo3x3_encode(lat, lng, level)
   res = "E"
   if lng < 0
     res = "W"
-    lng += 180
+    lng = lng + 180.0
   end if
-  lat += 90
-  unit = 180
+  lat = lat + 90.0
+  unit = 180.0
   for i = 1 to level - 1
-    unit = unit / 3
+    unit = unit / 3.0
     x = CLngLng(lng / unit)
     y = CLngLng(lat / unit)
     n = x + y * 3 + 1
@@ -26,18 +26,18 @@ Function Geo3x3_decode(code)
   if clen = 0
     return ""
   end if
-  begin = 0
+  begin = 1
   flg = 0
   c = Mid(code, 1, 1)
   if c = '-' or c = 'W'
     flg = 1
-    begin = 1
-  elif c == '+' or c == 'E'
-    begin = 1
+    begin = 2
+  elif c = '+' or c = 'E'
+    begin = 2
   end if
-  unit = 180
-  lat = 0
-  lng = 0
+  unit = 180.0
+  lat = 0.0
+  lng = 0.0
   level = 1
   for i = begin to clen - 2
     n = InStr("0123456789", Mid(code, i + 2, 1)) - 1
@@ -50,11 +50,11 @@ Function Geo3x3_decode(code)
     lat = lat + CLngLng(n / 3) * unit
     level = level + 1
   next
-  lat = lat + unit / 2
-  lng = lng + unit / 2
-  lat -= 90
+  lat = lat + unit / 2.0
+  lng = lng + unit / 2.0
+  lat = lat - 90.0
   if flg
-    lng = lng - 180
+    lng = lng - 180.0
   end if
   res = {}
   res.lat = lat
@@ -65,4 +65,4 @@ Function Geo3x3_decode(code)
 End Function
 
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
-WScript.Echo Geo3x3_decode("E3793653391822")
+WScript.Echo Geo3x3_decode("EE9139659937288")

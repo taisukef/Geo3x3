@@ -1126,7 +1126,7 @@ source geo3x3.vim9.vim
 echo Geo3x3_encode(35.65858, 139.745433, 14)
 echo Geo3x3_decode("E9139659937288")
 ```
-setup:
+setup:  
 [download : vim online](https://www.vim.org/download.php)からダウンロード
 ```bash
 $ make
@@ -1155,7 +1155,7 @@ LOAD
 12 S="E9139659937288"
 RUN
 ```
-setup:
+setup:  
 access [IchigoJam web](https://fukuno.jig.jp/app/IchigoJam/) or launch the [IchigoJam](https://ichigojam.net/)  
 
 ### in GnuCOBOL
@@ -1371,7 +1371,7 @@ Module VBModule
     End Sub
 End Module
 ```
-setup:
+setup:  
 Download [Mono](https://www.mono-project.com/download/stable/)  
 to run:
 ```bash
