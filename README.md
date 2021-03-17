@@ -420,7 +420,7 @@ $ runghc simple_geo3x3.hs
 ```
 
 ### in OpenVBS
-[Geo3x3.obs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.obs),
+[Geo3x3.obs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.obs)
 ```vbs
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
 WScript.Echo Geo3x3_decode("E9139659937288")
@@ -433,7 +433,7 @@ $ oscript Geo3x3.obs
 ```
 
 ### in VBScript
-[Geo3x3.vbs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.vbs),
+[Geo3x3.vbs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.vbs)
 ```vbs
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
 
