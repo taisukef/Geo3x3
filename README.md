@@ -22,9 +22,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 https://code4sabae.github.io/geo3x3-map/  
 
 ## Supported Languages
-59 programming languages supported now  
-現在59のプログラミング言語対応しています  
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL) / [VB.Net](#in-VBNet))
+60 programming languages supported now  
+現在60のプログラミング言語対応しています  
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [VBScript](#in-VBScript) / [Visual Basic](#in-Visual-Basic) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL))
 
 supported languages list / サポート言語一覧  
 https://taisukef.github.io/Geo3x3/langlist.html  
@@ -425,9 +425,52 @@ $ runghc simple_geo3x3.hs
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
 WScript.Echo Geo3x3_decode("E9139659937288")
 ```
+setup:  
+Download [OpenVBS - The Script Engine for the BASIC-2020 -](https://p.na-s.jp/openvbs.html)  
 to run:
 ```bash
 $ oscript Geo3x3.obs
+```
+
+### in VBScript
+[Geo3x3.vbs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.vbs),
+```vbs
+WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
+
+pos = Geo3x3_decode("E9139659937288")
+WScript.Echo pos(0)
+WScript.Echo pos(1)
+WScript.Echo pos(2)
+WScript.Echo pos(3)
+```
+to run: (Windows)
+```bash
+$ cscript Geo3x3.vbs
+```
+
+### in Visual Basic
+[geo3x3.vb](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vb),
+[simple_geo3x3.vb](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.vb)
+```VB.net
+Module VBModule
+    Sub Main()
+        Console.WriteLine(Geo3x3.Encode(35.65858, 139.745433, 14))
+
+        Dim res(4) as Double
+        res = Geo3x3.Decode("E9139659937288")
+        Console.WriteLine(res(0))
+        Console.WriteLine(res(1))
+        Console.WriteLine(res(2))
+        Console.WriteLine(res(3))
+    End Sub
+End Module
+```
+setup:  
+Download [Mono](https://www.mono-project.com/download/stable/)  
+to run:
+```bash
+$ vbnc simple_geo3x3.vb
+$ mono simple_geo3x3.exe
 ```
 
 ### in Scala
@@ -1352,31 +1395,6 @@ to run:
 ```
 $ psql geo3x3
 > \i simple_geo3x3.plpg.sql
-```
-
-### in VB.Net
-[geo3x3.vb](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vb),
-[simple_geo3x3.vb](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.vb)
-```VB.net
-Module VBModule
-    Sub Main()
-        Console.WriteLine(Geo3x3.Encode(35.65858, 139.745433, 14))
-
-        Dim res(4) as Double
-        res = Geo3x3.Decode("E9139659937288")
-        Console.WriteLine(res(0))
-        Console.WriteLine(res(1))
-        Console.WriteLine(res(2))
-        Console.WriteLine(res(3))
-    End Sub
-End Module
-```
-setup:  
-Download [Mono](https://www.mono-project.com/download/stable/)  
-to run:
-```bash
-$ vbnc simple_geo3x3.vb
-$ mono simple_geo3x3.exe
 ```
 
 ## History

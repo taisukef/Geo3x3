@@ -16,6 +16,8 @@ Dart,dart,blacket,var,"final,const",script,https://github.com/taisukef/Geo3x3/bl
 Rust,rs,blacket,let mut,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rs
 Haskell,hs,indent,none,let,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hs
 OpenVBS,obs,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.obs
+VBScript,vbs,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vbs
+Visual Basic,vb,end,dim,none,Mono,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vb
 Scala,scala,blacket,var,val,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.scala
 R,R,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.R
 GAS,gs,blacket,let,const,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.gs
@@ -50,7 +52,6 @@ AWK,awk,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/
 Vim script,vim,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vim
 IchigoJam BASIC,bas,none,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas
 Vim9 script,vim,end,var,consnt,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vim9.vim
-IchigoJam BASIC,bas,none,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas
 GnuCOBOL,cbl,end,pic,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.cbl
 MoonScript,moon,indent,none,none,lua,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.moon
 Octave,m,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.m
@@ -58,4 +59,3 @@ Emacs Lisp,el,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/m
 Fortran 90,f90,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.f90
 MariaDB SQL/PSM,sql,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.my.sql
 PL/pgSQL,sql,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.plpg.sql
-VB.Net,vb,end,dim,none,Mono,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.vb
