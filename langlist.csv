@@ -59,3 +59,4 @@ Emacs Lisp,el,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/m
 Fortran 90,f90,end,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.f90
 MariaDB SQL/PSM,sql,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.my.sql
 PL/pgSQL,sql,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.plpg.sql
+Tcl,tcl,blacket,set,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.tcl
