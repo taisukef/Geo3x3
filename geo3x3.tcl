@@ -1,4 +1,4 @@
-proc encode {lat lng level} {
+proc geo3x3_encode {lat lng level} {
     if {$level < 1} {
         return ""
     }
@@ -23,7 +23,7 @@ proc encode {lat lng level} {
     return $res
 }
 
-proc decode {code} {
+proc geo3x3_decode {code} {
     if {[string length $code] == 0} {
         return {0.0 0.0 0 0.0}
     }
