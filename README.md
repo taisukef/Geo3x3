@@ -423,10 +423,13 @@ $ runghc simple_geo3x3.hs
 [Geo3x3.obs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.obs)
 ```vbs
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
-WScript.Echo Geo3x3_decode("E9139659937288")
+WScript.Echo Join(Geo3x3_decode("E9139659937288"))
 ```
 setup:  
-Download [OpenVBS - The Script Engine for the BASIC-2020 -](https://p.na-s.jp/openvbs.html)  
+Download src [OpenVBS - The Script Engine for the BASIC-2020 -](https://p.na-s.jp/openvbs.html)  
+```
+$ nmake -f makefile.osx
+```
 to run:
 ```bash
 $ oscript Geo3x3.obs
@@ -436,12 +439,7 @@ $ oscript Geo3x3.obs
 [Geo3x3.vbs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.vbs)
 ```vbs
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
-
-pos = Geo3x3_decode("E9139659937288")
-WScript.Echo pos(0)
-WScript.Echo pos(1)
-WScript.Echo pos(2)
-WScript.Echo pos(3)
+WScript.Echo Join(Geo3x3_decode("E9139659937288"))
 ```
 to run: (Windows)
 ```bash

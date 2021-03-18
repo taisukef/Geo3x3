@@ -60,4 +60,4 @@ Function Geo3x3_decode(code)
 End Function
 
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
-WScript.Echo Join( Geo3x3_decode("E9139659937288") )
+WScript.Echo Join(Geo3x3_decode("E9139659937288"))
