@@ -469,7 +469,7 @@ setup:
 Download [Mono](https://www.mono-project.com/download/stable/)  
 to run:
 ```bash
-$ vbnc simple_geo3x3.vb
+$ vbnc simple_geo3x3.vb geo3x3.vb
 $ mono simple_geo3x3.exe
 ```
 
