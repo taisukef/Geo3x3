@@ -56,14 +56,8 @@ Function Geo3x3_decode(code)
     If flg Then
         lng = lng - 180.0
     End If
-    'Geo3x3_decode = Array(lat, lng, level, unit)
-    res = {}
-    res.lat = lat
-    res.lng = lng
-    res.level = level
-    res.unit = unit
-    Return res
+    Geo3x3_decode = Array(lat, lng, level, unit)
 End Function
 
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
-WScript.Echo Geo3x3_decode("E9139659937288")
+WScript.Echo Join( Geo3x3_decode("E9139659937288") )
