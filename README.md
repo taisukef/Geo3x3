@@ -1437,7 +1437,7 @@ $ v run simple_geo3x3.v
 ```
 
 ### in Pike
-[geo3x3.pmod](https://github.com/taisukef/Geo3x3/blob/master/geo3x3/Geo3x3.pmod),
+[Geo3x3.pmod](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.pmod),
 [simple_geo3x3.pike](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.pike)
 ```Pike
 int main(int argc, array(string)argv) {
