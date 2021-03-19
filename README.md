@@ -1476,7 +1476,7 @@ $ io simple_geo3x3.io
 ```
 
 ### in Wren
-[Geo3x3.wren](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.wren),
+[geo3x3.wren](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.wren),
 [simple_geo3x3.wren](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.wren)
 ```Wren
 import "./geo3x3" for Geo3x3
