@@ -62,3 +62,4 @@ PL/pgSQL,sql,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master
 Tcl,tcl,blacket,set,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.tcl
 V,v,blacket,mut,type,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3/geo3x3.v
 Pike,"pike,pmod",blacket,type,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3/Geo3x3.pmod
+Io,io,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3/geo3x3.io
