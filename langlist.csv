@@ -64,3 +64,4 @@ V,v,blacket,mut,type,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3
 Pike,"pike,pmod",blacket,type,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3/Geo3x3.pmod
 Io,io,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3/geo3x3.io
 Wren,wren,blacket,var,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3/geo3x3.wren
+GNU Smalltalk,st,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3/Geo3x3.st
