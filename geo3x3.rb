@@ -29,16 +29,6 @@ module Geo3x3
     result
   end
 
-  def encode_int(lat, lng, level)
-    code = encode(lat, lng, level)
-    raise ArgumentError unless code
-
-    result = code[1..-1].to_i
-    result = -result if code[0] == "W"
-
-    result
-  end
-
   def decode(code)
     if code.is_a? Integer
       code = code < 0 ? "W#{-code}" : "E#{code}"
@@ -76,18 +66,5 @@ module Geo3x3
     lng -= 180.0 if flg
 
     [lat, lng, level, unit]
-  end
-
-  def coords(code)
-    pos = decode(code)
-    x = pos[0]
-    y = pos[1]
-    u2 = pos[3] / 2
-    [
-      y - u2, x - u2,
-      y - u2, x + u2,
-      y + u2, x + u2,
-      y + u2, x - u2
-    ]
   end
 end
