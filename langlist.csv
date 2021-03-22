@@ -68,3 +68,4 @@ GNU Smalltalk,st,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blo
 JScript,js,blacket,var,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.jscript.js
 Pharo,st,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3-codec/Geo3x3.class.st
 Scratch,sb3,block,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_encode.sb3.png
+Standard ML,sml,end,val,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sml
