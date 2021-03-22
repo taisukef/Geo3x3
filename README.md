@@ -1561,6 +1561,7 @@ geo3x3_decode "E9139659937288";
 setup:
 ```bash
 $ brew install smlnj
+$ export PATH=/usr/local/smlnj/bin:"$PATH"
 ```
 to run:
 ```bash
