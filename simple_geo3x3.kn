@@ -1,0 +1,10 @@
+func main()
+	
+	{get Geo3x3 code from latitude / longitude / level}
+	var code: []char :: \geo3x3@encode(35.65858, 139.745433, 14)
+	do cui@print("\{code}\n")
+	
+	{get location from Geo3x3 code}
+	var pos: []float :: \geo3x3@decode("E9139659937288")
+	do cui@print("\{pos[0].toStr()}, \{pos[1].toStr()}, \{pos[2].toStr()}, \{pos[3].toStr()}\n")
+end func
