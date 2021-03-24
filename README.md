@@ -982,12 +982,12 @@ func main()
 	do cui@print("\{pos[0].toStr()}, \{pos[1].toStr()}, \{pos[2].toStr()}, \{pos[3].toStr()}\n")
 end func
 ```
-setup:
-access [download page of Kuin](kuina.ch/kuin)
-to run(Windows only):
+setup:  
+access [download page of Kuin](kuina.ch/kuin)  
+to run(Windows only):  
 ```
-\>kuincl.exe -i simple_geo3x3.kn -e exe
-\>out.exe
+>kuincl.exe -i simple_geo3x3.kn -e exe
+>out.exe
 ```
 ## History
 ver 1.05 2021-03-01 change coding (origin lat:90 lng:0 → lat:-90 lng:0)  
