@@ -983,7 +983,7 @@ func main()
 end func
 ```
 setup:  
-access [download page of Kuin](kuina.ch/kuin)  
+access [download page of Kuin](https://kuina.ch/kuin/download)  
 to run(Windows only):  
 ```
 >kuincl.exe -i simple_geo3x3.kn -e exe
