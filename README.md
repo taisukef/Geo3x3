@@ -984,7 +984,7 @@ end func
 ```
 setup:  
 access [download page of Kuin](https://kuina.ch/kuin/download)  
-to run(Windows only):  
+to run(Windows):  
 ```
 >kuincl.exe -i simple_geo3x3.kn -e exe
 >out.exe
