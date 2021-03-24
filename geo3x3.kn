@@ -31,10 +31,8 @@
 end func
 
 
-{DECODE}
 
-
-+func decode(code: []char): []float
++func decode（code：[] char）：[] float
 	var clen: int :: ^code
 	if(clen = 0)
 		ret null
