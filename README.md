@@ -986,7 +986,7 @@ setup:
 access [download page of Kuin](https://kuina.ch/kuin/download)  
 to run(Windows):  
 ```
->kuincl.exe -i simple_geo3x3.kn -e exe
+>kuincl.exe -i simple_geo3x3.kn
 >out.exe
 ```
 ## History
