@@ -32,7 +32,7 @@ end func
 
 
 
-+func decode（code：[] char）：[] float
++func decode(code: []char): []float
 	var clen: int :: ^code
 	if(clen = 0)
 		ret null
@@ -52,7 +52,7 @@ end func
 	var lat: float :: 0.0
 	var lng: float :: 0.0
 	var level: int :: 1
-	var i: int :: 1
+	var i: int :: begin
 	var array: []char :: "0123456789"
 	var n: int
 	while a(i < clen)
