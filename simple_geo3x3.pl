@@ -1,5 +1,3 @@
-#!/usr/bin/perl
- 
 use lib qw(./);
 use geo3x3;
 

@@ -1,68 +1,63 @@
 Function Geo3x3_encode(lat, lng, level)
-  if level < 1
-    return ""
-  end if
-  res = "E"
-  if lng < 0
-    res = "W"
-    lng += 180
-  end if
-  lat += 90
-  unit = 180
-  for i = 1 to level - 1
-    unit = unit / 3
-    x = CLngLng(lng / unit)
-    y = CLngLng(lat / unit)
-    n = x + y * 3 + 1
-    res = res & n
-    lng = lng - x * unit
-    lat = lat - y * unit
-  next
-  return res
+    If level < 1 Then
+        Return ""
+    End If
+    res = "E"
+    If lng < 0 Then
+        res = "W"
+        lng = lng + 180.0
+    End If
+    lat = lat + 90.0
+    unit = 180.0
+    For i = 1 To level - 1
+        unit = unit / 3.0
+        x = Int(lng / unit)
+        y = Int(lat / unit)
+        n = x + y * 3 + 1
+        res = res & n
+        lng = lng - x * unit
+        lat = lat - y * unit
+    Next
+    Geo3x3_encode = res
 End Function
 
 Function Geo3x3_decode(code)
-  clen = Len(code)
-  if clen = 0
-    return ""
-  end if
-  begin = 0
-  flg = 0
-  c = Mid(code, 1, 1)
-  if c = '-' or c = 'W'
-    flg = 1
+    clen = Len(code)
+    If clen = 0 Then
+        Return ""
+    End If
     begin = 1
-  elif c == '+' or c == 'E'
-    begin = 1
-  end if
-  unit = 180
-  lat = 0
-  lng = 0
-  level = 1
-  for i = begin to clen - 2
-    n = InStr("0123456789", Mid(code, i + 2, 1)) - 1
-    if n <= 0
-      break
-    end if
-    unit = unit / 3
-    n = n - 1
-    lng = lng + (n mod 3) * unit
-    lat = lat + CLngLng(n / 3) * unit
-    level = level + 1
-  next
-  lat = lat + unit / 2
-  lng = lng + unit / 2
-  lat -= 90
-  if flg
-    lng = lng - 180
-  end if
-  res = {}
-  res.lat = lat
-  res.lng = lng
-  res.level = level
-  res.unit = unit
-  return res
+    flg = 0
+    c = Mid(code, 1, 1)
+    If c = "-" or c = "W" Then
+        flg = 1
+        begin = 1
+    ElseIf c = "+" or c = "E" Then
+        begin = 1
+    End If
+    unit = 180.0
+    lat = 0.0
+    lng = 0.0
+    level = 1
+    For i = begin To clen - 1
+        n = InStr("0123456789", Mid(code, i + 1, 1)) - 1
+        If n <= 0 Then
+            Exit For
+        End If
+        unit = unit / 3
+        n = n - 1
+        lng = lng + (n mod 3) * unit
+        lat = lat + Int(n / 3) * unit
+        level = level + 1
+    Next
+    lat = lat + unit / 2.0
+    lng = lng + unit / 2.0
+    lat = lat - 90.0
+    If flg Then
+        lng = lng - 180.0
+    End If
+    Geo3x3_decode = Array(lat, lng, level, unit)
 End Function
 
 WScript.Echo Geo3x3_encode(35.65858, 139.745433, 14)
-WScript.Echo Geo3x3_decode("E3793653391822")
+WScript.Echo Join(Geo3x3_decode("E9139659937288"))
