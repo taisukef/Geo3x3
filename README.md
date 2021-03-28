@@ -1,7 +1,7 @@
 Geo3x3 ver 1.05
 ======
-![Geo3x3 Logo](https://taisukef.github.io/Geo3x3/Geo3x3.png)  
-Logo created by mizuno(https://github.com/macoto1655)  
+![Geo3x3 Logo](https://taisukef.github.io/Geo3x3/Geo3x3_WhiteBack.png)  
+Logo created by mizuno (https://github.com/macoto1655) [transparent ver.](https://taisukef.github.io/Geo3x3/Geo3x3.png)  
 
 ## What is Geo3x3
 Geo3x3 is a simple geo-coding system for WGS84  
