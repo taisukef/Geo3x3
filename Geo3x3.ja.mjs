@@ -14,7 +14,6 @@ class Geo3x3 {
       コード = "W";
       経度 += 180.0;
     }
-    //緯度 = 90 - 緯度; // 0:the North Pole,  180:the South Pole
     緯度 += 90.0; // 180:the North Pole,  0:the South Pole
     let ユニット = 180.0;
     for (let i = 1; i < レベル; i++) {
