@@ -16,9 +16,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 |       | 4 | 5 | 6 | 4 | 5 | 6 |  
 | South | 1 | 2 | 3 | 1 | 2 | 3 |  
 
-    W5555555 = level 8  
-    E1384700 = level 6 (postfix 0 = dummy)  
-    * origin = lat -90, lng 0 -> lat 90, lng -90(W) 90(E)  
+W5555555 = level 8  
+E1384700 = level 6 (postfix 0 = dummy)  
+* origin = lat -90, lng 0 -> lat 90, lng -90(W) 90(E)  
 
 ## Applications
 [Geo3x3 map](https://code4sabae.github.io/geo3x3-map/) [(src)](https://github.com/code4sabae/geo3x3-map/)  
@@ -122,6 +122,7 @@ $ deno run simple_geo3x3.ts
 ```
 
 ### in Python
+[Python](https://www.python.org/)  
 [geo3x3.py](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.py),
 [simple_geo3x3.py](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.py)
 ```py
@@ -142,6 +143,7 @@ $ python3 simple_geo3x3.py
 ```
 
 ### in Ruby
+[Ruby](https://www.ruby-lang.org/)  
 [geo3x3.rb](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rb),
 [simple_geo3x3.rb](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.rb)
 ```ruby
@@ -291,6 +293,7 @@ $ mono ./simple_geo3x3.exe
 ```
 
 ### in PHP
+[PHP](https://www.php.net/)  
 [Geo3x3.php](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.php),
 [simple_geo3x3.php](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.php)
 ```php
@@ -312,6 +315,7 @@ $ php simple_geo3x3.php
 ```
 
 ### in Swift
+[Swift](https://www.apple.com/swift/)  
 [Geo3x3.swift](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.swift),
 [simple_geo3x3.swift](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.swift)
 ```swift
@@ -490,6 +494,7 @@ $ mono simple_geo3x3.exe
 ```
 
 ### in Scala
+[Scala](https://www.scala-lang.org/)  
 [Geo3x3.scala](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.scala),
 [simple_geo3x3.scala](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.scala)
 ```scala
@@ -547,6 +552,7 @@ $ nim r simple_geo3x3.nim
 ```
 
 ### in Elixir
+[Elixir](https://elixir-lang.jp/)  
 [geo3x3.ex](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ex),
 [simple_geo3x3.exs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.exs)
 ```elixir
@@ -562,6 +568,7 @@ $ elixir simple_geo3x3.exs
 ```
 
 ### in Lua
+[Lua](https://www.lua.org/)  
 [geo3x3.lua](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lua),
 [simple_geo3x3.lua](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.lua)
 ```lua
@@ -596,6 +603,7 @@ $ perl simple_geo3x3.pl
 ```
 
 ### in Groovy
+[Groovy](https://groovy-lang.org/)  
 [Geo3x3.groovy](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.groovy),
 [simple_geo3x3.groovy](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.groovy)
 ```groovy
@@ -611,6 +619,7 @@ $ groovy simple_geo3x3.groovy
 ```
 
 ### in D
+[D](https://dlang.org/)  
 [Geo3x3.d](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.d),
 [simple_geo3x3.d](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.d)
 ```D
@@ -1083,6 +1092,7 @@ $ ./simple_geo3x3
 ```
 
 ### in Crystal
+[Crystal](https://crystal-lang.org/)  
 [Geo3x3.cr](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.cr),
 [simple_geo3x3.cr](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.cr)
 ```Crystal
@@ -1198,6 +1208,7 @@ $ vim
 ```
 
 ### in IchigoJam BASIC
+[IchigoJam BASIC](https://ichigojam.net)  
 [geo3x3_encode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.bas),
 [geo3x3_decode.bas](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_decode.bas)
 ```IchigoJam
@@ -1284,6 +1295,7 @@ $ ./simple_geo3x3
 ```
 
 ### in MoonScript
+[MoonScript](https://moonscript.org/)  
 [geo3x3.moon](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.moon),
 [simple_geo3x3.moon](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.moon)
 ```MoonScript
@@ -1578,6 +1590,7 @@ $ sml < simple_geo3x3.sml
 ```
 
 ### in なでしこ
+[なでしこ](https://nadesi.com/top/)  
 [geo3x3.nako3](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nako3)
 ```なでしこ
 35.65858と139.745433を14でGeo3x3エンコードして表示
@@ -1593,6 +1606,7 @@ $ cnako3 geo3x3.nako3
 ```
 
 ### in Kuin
+[Kuin](https://kuina.ch/kuin)  
 [geo3x3.kn](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.kn),
 [simple_geo3x3.kn](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.kn)
 ```
@@ -1616,6 +1630,7 @@ to run(Windows):
 ```
 
 ### in ClojureScript
+[ClojureScript](https://clojurescript.org/)  
 [geo3x3.cljs](https://github.com/taisukef/Geo3x3/blob/master/cljs/geo3x3.cljs),
 [simple_geo3x3.cljs](https://github.com/taisukef/Geo3x3/blob/master/cljs/simple_geo3x3.cljs)
 ```
@@ -1636,6 +1651,7 @@ $ lumo cljs/simple_geo3x3.cljs
 ```
 
 ### in HSP
+[HSP](https://hsp.tv/)  
 [geo3x3.hsp](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.hsp),
 [simple_geo3x3.hsp](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.hsp)
 ```HSP
