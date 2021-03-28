@@ -1,4 +1,4 @@
-	goto *main
+    goto *main
 
 #include "geo3x3.hsp"
 

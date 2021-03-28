@@ -1,4 +1,4 @@
-Geo3x3 ver 1.05
+Geo3x3
 ======
 ![Geo3x3 Logo](https://taisukef.github.io/Geo3x3/Geo3x3_WhiteBack.png)  
 Logo created by mizuno (https://github.com/macoto1655) [transparent ver.](https://taisukef.github.io/Geo3x3/Geo3x3.png)  
@@ -16,13 +16,13 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 |       | 4 | 5 | 6 | 4 | 5 | 6 |  
 | South | 1 | 2 | 3 | 1 | 2 | 3 |  
 
-	W5555555 = level 8  
-	E1384700 = level 6 (postfix 0 = dummy)  
-	* origin = lat -90, lng 0 -> lat 90, lng -90(W) 90(E)  
+    W5555555 = level 8  
+    E1384700 = level 6 (postfix 0 = dummy)  
+    * origin = lat -90, lng 0 -> lat 90, lng -90(W) 90(E)  
 
 ## Applications
-[Geo3x3 map](https://code4sabae.github.io/geo3x3-map/) [src](https://github.com/code4sabae/geo3x3-map/)  
-[GC Wizard](https://gcwizard.net/) [src](https://github.com/S-Man42/GCWizard)  
+[Geo3x3 map](https://code4sabae.github.io/geo3x3-map/) [(src)](https://github.com/code4sabae/geo3x3-map/)  
+[GC Wizard](https://gcwizard.net/) [(src)](https://github.com/S-Man42/GCWizard)  
 
 ## Supported Languages
 74 programming languages supported now  
@@ -494,10 +494,10 @@ $ mono simple_geo3x3.exe
 [simple_geo3x3.scala](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.scala)
 ```scala
 def main(args: Array[String]): Unit = {
-	val code = encode(35.65858, 139.745433, 14)
-	println(code)
-	val (lat, lng, level, unit) = decode("E9139659937288")
-	println(s"${lat} ${lng} ${level} ${unit}")
+    val code = encode(35.65858, 139.745433, 14)
+    println(code)
+    val (lat, lng, level, unit) = decode("E9139659937288")
+    println(s"${lat} ${lng} ${level} ${unit}")
 }
 ```
 to run:
@@ -1597,14 +1597,14 @@ $ cnako3 geo3x3.nako3
 [simple_geo3x3.kn](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.kn)
 ```
 func main()
-	
-	{get Geo3x3 code from latitude / longitude / level}
-	var code: []char :: \geo3x3@encode(35.65858, 139.745433, 14)
-	do cui@print("\{code}\n")
-	
-	{get location from Geo3x3 code}
-	var pos: []float :: \geo3x3@decode("E9139659937288")
-	do cui@print("\{pos[0].toStr()}, \{pos[1].toStr()}, \{pos[2].toStr()}, \{pos[3].toStr()}\n")
+    
+    {get Geo3x3 code from latitude / longitude / level}
+    var code: []char :: \geo3x3@encode(35.65858, 139.745433, 14)
+    do cui@print("\{code}\n")
+    
+    {get location from Geo3x3 code}
+    var pos: []float :: \geo3x3@decode("E9139659937288")
+    do cui@print("\{pos[0].toStr()}, \{pos[1].toStr()}, \{pos[2].toStr()}, \{pos[3].toStr()}\n")
 end func
 ```
 setup:  
@@ -1639,7 +1639,7 @@ $ lumo cljs/simple_geo3x3.cljs
 [geo3x3.hsp](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.hsp),
 [simple_geo3x3.hsp](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.hsp)
 ```HSP
-	goto *main
+    goto *main
 
 #include "geo3x3.hsp"
 
