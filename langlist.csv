@@ -70,3 +70,5 @@ Pharo,st,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master
 Scratch,sb3,block,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_encode.sb3.png
 Standard ML,sml,end,val,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sml
 なでしこ3,nako3,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nako3
+Kuin,kn,end,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.kn
+ClojureScript,cljs,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/cljs/geo3x3.cljs
