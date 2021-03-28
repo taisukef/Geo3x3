@@ -20,8 +20,9 @@ divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is 
 	E1384700 = level 6 (postfix 0 = dummy)  
 	* origin = lat -90, lng 0 -> lat 90, lng -90(W) 90(E)  
 
-## Sample app
-https://code4sabae.github.io/geo3x3-map/  
+## Applications
+[Geo3x3 map](https://code4sabae.github.io/geo3x3-map/) [src](https://github.com/code4sabae/geo3x3-map/)  
+[GC Wizard](https://gcwizard.net/) [src](https://github.com/S-Man42/GCWizard)  
 
 ## Supported Languages
 74 programming languages supported now  
