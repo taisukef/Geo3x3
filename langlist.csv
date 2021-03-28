@@ -72,3 +72,4 @@ Standard ML,sml,end,val,none,script,https://github.com/taisukef/Geo3x3/blob/mast
 なでしこ3,nako3,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nako3
 Kuin,kn,end,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.kn
 ClojureScript,cljs,blackets,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/cljs/geo3x3.cljs
+HSP,hsp,mixed,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.hsp

@@ -1,0 +1,72 @@
+#module
+
+#defcfunc gex3x3_encode double lat, double lng, int level
+    if level < 1 {
+        Return ""
+    }
+    if lng < 0 {
+	    res = "W"
+        flng = lng + 180.0
+   	} else {
+	    res = "E"
+	    flng = lng
+	}
+    flat = lat + 90.0
+    unit = 180.0
+    repeat level - 1
+        unit = unit / 3.0
+        x = Int(flng / unit)
+        y = Int(flat / unit)
+        n = x + y * 3 + 1
+        res = res + n
+        flng = flng - double(x) * unit
+        flat = flat - double(y) * unit
+    loop
+    return res
+
+#deffunc gex3x3_decode str code, array res2
+    unit = 180.0
+    lat = 0.0
+    lng = 0.0
+    level = 0
+   	res2 = lat, lng, double(level), unit
+    clen = strlen(code)
+    if clen = 0 {
+	    return
+	}
+    begin = 0
+    flg = 0
+    scode = code
+    c = strmid(scode, 0, 1)
+    if c = "-" | c = "W" {
+	    flg = 1
+        begin = 1
+    } else {
+	    if c = "+" | c = "E" {
+        	begin = 1
+        }
+    }
+    level = 1
+    i = begin
+    repeat clen - 1
+    	snum = "0123456789"
+        n = instr(snum, 0, strmid(scode, i, 1)) - 1
+        if n < 0 {
+	        break
+	    }
+        unit = unit / 3.0
+        lng = lng + double(n \ 3) * unit
+        lat = lat + double(n / 3) * unit
+        level = level + 1
+        i = i + 1
+    loop
+    lat = lat + unit / 2.0
+    lng = lng + unit / 2.0
+    lat = lat - 90.0
+    if flg {
+        lng = lng - 180.0
+   	}
+   	res2 = lat, lng, double(level), unit
+    return
+
+#global

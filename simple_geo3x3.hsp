@@ -1,0 +1,10 @@
+	goto *main
+
+#include "geo3x3.hsp"
+
+*main
+    mes gex3x3_encode(35.65858, 139.745433, 14)
+    
+    ddim res, 4
+    gex3x3_decode "E9139659937288", res
+    mes "" + res(0) + " " + res(1) + " " + res(2) + " " + res(3)
