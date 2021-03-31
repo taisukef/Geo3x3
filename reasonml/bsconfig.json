@@ -1,0 +1,5 @@
+{
+  "name": "reasonml",
+  "namespace": true,
+  "sources": ["./"]
+}
