@@ -1672,7 +1672,7 @@ to run:
 press the 'F5' key  
 
 ### in Reason
-[Reason](https://reasonml.github.io/en/),
+[Reason](https://reasonml.github.io/en/)  
 [geo3x3.re](https://github.com/taisukef/Geo3x3/blob/master/reason/geo3x3.re),
 [simple_geo3x3.re](https://github.com/taisukef/Geo3x3/blob/master/reason/simple_geo3x3.re)
 ```re
