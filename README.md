@@ -1700,6 +1700,9 @@ to run:
 $ node lib/js/simple_geo3x3.js
 ```
 
+### in LiveScript
+[LiveScript](https://livescript.net/)  
+
 ## History
 ver 1.05 2021-03-01 change coding (origin lat:90 lng:0 → lat:-90 lng:0)  
 ver 1.04 2021-02-22 fixed WGS84  
