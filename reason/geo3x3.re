@@ -7,7 +7,7 @@ let encode = (lat: float, lng: float, level: int) => {
     let lng2 = ref(lng);
     let level = ref(level);
     
-    while (level^ > 0) {
+    while (level^ > 1) {
       unit := unit^ /. 3.0;
       let x: int = int_of_float(lng2^ /. unit^);
       let y: int = int_of_float(lat2^ /. unit^);

@@ -30,3 +30,6 @@ EIFGENs/
 *.dwarf
 zen-cache
 *.mod
+.merlin
+reason/lib/
+yarn.lock
