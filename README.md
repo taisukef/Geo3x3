@@ -77,6 +77,7 @@ console.log(Geo3x3.decode("E9139659937288"));
 ```
 
 ### in JavaScript (Deno)
+[Deno](https://deno.land)  
 [Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mjs),
 [simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
 ```mjs
@@ -92,6 +93,7 @@ $ deno run -A simple_geo3x3.mjs
 ```
 
 ### in JavaScript (Node.js)
+[Node.js](https://nodejs.org/)  
 [Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mjs),
 [simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
 ```js
@@ -107,6 +109,7 @@ $ node simple_geo3x3.mjs
 ```
 
 ### in TypeScript (Deno)
+[Deno](https://deno.land)  
 [Geo3x3.ts](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.ts),
 [simple_geo3x3.ts](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.ts)
 ```ts
@@ -162,6 +165,9 @@ $ ruby simple_geo3x3.rb
 ```
 
 ### in Java
+[Java](https://www.java.com/)  
+[Geo3x3.java](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.java),
+[simple_geo3x3.java](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.java)
 ```java
 public class simple_geo3x3 {
     public static void main(String[] args) {
@@ -180,6 +186,7 @@ $ javac simple_geo3x3.java Geo3x3.java
 $ java simple_geo3x3
 ```
 ### in Zen
+[Zen](https://zen-lang.org/)  
 [geo3x3.zen](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.zen),
 [simple_geo3x3.zen](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.zen)
 ```zen
@@ -270,6 +277,7 @@ $ g++ simple_geo3x3.cpp; ./a.out
 ```
 
 ### in C#
+[C#](https://docs.microsoft.com/en-us/dotnet/csharp/)  
 [Geo3x3.cs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.cs),
 [simple_geo3x3.cs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.cs)
 ```c#
