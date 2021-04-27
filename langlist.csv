@@ -74,3 +74,4 @@ Kuin,kn,end,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/ge
 ClojureScript,cljs,blackets,none,none,AltJS,https://github.com/taisukef/Geo3x3/blob/master/cljs/geo3x3.cljs
 HSP,hsp,mixed,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.hsp
 Reason,re,blacket,let,none,AltJS,https://github.com/taisukef/Geo3x3/blob/master/reason/geo3x3.re
+THPL,html,blacket,var,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.thpl.html
