@@ -69,8 +69,8 @@ console.log(Geo3x3.decode("E9139659937288"));
 ### in JavaScript (Deno)
 [Deno](https://deno.land)  
 [Geo3x3.js](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.js),
-[simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.js)
-```mjs
+[simple_geo3x3.js](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.js)
+```js
 import { Geo3x3 } from "https://taisukef.github.io/Geo3x3/Geo3x3.js";
 console.log(Geo3x3.encode(35.65858, 139.745433, 14));
 console.log(Geo3x3.decode("E9139659937288"));
@@ -99,7 +99,6 @@ console.log(Geo3x3.decode("E9139659937288"));
 ```
 
 to run:
-
 ```bash
 $ node simple_geo3x3.mjs
 ```
