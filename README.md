@@ -737,6 +737,7 @@ $ erlc simple_geo3x3.erl geo3x3.erl; erl -noshell -noinput -s simple_geo3x3 main
 ```
 
 ### in Clojure
+[Clojure](https://clojure.org/)  
 [geo3x3.clj](https://github.com/taisukef/Geo3x3/blob/master/src/geo3x3.clj),
 [simple_geo3x3.clj](https://github.com/taisukef/Geo3x3/blob/master/src/simple_geo3x3.clj)
 ```Clojure
