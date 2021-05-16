@@ -1710,7 +1710,7 @@ $ open Geo3x3.thpl.html
 ### in Janet
 [Janet](https://janet-lang.org/)  
 [geo3x3.janet](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.janet)
-[simple_geo3x3.janet](https://github.com/taisukef/Geo3x3/blob/master/reason/simple_geo3x3.janet)
+[simple_geo3x3.janet](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.janet)
 ```janet
 (import ./geo3x3)
 
@@ -1726,6 +1726,29 @@ $ brew install janet
 to run:
 ```bash
 $ janet simple_geo3x3.janet
+```
+
+### in Phel
+[Phel](https://phel-lang.org/)  
+[geo3x3.phel](https://github.com/taisukef/Geo3x3/blob/master/phel/src/geo3x3.phel)
+[simpleGeo3x3.phel](https://github.com/taisukef/Geo3x3/blob/master/phel/src/simpleGeo3x3.phel)
+```phel
+(ns geo3x3\simpleGeo3x3
+  (:require geo3x3\geo3x3))
+
+(println (geo3x3/encode 35.65858 139.745433 14))
+(println (geo3x3/decode "E9139659937288"))
+```
+setup:  
+```bash
+$ brew install php@7.4
+# setup composer
+```
+to run:
+```bash
+$ cd phel
+$ composer init
+$ ./vendor/bin/phel run geo3x3\\\\simpleGeo3x3
 ```
 
 ## History
