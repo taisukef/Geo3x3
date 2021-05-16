@@ -737,7 +737,7 @@ $ erlc simple_geo3x3.erl geo3x3.erl; erl -noshell -noinput -s simple_geo3x3 main
 ```
 
 ### in Clojure
-[Clojure](https://clojure.org/)  
+[Clojure](https://clojure.org/) [src GitHub](https://github.com/clojure/clojure)  
 [geo3x3.clj](https://github.com/taisukef/Geo3x3/blob/master/src/geo3x3.clj),
 [simple_geo3x3.clj](https://github.com/taisukef/Geo3x3/blob/master/src/simple_geo3x3.clj)
 ```Clojure
@@ -1634,7 +1634,7 @@ to run(Windows):
 ```
 
 ### in ClojureScript
-[ClojureScript](https://clojurescript.org/)  
+[ClojureScript](https://clojurescript.org/) [src on GitHub](https://github.com/clojure/clojurescript)  
 [geo3x3.cljs](https://github.com/taisukef/Geo3x3/blob/master/cljs/geo3x3.cljs),
 [simple_geo3x3.cljs](https://github.com/taisukef/Geo3x3/blob/master/cljs/simple_geo3x3.cljs)
 ```
@@ -1709,7 +1709,7 @@ $ open Geo3x3.thpl.html
 ```
 
 ### in Janet
-[Janet](https://janet-lang.org/)  
+[Janet](https://janet-lang.org/) [src on GitHub](https://github.com/janet-lang/janet)  
 [geo3x3.janet](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.janet),
 [simple_geo3x3.janet](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.janet)
 ```janet
@@ -1730,7 +1730,7 @@ $ janet simple_geo3x3.janet
 ```
 
 ### in Phel
-[Phel](https://phel-lang.org/)  
+[Phel](https://phel-lang.org/) [src on  GitHub](https://github.com/phel-lang/phel-lang)  
 [geo3x3.phel](https://github.com/taisukef/Geo3x3/blob/master/phel/src/geo3x3.phel),
 [simpleGeo3x3.phel](https://github.com/taisukef/Geo3x3/blob/master/phel/src/simpleGeo3x3.phel)
 ```phel
