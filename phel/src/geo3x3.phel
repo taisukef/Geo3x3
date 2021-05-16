@@ -1,0 +1,76 @@
+(ns geo3x3\geo3x3)
+
+(defn- encode_fn [code level i lat lng unit]
+  (if (>= i level)
+    code
+    (encode_fn
+      (str code (+ 1 (php/floor (/ lng unit)) (* (php/floor (/ lat unit)) 3)))
+      level
+      (+ i 1)
+      (- lat (* (php/floor (/ lat unit)) unit))
+      (- lng (* (php/floor (/ lng unit)) unit))
+      (/ unit 3.0)
+    )
+  )
+)
+
+(defn encode [lat lng level]
+  (if (< level 1)
+    nil
+    (encode_fn
+      (if (>= lng 0.0) "E" "W")
+      level
+      1
+      (+ lat 90.0)
+      (if (>= lng 0.0) lng (+ lng 180.0))
+      (/ 180.0 3.0)
+    )
+  )
+)
+
+(defn is_1to9 (c)
+  (let [n (php/intval c)]
+    (and (>= n 1) (<= n 9))
+  )
+)
+
+(defn- decode_fn [code idx lat lng level unit]
+  (if (or (= (php/strlen code) idx) (not (is_1to9 (php/substr code idx 1))))
+    (tuple (- (+ lat (/ (* unit 3.0) 2.0)) 90.0) (+ lng (/ (* unit 3.0) 2.0)) level (* unit 3.0))
+    (do
+      (let [n (- (php/intval (php/substr code idx 1)) 1)]
+        (decode_fn
+            code
+            (+ idx 1)
+            (+ lat (* (php/floor (/ n 3)) unit))
+            (+ lng (* (php/floor (% n 3)) unit))
+            (+ level 1)
+            (/ unit 3.0)
+        )
+      )
+    )
+  )
+)
+
+(defn- decode_fne [code idx]
+  (decode_fn code idx 0.0 0.0 1 (/ 180.0 3.0))
+)
+
+(defn- decode_fnw [code idx]
+  (let [pos (decode_fne code idx)]
+      (tuple (first pos) (- (first (slice pos 1)) 180) (first (slice pos 2)) (first (slice pos 3)))
+  )
+)
+
+(defn decode [code]
+  (if (> (php/strlen code) 0)
+    (do
+      (case (php/substr code 0 1)
+        "W" (decode_fnw code 1)
+        "E" (decode_fne code 1)
+        '(0.0 0.0 0 180.0)
+      )
+    )
+    '(0.0 0.0 0 180.0)
+  )
+)

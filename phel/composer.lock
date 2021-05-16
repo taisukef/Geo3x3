@@ -1,0 +1,151 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "c07d9d153a223144ae7922cddfbd61a2",
+    "packages": [
+        {
+            "name": "phel-lang/phel-composer-plugin",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phel-lang/phel-composer-plugin.git",
+                "reference": "9e3af8cfe854ddfae04934c26877a5b989ca7156"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phel-lang/phel-composer-plugin/zipball/9e3af8cfe854ddfae04934c26877a5b989ca7156",
+                "reference": "9e3af8cfe854ddfae04934c26877a5b989ca7156",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1.0 || ^2.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "composer/composer": "^1.10.0",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^9",
+                "vimeo/psalm": "^3.11"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Phel\\Composer\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phel\\Composer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Haase",
+                    "email": "je.haase@gmail.com"
+                }
+            ],
+            "description": "A composer plugin for the Phel language.",
+            "homepage": "https://phel-lang.org/",
+            "keywords": [
+                "composer",
+                "functional",
+                "language",
+                "lisp",
+                "phel",
+                "plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/phel-lang/phel-composer-plugin/issues",
+                "source": "https://github.com/phel-lang/phel-composer-plugin/tree/v0.1.0"
+            },
+            "time": "2021-01-17T20:38:50+00:00"
+        },
+        {
+            "name": "phel-lang/phel-lang",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phel-lang/phel-lang.git",
+                "reference": "3be6b248dba7efef9b78f126a5d59f5723e82cc6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phel-lang/phel-lang/zipball/3be6b248dba7efef9b78f126a5d59f5723e82cc6",
+                "reference": "3be6b248dba7efef9b78f126a5d59f5723e82cc6",
+                "shasum": ""
+            },
+            "require": {
+                "phel-lang/phel-composer-plugin": "^0.1",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "ext-readline": "*",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "infection/infection": "^0.16.3 || ^0.20.0",
+                "phpmetrics/phpmetrics": "^2.7",
+                "phpunit/phpunit": "^9.5",
+                "symfony/var-dumper": "^5.2",
+                "vimeo/psalm": "dev-master"
+            },
+            "bin": [
+                "phel"
+            ],
+            "type": "library",
+            "extra": {
+                "phel": {
+                    "loader": {
+                        "phel\\": "src/phel/"
+                    },
+                    "loader-dev": {
+                        "phel\\": "tests/phel/"
+                    },
+                    "tests": [
+                        "tests/phel/"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phel\\": "src/php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Haase",
+                    "email": "je.haase@gmail.com"
+                }
+            ],
+            "description": "Phel is a functional programming language that compiles to PHP",
+            "homepage": "https://phel-lang.org/",
+            "keywords": [
+                "functional",
+                "language",
+                "lisp",
+                "phel"
+            ],
+            "support": {
+                "issues": "https://github.com/phel-lang/phel-lang/issues",
+                "source": "https://github.com/phel-lang/phel-lang/tree/v0.1.0"
+            },
+            "time": "2021-01-31T18:34:16+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "geo3x3/phel",
+    "authors": [
+        {
+            "name": "Taisuke Fukuno",
+            "email": "fukuno@jig.jp"
+        }
+    ],
+    "require": {
+        "phel-lang/phel-lang": "^0.1"
+    },
+    "extra": {
+        "phel": {
+            "loader": {
+                "geo3x3\\": "src/"
+            }
+        }
+    }
+}
