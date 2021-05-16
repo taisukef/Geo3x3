@@ -53,7 +53,7 @@
 
 (defn decode_fnw [code]
     (let [pos (decode_fne code)]
-        [(- (first pos) 180.0) (nth pos 1) (nth pos 2) (nth pos 3)]
+        [(first pos) (- (nth pos 1) 180.0) (nth pos 2) (nth pos 3)]
     )
 )
 

@@ -8,3 +8,9 @@
 (message (number-to-string (nth 1 pos)))
 (message (number-to-string (nth 2 pos)))
 (message (number-to-string (nth 3 pos)))
+
+(setq pos2 (geo3x3_decode "W9"))
+(message (number-to-string (nth 0 pos2)))
+(message (number-to-string (nth 1 pos2)))
+(message (number-to-string (nth 2 pos2)))
+(message (number-to-string (nth 3 pos2)))

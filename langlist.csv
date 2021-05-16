@@ -24,7 +24,7 @@ GAS,gs,blacket,let,const,script,https://github.com/taisukef/Geo3x3/blob/master/G
 Nim,nim,indent,var,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nim
 Lua,lua,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lua
 Perl,"pl,pm",blacket,my,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pm
-Elixir,"ex,exs",end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.ex
+Elixir,"ex,exs",end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ex
 Groovy,groovy,blacket,def,final,JVM,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.groovy
 D,d,blacket,auto,const,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.d
 Julia,jl,end,none,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.jl
@@ -32,7 +32,7 @@ Racket,rkt,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/mast
 OCaml,ml,blacket,none,let,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ml
 Erlang,erl,end,none,none,BEAM,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.erl
 Clojure,clj,blacket,none,none,JVM,https://github.com/taisukef/Geo3x3/blob/master/src/geo3x3.clj
-F#,fs,indent,none,let,Mono,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.fs
+F#,fs,indent,none,let,Mono,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.fs
 Haxe,hx,blacket,var,final,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.hx
 Scheme,"sls,scm",blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sls
 Common Lisp,lisp,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.lisp

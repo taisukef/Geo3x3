@@ -758,7 +758,7 @@ $ lein run
 ```
 
 ### in F#
-[Geo3x3.fs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.fs),
+[Geo3x3.fs](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.fs),
 [simple_geo3x3.fs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.fs)
 ```F#
 module simple_geo3x3
