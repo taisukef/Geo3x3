@@ -1709,7 +1709,7 @@ $ open Geo3x3.thpl.html
 
 ### in Janet
 [Janet](https://janet-lang.org/)  
-[geo3x3.janet](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.janet)
+[geo3x3.janet](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.janet),
 [simple_geo3x3.janet](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.janet)
 ```janet
 (import ./geo3x3)
@@ -1730,7 +1730,7 @@ $ janet simple_geo3x3.janet
 
 ### in Phel
 [Phel](https://phel-lang.org/)  
-[geo3x3.phel](https://github.com/taisukef/Geo3x3/blob/master/phel/src/geo3x3.phel)
+[geo3x3.phel](https://github.com/taisukef/Geo3x3/blob/master/phel/src/geo3x3.phel),
 [simpleGeo3x3.phel](https://github.com/taisukef/Geo3x3/blob/master/phel/src/simpleGeo3x3.phel)
 ```phel
 (ns geo3x3\simpleGeo3x3
@@ -1742,12 +1742,13 @@ $ janet simple_geo3x3.janet
 setup:  
 ```bash
 $ brew install php@7.4
-# setup composer
+```
+setup [Composer](https://getcomposer.org/)
 ```
 to run:
 ```bash
 $ cd phel
-$ composer init
+$ composer install
 $ ./vendor/bin/phel run geo3x3\\\\simpleGeo3x3
 ```
 
