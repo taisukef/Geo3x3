@@ -55,10 +55,6 @@
   (tuple (first pos) (- (first (slice pos 1)) 180) (first (slice pos 2)) (first (slice pos 3)))
 )
 
-(defn decodex [scode]
-  (tuple 1 (+ 3 2) 3 4)
-)
-
 (defn decode [scode]
   (def code (string/bytes scode))
   (if (> (length code) 0)
