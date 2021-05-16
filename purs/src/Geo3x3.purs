@@ -71,7 +71,7 @@ decode_fnw code =
     let
         pos = decode_fne code
     in
-    { lat: 180.0 - pos.lat, lng: pos.lng, level: pos.level, unit: pos.unit }
+    { lat: pos.lat, lng: pos.lng - 180.0, level: pos.level, unit: pos.unit }
 
 decode :: String -> { lat :: Number, lng :: Number, level :: Int, unit :: Number }
 decode code =

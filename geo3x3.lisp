@@ -56,7 +56,7 @@
 (defun decode_fnw (code)
     (let (pos)
         (setq pos (decode_fne code))
-        (list (- (first pos) 180.0) (second pos) (third pos) (fourth pos))
+        (list (first pos) (- (second pos) 180.0) (third pos) (fourth pos))
     )
 )
 
