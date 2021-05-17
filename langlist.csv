@@ -77,3 +77,4 @@ Reason,re,blacket,let,none,AltJS,https://github.com/taisukef/Geo3x3/blob/master/
 THPL,html,blacket,var,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.thpl.html
 Janet,janet,blacket,var,def,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.janet
 Phel,phel,blacket,let,def,script,https://github.com/taisukef/Geo3x3/blob/master/phel/src/geo3x3.phel
+Raku,"raku,rakumod",blacket,my,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rakumod

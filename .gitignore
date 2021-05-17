@@ -33,3 +33,4 @@ zen-cache
 .merlin
 reason/lib/
 yarn.lock
+.precomp
