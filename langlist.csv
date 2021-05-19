@@ -78,3 +78,4 @@ THPL,html,blacket,var,none,script,https://github.com/taisukef/Geo3x3/blob/master
 Janet,janet,blacket,var,def,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.janet
 Phel,phel,blacket,let,def,script,https://github.com/taisukef/Geo3x3/blob/master/phel/src/geo3x3.phel
 Raku,"raku,rakumod",blacket,my,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rakumod
+文言,wy,end,數,none,script,https,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_encode.wy
