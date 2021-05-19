@@ -1775,9 +1775,9 @@ $ raku -I . simple_geo3x3.raku
 ### in-文言
 [文言](https://wy-lang.org/), [src on GitHub](https://github.com/wenyan-lang/wenyan)  
 [Geo3x3_encode.wy](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_encode.wy)
-[image](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_encode.wy.svg),
+[(image)](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_encode.wy.svg),
 [Geo3x3_decode.wy](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_decode.wy)
-[image](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_decode.wy.svg)
+[(image)](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_decode.wy.svg)
 ```文言
 噫。施「编码」於三十五又六分五釐八毫五絲八忽。於一百三十九又七分四釐五毫四絲三忽二微。於一十四。
 名之曰「酉辰」。
