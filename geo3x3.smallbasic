@@ -1,7 +1,7 @@
 Sub Geo3x3_encode
     If level < 1 Then
         res = ""
-        Goto End
+        Goto End_Geo3x3_encode
     EndIf
     res = "E"
     If lng < 0 Then
@@ -19,7 +19,7 @@ Sub Geo3x3_encode
         lng = lng - x * unit
         lat = lat - y * unit
     EndFor
-    End:
+    End_Geo3x3_encode:
 EndSub
 
 Sub Geo3x3_decode
@@ -29,7 +29,7 @@ Sub Geo3x3_decode
     level = 0
     clen = Text.GetLength(code)
     If clen = 0 Then
-        Goto End
+        Goto End_Geo3x3_decode
     EndIf
     begin = 1
     flg = 0
@@ -58,7 +58,7 @@ Sub Geo3x3_decode
     If flg Then
         lng = lng - 180.0
     EndIf
-    End:
+    End_Geo3x3_decode:
 EndSub
 
 lat = 35.65858
