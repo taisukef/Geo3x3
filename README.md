@@ -1833,8 +1833,8 @@ GEO3X3_DECODE "E9139659937288",RES
 ```
 setup:  
 [プチコン3号](http://smilebasic.com/) or [プチコン4](https://www.petc4.smilebasic.com/)  
-to run:
-公開キー: 7BE333DJ  
+to run:  
+download by 公開キー: 7BE333DJ  
 
 
 ## History
