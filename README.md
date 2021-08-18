@@ -1838,7 +1838,7 @@ download by 公開キー: 7BE333DJ
 
 ## in Small Basic
 [Small Basic](https://smallbasic-publicwebsite.azurewebsites.net/)  
-[geo3x3.txt](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.txt)
+[geo3x3.smallbasic](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.smallbasic)
 ```
 lat = 35.65858
 lng = 139.745433
@@ -1854,7 +1854,7 @@ TextWindow.WriteLine(level)
 TextWindow.WriteLine(unit)
 ```
 setup:  
-access [Small Basic](https://superbasic-v2.azurewebsites.net/)  
+download [Small Basic](https://smallbasic-publicwebsite.azurewebsites.net/) or access [Small Basic](https://superbasic-v2.azurewebsites.net/)  
 to run:
 F5  
 click "Run"  
