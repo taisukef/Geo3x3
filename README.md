@@ -1860,7 +1860,7 @@ click "Run"
 ver 1.05 2021-03-01 change coding (origin lat:90 lng:0 → lat:-90 lng:0)  
 ver 1.04 2021-02-22 fixed WGS84  
 ver 1.03 2021-02-20 support int encoded, license CC BY -> CC0 (Public Domain)  
-ver 1.02 2013-02-18 write in Java, lincense CC BY-ND -> CC BY  
+ver 1.02 2013-02-18 write in Java, license CC BY-ND -> CC BY  
 ver 1.01 2012-01-15 change coding  
 ver 1.00 2012-01-15 first release  
 
