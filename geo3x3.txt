@@ -23,12 +23,12 @@ Sub Geo3x3_encode
 EndSub
 
 Sub Geo3x3_decode
+    unit = 180.0
+    lat = 0.0
+    lng = 0.0
+    level = 0
     clen = Text.GetLength(code)
     If clen = 0 Then
-        res[0] = 0
-        res[1] = 0
-        res[2] = 0
-        res[3] = 0
         Goto End
     EndIf
     begin = 1
@@ -40,9 +40,6 @@ Sub Geo3x3_decode
     ElseIf c = "+" or c = "E" Then
         begin = 1
     EndIf
-    unit = 180.0
-    lat = 0.0
-    lng = 0.0
     level = 1
     For i = begin To clen - 1
         n = Text.GetIndexOf("0123456789", Text.GetSubText(code, i + 1, 1)) - 1
@@ -61,10 +58,6 @@ Sub Geo3x3_decode
     If flg Then
         lng = lng - 180.0
     EndIf
-    res[0] = lat
-    res[1] = lng
-    res[2] = level
-    res[3] = unit
     End:
 EndSub
 
@@ -76,4 +69,7 @@ TextWindow.WriteLine(res)
 
 code = "E9139659937288"
 Geo3x3_decode()
-TextWindow.WriteLine(res)
+TextWindow.WriteLine(lat)
+TextWindow.WriteLine(lng)
+TextWindow.WriteLine(level)
+TextWindow.WriteLine(unit)
