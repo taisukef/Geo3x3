@@ -358,6 +358,12 @@ func main() {
 }
 ```
 
+setup:
+
+```bash
+$ brew install go
+```
+
 to run:
 
 ```bash
