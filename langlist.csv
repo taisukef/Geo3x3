@@ -82,3 +82,4 @@ Raku,"raku,rakumod",blacket,my,none,script,https://github.com/taisukef/Geo3x3/bl
 Vala,vala,blacket,var,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.vala
 SmileBASIC,prg,none,dim,none,$%,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.prg
 Small Basic,smallbasic,none,none,none,$,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.smallbasic
+Flix,flix,indent,none,let,JVM,https://github.com/taisukef/Geo3x3/blob/master/flix/src/Geo3x3.flix
