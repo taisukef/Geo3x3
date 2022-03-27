@@ -1876,7 +1876,6 @@ def main(_args: Array[String]): Int32 & Impure =
 ```
 setup:  
 Setup JDK and download flix.jar from [https://github.com/flix/flix/releases/latest](https://github.com/flix/flix/releases/latest) and put filx/  
-```
 to run:
 ```
 $ cd flix
