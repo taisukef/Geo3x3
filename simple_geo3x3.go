@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "./geo3x3"
+import "simple_geo3x3/geo3x3"
 
 func main() {
     code := geo3x3.Encode(35.65858, 139.745433, 14)

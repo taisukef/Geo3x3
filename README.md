@@ -347,7 +347,7 @@ $ ./main
 package main
 
 import "fmt"
-import "./geo3x3"
+import "simple_geo3x3/geo3x3"
 
 func main() {
     code := geo3x3.Encode(35.65858, 139.745433, 14)
@@ -367,8 +367,8 @@ $ brew install go
 to run:
 
 ```bash
-$ go build simple_geo3x3.go
-$ ./simple_geo3x3
+$ go mod init simple_geo3x3
+$ go run simple_geo3x3.go
 ```
 
 ### in Kotlin
