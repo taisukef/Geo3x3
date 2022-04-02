@@ -1893,10 +1893,11 @@ Write-Output $code
 $pos = Decode-Geo3x3 "E9139659937288"
 Write-Output $pos
 ```
-
+Setup(MacOS,Linux):  
+[Microsoft](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.2)
 to run:  
 ```
->./simple_geo3x3.ps1
+> ./simple_geo3x3.ps1
 ```
 ## History
 ver 1.05 2021-03-01 change coding (origin lat:90 lng:0 → lat:-90 lng:0)  
