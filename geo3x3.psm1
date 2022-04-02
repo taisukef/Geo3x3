@@ -1,4 +1,4 @@
-function Encode-Geo3x3 {
+function ConvertTo-Geo3x3 {
     param (
         [double]$lat,
         [double]$lng,
@@ -27,7 +27,7 @@ function Encode-Geo3x3 {
     return $res
 }
 
-function Decode-Geo3x3 {
+function ConvertFrom-Geo3x3 {
     param (
         [string]$code
     )
