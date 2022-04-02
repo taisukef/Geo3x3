@@ -1893,7 +1893,7 @@ $pos = Decode-Geo3x3 "E9139659937288"
 Write-Output $pos
 ```
 Setup(MacOS,Linux):  
-[Microsoft](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.2)  
+[How to setup](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.2)  
 to run:  
 ```
 > ./simple_geo3x3.ps1
