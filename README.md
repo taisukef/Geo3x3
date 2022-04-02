@@ -1885,7 +1885,6 @@ $ java -jar flix.jar run
 ## in Windows PowerShell
 [geo3x3.psm1](https://github.com/taiskef/Geo3x3/blob/master/geo3x3.psm1)  
 ```
-powershell
 Import-Module -Name ./ -Verbose
 $code = Encode-Geo3x3 35.65858 139.745433 14
 Write-Output $code
@@ -1894,7 +1893,7 @@ $pos = Decode-Geo3x3 "E9139659937288"
 Write-Output $pos
 ```
 Setup(MacOS,Linux):  
-[Microsoft](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.2)
+[Microsoft](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.2)  
 to run:  
 ```
 > ./simple_geo3x3.ps1
