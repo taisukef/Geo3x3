@@ -1896,7 +1896,7 @@ Write-Output $pos
 
 to run:  
 ```
-\ > ./simple_geo3x3.ps1
+>./simple_geo3x3.ps1
 ```
 ## History
 ver 1.05 2021-03-01 change coding (origin lat:90 lng:0 → lat:-90 lng:0)  
