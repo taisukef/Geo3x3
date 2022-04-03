@@ -1906,7 +1906,7 @@ to run:
 (for Mac)
 ```
 $ pwsh
-$ ./simple_geo3x3.ps1
+> ./simple_geo3x3.ps1
 ```
 
 ## History
