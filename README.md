@@ -1883,8 +1883,8 @@ $ java -jar flix.jar run
 ```
 
 ## in PowerShell
-[geo3x3.psm1](https://github.com/taiskef/Geo3x3/blob/master/geo3x3.psm1)  
-[simple_geo3x3.ps1](https://github.com/taiskef/Geo3x3/blob/master/simple_geo3x3.ps1)
+[geo3x3.psm1](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.psm1)  
+[simple_geo3x3.ps1](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.ps1)
 ```
 Import-Module -Name ./ -Verbose
 $code = Encode-Geo3x3 35.65858 139.745433 14
