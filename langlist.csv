@@ -85,3 +85,4 @@ Small Basic,smallbasic,none,none,none,$,https://github.com/taisukef/Geo3x3/blob/
 Flix,flix,indent,none,let,JVM,https://github.com/taisukef/Geo3x3/blob/master/flix/src/Geo3x3.flix
 PowerShell,"ps1,psm1",blacket,[type],none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.psm1
 Koka,kk,indent / blacket,var,val,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.kk
+Zig,zig,blacket,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.zig
