@@ -10,7 +10,7 @@ Geo3x3はシンプルなWGS84向けジオコーディングです
 divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is more in detail.  
 地球を東(E)と西(W)に分け、再帰的に3x3の9エリアで分割します。長いほど精度が上がります。  
 
-|       |>| East ||>|  West ||  
+|       || East |||  West ||  
 |-------|--|:----:|-|-|:-----:|-|  
 | North | 7 | 8 | 9 | 7 | 8 | 9 |  
 |       | 4 | 5 | 6 | 4 | 5 | 6 |  
