@@ -103,8 +103,8 @@ to run:
 $ node simple_geo3x3.mjs
 ```
 
-### in JavaScript (bun)
-[bun](https://bun.sh/)  
+### in JavaScript (Bun)
+[Bun](https://bun.sh/)  
 [Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mjs),
 [simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
 ```js
