@@ -10,7 +10,7 @@ Geo3x3はシンプルなWGS84向けジオコーディングです
 divide the earth to two (West or East), recursive divisiton 3x3(9th). longer is more in detail.  
 地球を東(E)と西(W)に分け、再帰的に3x3の9エリアで分割します。長いほど精度が上がります。  
 
-|       |  | East | | |  West | |  
+|       || East |||  West ||  
 |-------|--|:----:|-|-|:-----:|-|  
 | North | 7 | 8 | 9 | 7 | 8 | 9 |  
 |       | 4 | 5 | 6 | 4 | 5 | 6 |  
@@ -101,6 +101,25 @@ console.log(Geo3x3.decode("E9139659937288"));
 to run:
 ```bash
 $ node simple_geo3x3.mjs
+```
+
+### in JavaScript (bun)
+[bun](https://bun.sh/)  
+[Geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.mjs),
+[simple_geo3x3.mjs](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mjs)
+```js
+import { Geo3x3 } from "./Geo3x3.mjs";
+console.log(Geo3x3.encode(35.65858, 139.745433, 14));
+console.log(Geo3x3.decode("E9139659937288"));
+```
+
+setup:
+```bash
+curl https://bun.sh/install | bash
+```
+to run:
+```bash
+$ bun simple_geo3x3.mjs
 ```
 
 ### in TypeScript (Deno)
