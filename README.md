@@ -1797,7 +1797,7 @@ to run:
 $ raku -I . simple_geo3x3.raku
 ```
 
-### in-文言
+### in 文言
 [文言](https://wy-lang.org/), [src on GitHub](https://github.com/wenyan-lang/wenyan)  
 [Geo3x3_encode.wy](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_encode.wy)
 [(image)](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_encode.wy.svg),
