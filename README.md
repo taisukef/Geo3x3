@@ -1902,6 +1902,7 @@ $ java -jar flix.jar run
 ```
 
 ## in PowerShell
+[PowerShell](https://docs.microsoft.com/ja-jp/powershell/)  
 [geo3x3.psm1](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.psm1)  
 [simple_geo3x3.ps1](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.ps1)
 ```
@@ -1929,7 +1930,7 @@ $ pwsh
 ```
 
 ### in Koka
-[Koka](https://koka-lang.github.io)
+[Koka](https://koka-lang.github.io)  
 [geo3x3.kk](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.kk),
 [simple_geo3x3.kk](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.kk)
 ```
@@ -1951,7 +1952,7 @@ $ koka -e simple_geo3x3.kk
 ```
 
 ### in Zig
-[Zig](https://ziglang.org)
+[Zig](https://ziglang.org)  
 [geo3x3.zig](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.zig),
 [simple_geo3x3.zig](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.zig)
 ```
@@ -1980,7 +1981,7 @@ $ zig run simple_geo3x3.zig
 ```
 
 ### in BanchaScript
-[BanchaScript](https://github.com/taisukef/BanchaScript/)
+[BanchaScript](https://github.com/taisukef/BanchaScript/)  
 [Geo3x3.bancha](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.bancha),
 [simple_geo3x3.bancha](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.bancha)
 ```
