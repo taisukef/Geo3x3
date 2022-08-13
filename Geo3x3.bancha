@@ -1,0 +1,98 @@
+function log(x) {
+  native "console.log(x)";    
+}
+
+operator ++ prefix  1 = "++{0}"; 
+operator -- prefix  1 = "--{0}";
+operator ++ postfix 1 = "{0}++";
+operator -- postfix 1 = "{0}--";
+operator -  prefix  1 = "-{0}";
+operator +  prefix  1 = "+{0}";
+
+operator *  infixl  2 = "({0}*{1})"; 
+operator /  infixl  2 = "({0}/{1})";
+operator %  infixl  2 = "({0}%{1})";
+
+operator +  infixl  3 = "({0}+{1})";
+operator -  infixl  3 = "({0}-{1})";
+
+operator <  infixl  5 = "({0}<{1})";
+operator >  infixl  5 = "({0}>{1})";
+operator <= infixl  5 = "({0}<={1})";
+operator >= infixl  5 = "({0}>={1})";
+
+operator == infixl  5 = "({0}=={1})";
+operator != infixl  5 = "({0}!={1})";
+
+operator := infixl 14 = "{0}={1}";
+
+function floor(n) {
+  return native "Math.floor(n)";
+}
+function charAt(s, n) {
+  return native "s[n]";
+}
+function indexOf(s, key) {
+  return native "s.indexOf(key)";
+}
+function length(s) {
+  return native "s.length";
+}
+function encode(lat, lng, level) {
+  var res = "E";
+  if (lng < 0.0) {
+    res := "W";
+    lng := lng + 180.0;
+  }
+  lat := lat + 90; // 180:the North Pole, 0:the South Pole
+  var unit = 180.0;
+  for (var i = 1; i < level; i++) {
+    unit := unit / 3.0;
+    var x = floor(lng / unit);
+    var y = floor(lat / unit);
+    res := res + (x + y * 3 + 1);
+    lng := lng - x * unit;
+    lat := lat - y * unit;
+  }
+  return res;
+}
+function decode(code) {
+  var flg = false;
+  var begin = 0;
+  var c = charAt(code, 0);
+  if (c == "W") {
+    flg := true;
+    begin := 1;
+  } else {
+    if (c == "E") {
+      begin := 1;
+    } else {
+      return null;
+    }
+  }
+  var unit = 180.0;
+  var lat = 0.0;
+  var lng = 0.0;
+  var level = 1;
+  for (var i = begin; i < length(code); i++) {
+    var n = indexOf("0123456789", charAt(code, i));
+    if (n == 0) {
+      break;
+    }
+    if (n < 0) {
+      return null; // err
+    }
+    unit := unit / 3;
+    n--;
+    lng := lng + n % 3 * unit;
+    lat := lat + floor(n / 3) * unit;
+    level++;
+  }
+  lat := lat + unit / 2;
+  lng := lng + unit / 2;
+  lat := lat - 90.0;
+  if (flg) {
+    lng := lng - 180.0;
+  }
+  return [lat, lng, level, unit];
+}
