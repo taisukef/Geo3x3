@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+
+<h1>Geo3x3 in AssemblyScript</h1>
+encode: <div id=encode></div>
+decode: <div id=decode></div>
+
+<script type="module">
+import * as Geo3x3 from "./build/release.js";
+
+encode.textContent = Geo3x3.encode(35.65858, 139.745433, 14);
+decode.textContent = Geo3x3.decode("E9139659937288");
+</script>
+  
+</body>
+</html>
