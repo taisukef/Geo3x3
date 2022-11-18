@@ -1,0 +1,25 @@
+function floor(n) {
+  return to_real_number(to_integer(n))
+}
+function Geo3x3_encode(lat, lng, level) {
+  res = "E"
+  if lng < 0.0
+  {
+    res = "W"
+    lng = lng + 180.0
+  }
+  lat = lat + to_real_number(90)
+  unit = to_real_number(180)
+  repeat i:i < level - 1
+  {
+    unit = div_double_double(unit, 3.0)
+    x = floor(div_double_double(lng, unit))
+    y = floor(div_double_double(lat, unit))
+    c1 = 1 + 3 * to_integer(y)
+    res = res + int_to_str(c1 + to_integer(x))
+    lng = lng - mul_double(x, unit)
+    lat = lat - mul_double(y, unit)
+  }
+  return res
+}
+print(Geo3x3_encode(35.65858, 139.745433, 14))

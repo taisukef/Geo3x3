@@ -1,0 +1,120 @@
+function floor(n) {
+  return to_real_number(to_integer(n))
+}
+function Geo3x3_encode(lat, lng, level) {
+  res = "E"
+  if lng < 0.0
+  {
+    res = "W"
+    lng = lng + 180.0
+  }
+  lat = lat + to_real_number(90)
+  unit = to_real_number(180)
+  repeat i:i < level - 1
+  {
+    unit = div_double_double(unit, 3.0)
+    x = floor(div_double_double(lng, unit))
+    y = floor(div_double_double(lat, unit))
+    c1 = 1 + 3 * to_integer(y)
+    res = res + int_to_str(c1 + to_integer(x))
+    lng = lng - mul_double(x, unit)
+    lat = lat - mul_double(y, unit)
+  }
+  return res
+}
+
+function mod_int_int(n, m) {
+  d = div_double_double(to_real_number(n), to_real_number(m))
+  r = sub_double(d, floor(d))
+  return to_integer(mul_double(r, m))
+}
+//print(int_to_str(mod_int_int(10, 3)))
+
+function char_to_int(s) {
+  n = 0
+  if s == "0"
+  {
+    n = 0
+  }
+  if s == "1"
+  {
+    n = 1
+  }
+  if s == "2"
+  {
+    n = 2
+  }
+  if s == "3"
+  {
+    n = 3
+  }
+  if s == "4"
+  {
+    n = 4
+  }
+  if s == "5"
+  {
+    n = 5
+  }
+  if s == "6"
+  {
+    n = 6
+  }
+  if s == "7"
+  {
+    n = 7
+  }
+  if s == "8"
+  {
+    n = 8
+  }
+  if s == "9"
+  {
+    n = 9
+  }
+  return n
+}
+//print(int_to_str(char_to_int("7")))
+
+function Geo3x3_decode(code) {
+  flg = 0
+  begin = 0
+  c = code[0]
+  if c == "W"
+  {
+    flg = 1
+    begin = 1
+  }
+  if c == "E"
+  {
+    begin = 1
+  } else
+  {
+    return [0, 0, 0]
+  }
+  unit = to_real_number(180)
+  lat = to_real_number(0)
+  lng = to_real_number(0)
+  level = 1
+  repeat count:count < code.size - begin
+  {
+    i = count + begin
+    n = char_to_int(code[i])
+    unit = div_double_double(unit, to_real_number(3))
+    n = n - 1
+    lng = lng + mul_double(mod_int_int(n, 3), unit)
+    lat = lat + mul_double(floor(div_double_double(n, to_real_number(3)), unit))
+    level = level + 1
+  }
+  lat = lat + div_double_double(unit, 2)
+  lng = lng + div_double_double(unit, 2)
+  lat = lat - to_real_number(90)
+  if flg == 1
+  {
+    lng = lng - to_real_number(180)
+  }
+  return [lat, lng, level, unit]
+}
+print(Geo3x3_encode(35.65858, 139.745433, 14))
+res = Geo3x3_decode(["E", "9", "1", "3", "9", "6", "5", "9", "9", "3", "7", "2", "8", "8"])
+print(float_to_str(res[0]) + ", " + float_to_str(res[1]) + ", " + float_to_str(res[2]))
