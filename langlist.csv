@@ -88,3 +88,4 @@ Koka,kk,indent / blacket,var,val,compile,https://github.com/taisukef/Geo3x3/blob
 Zig,zig,blacket,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.zig
 BanchaScript,bancha,blacket,var,none,AltJS,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.bancha
 AssemblyScript,ts,blacket,let,const,complie,https://github.com/taisukef/Geo3x3/blob/master/asc/assembly/index.ts
+Clawn,clawn,blacket,none,none,complie,https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.clawn

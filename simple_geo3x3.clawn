@@ -1,0 +1,77 @@
+import "./simple_geo3x3.clawn.c"
+
+function floor(n) {
+  return to_real_number(to_integer(n))
+}
+
+function mod_int_int(n2, m2) {
+  d = div_double_double(to_real_number(n2), to_real_number(m2))
+  r = sub_double(d, floor(d))
+  mm = mul_double(r, to_real_number(m2))
+  mm2 = add_double(mm, 0.1)
+  mod = to_integer(mm2)
+  return mod
+}
+
+function Geo3x3_encode(lat, lng, level) {
+  res = "E"
+  if lng < 0.0
+  {
+    res = "W"
+    lng = lng + 180.0
+  }
+  lat = lat + to_real_number(90)
+  unit = to_real_number(180)
+  repeat i:i < level - 1
+  {
+    unit = div_double_double(unit, 3.0)
+    x = floor(div_double_double(lng, unit))
+    y = floor(div_double_double(lat, unit))
+    c1 = 1 + 3 * to_integer(y)
+    res = res + int_to_str(c1 + to_integer(x))
+    lng = lng - mul_double(x, unit)
+    lat = lat - mul_double(y, unit)
+  }
+  return res
+}
+
+function Geo3x3_decode(code) {
+  flg = 0
+  begin = 0
+  c = str_charCodeAt(code, 0)
+  if 69 == c
+  {
+    begin = 1
+  }
+  if 87 == c
+  {
+    flg = 1
+    begin = 1
+  }
+  unit = to_real_number(180)
+  lat = to_real_number(0)
+  lng = to_real_number(0)
+  level = 1
+  repeat count:count < sub_int(str_size(code), begin)
+  {
+    c = str_charCodeAt(code, add_int(count, begin))
+    n = sub_int(c, 49)
+    unit = div_double_double(unit, to_real_number(3))
+    f = floor(div_double_double(to_real_number(n), to_real_number(3)))
+    lat = add_double(lat, mul_double(f, unit))
+    lng = add_double(lng, mul_double(to_real_number(mod_int_int(n, 3)), unit))
+    level = add_int(level, 1)
+  }
+  lat = add_double(lat, div_double_double(unit, to_real_number(2)))
+  lng = add_double(lng, div_double_double(unit, to_real_number(2)))
+  lat = sub_double(lat, to_real_number(90))
+  if flg == 1
+  {
+    lng = sub_double(lng, to_real_number(180))
+  }
+  return [lat, lng, to_real_number(level), unit]
+}
+
+print(Geo3x3_encode(35.65858, 139.745433, 14))
+res = Geo3x3_decode("E9139659937288")
+print(float_to_str(res[0]) + ", " + float_to_str(res[1]) + ", " + float_to_str(res[2]) + ", " + float_to_str(res[3]))
