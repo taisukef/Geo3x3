@@ -2043,6 +2043,17 @@ $ ./clawn simple_geo3x3.clawn
         PRINT*,GEO3X3_DECODE('E9139659937288')
       END PROGRAM MAIN
 ```
+setup(APT):
+```bash
+$ apt install gfortran -y
+```
+to run:
+```bash
+$ gfortran geo3x3_encode.for
+$ ./a.out
+$ gfortran geo3x3_decode.for
+$ ./a.out
+```
 ## History
 ver 1.05 2021-03-01 change coding (origin lat:90 lng:0 → lat:-90 lng:0)  
 ver 1.04 2021-02-22 fixed WGS84  
