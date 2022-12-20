@@ -2049,6 +2049,7 @@ $ apt install gfortran -y
 ```
 to run:
 ```bash
+$ cd fortran77
 $ gfortran geo3x3_encode.for
 $ ./a.out
 $ gfortran geo3x3_decode.for
