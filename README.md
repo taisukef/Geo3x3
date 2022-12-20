@@ -2028,14 +2028,14 @@ to run:
 $ ./clawn simple_geo3x3.clawn
 ```
 ### in FORTRAN 77
-[geo3x3_encode.for](https://github.com/taisukef/Geo3x3/master/blob/geo3x3_encode.for)
+[geo3x3_encode.for](https://github.com/taisukef/Geo3x3/master/blob/fortran77/geo3x3_encode.for)
 ```fortran77
       PROGRAM MAIN
       CHARACTER(50) GEO3X3_ENCODE
       PRINT*, GEO3X3_ENCODE(35.65858,139.745433,14)
       END PROGRAM MAIN
 ```
-[geo3x3_decode.for](https://github.com/taisukef/Geo3x3/master/blob/geo3x3_decode.for)
+[geo3x3_decode.for](https://github.com/taisukef/Geo3x3/master/blob/fortran77/geo3x3_decode.for)
 ```fortran77
       PROGRAM MAIN
         IMPLICIT NONE
