@@ -1,0 +1,63 @@
+["step",
+  ["func", "geo3x3_encode",
+    ["step",
+      ["set", "level", ["String.parseInt", ["pop"]]],
+      ["set", "lng", ["String.parseFloat", ["pop"]]],
+      ["set", "lat", ["String.parseFloat", ["pop"]]],
+      ["set", "res", "E"],
+      ["if", ["<", ["get", "lng", 0]], ["step",
+        ["set", "res", "W"],
+        ["set", "lng", ["+", ["get", "lng"], 180]]
+      ]],
+      ["set", "lat", ["+", ["get", "lat"], 90]],
+      ["set", "unit", 180],
+      ["set", "i", 1],
+      ["while", ["<", ["get", "i"], ["get", "level"]], ["step",
+        ["set", "unit", ["/", ["get", "unit"], 3]],
+        ["set", "x", ["Math.floor", ["/", ["get", "lng"], ["get", "unit"]]]],
+        ["set", "y", ["Math.floor", ["/", ["get", "lat"], ["get", "unit"]]]],
+        ["set", "res", ["+", ["get", "res"], ["+", ["get", "x"], ["*", ["get", "y"], 3], 1]]],
+        ["set", "lng", ["-", ["get", "lng"], ["*", ["get", "x"], ["get", "unit"]]]],
+        ["set", "lat", ["-", ["get", "lat"], ["*", ["get", "y"], ["get", "unit"]]]],
+        ["set", "i", ["+", ["get", "i"], 1]]
+      ]],
+      ["get", "res"]
+    ]
+  ],
+  ["func", "geo3x3_decode",
+    ["step",
+      ["set", "code", ["pop"]],
+      ["set", "flg", false],
+      ["set", "begin", 0],
+      ["set", "c", ["String.charAt", ["get", "code"], 0]],
+      ["if", ["=", ["get", "c"], "W"], ["step",
+        ["set", "flg", true],
+        ["set", "begin", 1]
+      ], ["if", ["=", ["get", "c"], "E"],
+        ["set", "begin", 1],
+        ["return", null]
+      ]],
+      ["set", "unit", 180],
+      ["set", "lat", 0],
+      ["set", "lng", 0],
+      ["set", "level", 1],
+      ["set", "i", ["get", "begin"]],
+      ["while", ["<", ["get", "i"], ["String.length", ["get", "code"]]], ["step", 
+        ["set", "n", ["String.indexOf", "0123456789", ["String.charAt", ["get", "code"], ["get", "i"]]]],
+        ["if", ["=", ["get", "n"], 0], ["break"]],
+        ["if", ["<", ["get", "n"], 0], ["return", null]],
+        ["set", "unit", ["/", ["get", "unit"], 3]],
+        ["set", "n", ["-", ["get", "n"], 1]],
+        ["set", "lng", ["+", ["get", "lng"], ["*", ["%", ["get", "n"], 3], ["get", "unit"]]]],
+        ["set", "lat", ["+", ["get", "lat"], ["*", ["Math.floor", ["/", ["get", "n"], 3]], ["get", "unit"]]]],
+        ["set", "level", ["+", ["get", "level"], 1]],
+        ["set", "i", ["+", ["get", "i"], 1]]
+      ]],
+      ["set", "lat", ["+", ["get", "lat"], ["/", ["get", "unit"], 2]]],
+      ["set", "lng", ["+", ["get", "lng"], ["/", ["get", "unit"], 2]]],
+      ["set", "lat", ["-", ["get", "lat"], 90]],
+      ["if", ["get", "flg"], ["set", "lng", ["-", ["get", "lng"], 180]]],
+      ["Array", ["get", "lat"], ["get", "lng"], ["get", "level"], ["get", "unit"]]
+    ]
+  ]
+]
