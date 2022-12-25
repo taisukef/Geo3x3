@@ -90,3 +90,4 @@ BanchaScript,bancha,blacket,var,none,AltJS,https://github.com/taisukef/Geo3x3/bl
 AssemblyScript,ts,blacket,let,const,complie,https://github.com/taisukef/Geo3x3/blob/master/asc/assembly/index.ts
 Clawn,clawn,blacket,none,none,complie,https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.clawn
 FORTRAN 77,"for,f",end,type,PARAMETER,compile,https://github.com/taisukef/Geo3x3/blob/master/fortran77/
+orelang,orelang,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.orelang
