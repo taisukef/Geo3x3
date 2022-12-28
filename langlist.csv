@@ -91,3 +91,4 @@ AssemblyScript,ts,blacket,let,const,complie,https://github.com/taisukef/Geo3x3/b
 Clawn,clawn,blacket,none,none,complie,https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.clawn
 FORTRAN 77,"for,f",end,type,PARAMETER,compile,https://github.com/taisukef/Geo3x3/blob/master/fortran77/
 orelang,orelang,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.orelang
+Laze,laze,blacket,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.laze
