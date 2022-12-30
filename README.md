@@ -2090,13 +2090,13 @@ to run: [Laze エディタ](https://laze.ddns.net/ja/editor)
 [geo3x3.wat](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.wat)
 ```
   (func (export "main")
-    f32.const 35.65858
-    f32.const 139.745433
-    i32.const 14
-    call $encode
+    (f32.const 35.65858)
+    (f32.const 139.745433)
+    (i32.const 14)
+    (call $encode)
     (call $log (i32.const 0) (i32.const 14))
 
-    call $decode
+    (call $decode)
     (call $log_f32 (f32.load (i32.const 0)))
     (call $log_f32 (f32.load (i32.const 4)))
     (call $log_f32 (f32.load (i32.const 8)))
