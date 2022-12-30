@@ -10,10 +10,10 @@
     (local $x i32)
     (local $y i32)
     (local $n i32)
-    (i32.store (i32.const 0) (i32.const 69)) ;; 69='E'
+    (i32.store8 (i32.const 0) (i32.const 69)) ;; 69='E'
     (if (f32.le (local.get $lng) (f32.const 0.0))
       (then
-        (i32.store (i32.const 0) (i32.const 87)) ;; 87='W'
+        (i32.store8 (i32.const 0) (i32.const 87)) ;; 87='W'
         (local.set $lng (f32.add (local.get $lng) (f32.const 180.0)))
       )
     )
@@ -27,7 +27,7 @@
       (local.set $y (i32.trunc_f32_u (f32.div (local.get $lat) (local.get $unit))))
       (local.set $n (i32.add (local.get $x) (i32.mul (local.get $y) (i32.const 3))))
       (local.set $n (i32.add (local.get $n) (i32.const 49))) ;; 49='1'
-      (i32.store (local.get $i) (local.get $n))
+      (i32.store8 (local.get $i) (local.get $n))
       (local.set $lng (f32.sub (local.get $lng) (f32.mul (f32.convert_i32_u (local.get $x)) (local.get $unit))))
       (local.set $lat (f32.sub (local.get $lat) (f32.mul (f32.convert_i32_u (local.get $y)) (local.get $unit))))
       (local.set $i (i32.add (local.get $i) (i32.const 1)))
@@ -48,7 +48,7 @@
     
     (local.set $flg (i32.const 0))
     (local.set $begin (i32.const 0))
-    (local.set $c (i32.load (i32.const 0)))
+    (local.set $c (i32.load8_u (i32.const 0)))
     (if (i32.eq (local.get $c) (i32.const 87)) ;; 87='W'
       (then
         (local.set $flg (i32.const 1))
@@ -64,7 +64,7 @@
     (local.set $level (i32.const 1))
     (local.set $i (local.get $begin))
     (block $block (loop $loop
-      (local.set $n (i32.and (i32.load (local.get $i)) (i32.const 255)))
+      (local.set $n (i32.load8_u (local.get $i)))
       (br_if $block (i32.eq (local.get $n) (i32.const 0)))
       (local.set $n (i32.sub (local.get $n) (i32.const 49))) ;; 49='1'
       (local.set $unit (f32.div (local.get $unit) (f32.const 3.0)))
