@@ -94,3 +94,4 @@ orelang,orelang,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob
 Laze,laze,blacket,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.laze
 WebAssembly,wat,blacket,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.wat
 Nelua,nelua,end,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nelua
+Roland,rol,blacket,type,none,complie,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rol
