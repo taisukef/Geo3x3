@@ -1,0 +1,7 @@
+require "geo3x3"
+
+print(encode(35.65858, 139.745433, 14))
+
+local pos = decode("E9139659937288")
+print(pos[0], pos[1], pos[2], pos[3])
+
