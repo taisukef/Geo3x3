@@ -34,3 +34,4 @@ zen-cache
 reason/lib/
 yarn.lock
 .precomp
+simple_geo3x3.wat

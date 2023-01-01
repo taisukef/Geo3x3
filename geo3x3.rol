@@ -1,0 +1,56 @@
+proc encode(lat: f32, lng: f32, level: usize) -> String {
+  let res: &u8 = malloc(level);
+  if level < 1 {
+    return String {
+      length: 0,
+      pointer: res,
+    };
+  }
+  res~ = 69; // E
+  if lng < 0.0 {
+    res~ = 87; // W
+    lng = lng + 180.0;
+  }
+  lat = lat + 90.0; // 180:the North Pole, 0:the South Pole
+  let unit: f32 = 180.0;
+  for i in 1..level {
+    unit = unit / 3.0;
+    let x: u32 = (lng / unit) truncate u32;
+    let y: u32 = (lat / unit) truncate u32;
+    let ptr: &u8 = (res transmute usize + i) transmute &u8;
+    ptr~ = (x + y * 3 + 49) truncate u8; // 49='1'
+    lng = lng - x truncate f32 * unit;
+    lat = lat - y truncate f32 * unit;
+  }
+  return String {
+    length: level,
+    pointer: res,
+  };
+}
+proc decode(code: String) -> [f32; 4] {
+  let ptr: &u8 = code.pointer;
+  let flg = ptr~ == 87;
+  let unit: f32 = 180.0;
+  let lat: f32 = 0.0;
+  let lng: f32 = 0.0;
+  let level: i32 = 1;
+  for i in 1..code.length {
+    let ptr2: &u8 = (code.pointer transmute usize + i) transmute &u8;
+    let n = ptr2~ - 49; // 49='1'
+    if n == 255 {
+      break;
+    }
+    unit = unit / 3.0;
+    lng = lng + ((n % 3) truncate f32) * unit;
+    lat = lat + ((n / 3) truncate f32) * unit;
+    level = level + 1;
+  }
+  lat = lat + unit / 2.0;
+  lng = lng + unit / 2.0;
+  lat = lat - 90.0;
+  if flg {
+    lng = lng - 180.0;
+  }
+  let res: [f32; 4] = [lat, lng, level truncate f32, unit];
+  return res;
+}

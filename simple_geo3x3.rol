@@ -1,0 +1,12 @@
+import "geo3x3.rol";
+
+proc main() {
+  let code = encode(35.65858, 139.745433, 14);
+  println(code);
+
+  let res = decode("E9139659937288");
+  println(f32_to_string(res[0]));
+  println(f32_to_string(res[1]));
+  println(f32_to_string(res[2]));
+  println(f32_to_string(res[3]));
+}
