@@ -2113,7 +2113,8 @@ $ deno run -A https://code4fukui.github.io/WABT-es/wata.js geo3x3.wat
 
 ### in Nelua
 [Nelua](https://nelua.io/)  
-[geo3x3.nelua](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nelua)
+[geo3x3.nelua](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nelua),
+[simple_geo3x3.nelua](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.nelua)
 ```
 require "geo3x3"
 
