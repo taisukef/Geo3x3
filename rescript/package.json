@@ -1,0 +1,16 @@
+{
+  "name": "rescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rescript",
+    "run": "node lib/es6/src/Geo3x3.bs.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rescript": "^10.0.1"
+  }
+}
