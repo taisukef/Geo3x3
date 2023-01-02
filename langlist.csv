@@ -95,3 +95,4 @@ Laze,laze,blacket,type,none,compile,https://github.com/taisukef/Geo3x3/blob/mast
 WebAssembly,wat,blacket,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.wat
 Nelua,nelua,end,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nelua
 Roland,rol,blacket,type,none,complie,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rol
+Rescript,res,blacket,none,none,AltJS,https://github.com/taisukef/Geo3x3/blob/master/rescript/src/Geo3x3.res
