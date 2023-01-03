@@ -1,0 +1,100 @@
+module geo3x3
+import text/string
+import mutable/array
+
+def intdiv(n: Double, m: Double): Int = {
+  if (n > m) {
+    1 + intdiv(n - m, m)
+  } else {
+    0
+  }
+}
+def int2str(n: Int) = {
+  if (n == 0) {
+    "0"
+  } else if (n == 1) {
+    "1"
+  } else if (n == 2) {
+    "2"
+  } else if (n == 3) {
+    "3"
+  } else if (n == 4) {
+    "4"
+  } else if (n == 5) {
+    "5"
+  } else if (n == 6) {
+    "6"
+  } else if (n == 7) {
+    "7"
+  } else if (n == 8) {
+    "8"
+  } else {
+    "9"
+  }
+}
+def encode_fn(code: String, level: Int, i: Int, lat: Double, lng: Double, unit: Double): String = {
+  if (i >= level) {
+    code
+  } else {
+    var x: Int = intdiv(lng, unit)
+    var y: Int = intdiv(lat, unit)
+    var c: String = int2str(1 + x + y * 3)
+    encode_fn(
+      infixConcat(code, c),
+      level,
+      i + 1,
+      lat - y.toDouble * unit,
+      lng - x.toDouble * unit,
+      unit / 3.0
+    )
+  }
+}
+
+def encode(lat: Double, lng: Double, level: Int): String = {
+  if (level < 1) {
+    ""
+  } else {
+    encode_fn(
+      if (lng >= 0.0) "E" else "W",
+      level,
+      1,
+      lat + 90.0,
+      if (lng >= 0.0) lng else lng + 180.0,
+      180.0 / 3.0
+    )
+  }
+}
+
+record Result(lat: Double, lng: Double, level: Int, unit: Double)
+
+def decode_fn(code: String, lat: Double, lng: Double, level: Int, unit: Double): Result = {
+  if (length(code) == 0) {
+    Result(lat + unit * 3.0 / 2.0 - 90.0, lng + unit * 3.0 / 2.0, level, unit * 3.0)
+  } else {
+    var n = unsafeToInt(unsafeGet(split(code, ""), 0)) - 1
+    decode_fn(
+      substring(code, 1),
+      lat + (n / 3).toDouble * unit,
+      lng + mod(n, 3).toDouble * unit,
+      level + 1,
+      unit / 3.0
+    )
+  }
+}
+def decode_fne(code: String): Result = {
+  decode_fn(code, 0.0, 0.0, 1, 180.0 / 3.0)
+}
+def decode_fnw(code: String): Result = {
+  var res = decode_fne(code)
+  Result(res.lat, res.lng - 180.0, res.level, res.unit)
+}
+def decode(code: String): Result = {
+  var c = unsafeGet(split(code, ""), 0)
+  if (c == "W") {
+    decode_fnw(substring(code, 1))
+  } else if (c == "E") {
+    decode_fne(substring(code, 1))
+  } else {
+    Result(0.0, 0.0, 1, 0.0)
+  }
+}

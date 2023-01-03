@@ -1,0 +1,6 @@
+import geo3x3
+
+def main() = {
+  println(encode(35.65858, 139.745433, 14))
+  println(decode("E9139659937288"))
+}
