@@ -2221,7 +2221,9 @@ $ ceylon run-js --run main default
 
 ### in Mochi
 [Mochi](https://github.com/code4fukui/Mochi/)  
-[geo3x3.mochi.js](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mochi.js)
+[geo3x3.mochi.js](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mochi.js),
+[simple_geo3x3_mochi_wasm.js](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3_mochi_wasm.js),
+[simple_geo3x3_mochi_js.js](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3_mochi_js.js)
 ```
 import { importWASM } from "https://code4fukui.github.io/Mochi/wasmutil.js";
 const { i_encode, i_decode, memory } = await importWASM("./geo3x3.wasm");
