@@ -39,9 +39,9 @@ E1384700 = level 6 (postfix 0 = dummy)
 
 ## Supported Languages
 
-99 languages supported  
+100 languages supported  
 
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [VBScript](#in-VBScript) / [Visual Basic](#in-Visual-Basic) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL) / [Tcl](#in-Tcl) / [V](#in-V) / [Pike](#in-Pike) / [Io](#in-Io) / [Wren](#in-Wren) / [GNU Smalltalk](#in-GNU-Smalltalk) / [JScript](#in-JScript) / [Pharo](#in-Pharo) / [Scratch](#in-Scratch) / [Standard ML](#in-Standard-ML) / [なでしこ](#in-なでしこ) / [Kuin](#in-Kuin) / [ClojureScript](#in-ClojureScript) / [HSP](#in-HSP) / [Reason](#in-Reason) / [THPL](#in-THPL) / [Janet](#in-Janet) / [Phel](#in-Phel) / [Raku](#in-Raku) / [文言](#in-文言) / [Vala](#in-Vala) / [SmileBASIC](#in-SmileBASIC) / [Small Basic](#in-Small-Basic) / [Flix](#in-Flix) / [PowerShell](#in-PowerShell) / [Koka](#in-Koka) / [Zig](#in-Zig) / [BanchaScript](#in-BanchaScript) / [AssemblyScript](#in-AssemblyScript) / [Clawn](#in-Clawn) / [FORTRAN 77](#in-FORTRAN-77) / [orelang](#in-orelang) / [Laze](#in-Laze) / [WebAssembly](#in-WebAssembly) / [Nelua](#in-Nelua) / [Roland](#in-Roland) / [ReScript](#in-ReScript) / [Effekt](#in-Effekt) / [Ceylon](#in-Ceylon))
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [VBScript](#in-VBScript) / [Visual Basic](#in-Visual-Basic) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL) / [Tcl](#in-Tcl) / [V](#in-V) / [Pike](#in-Pike) / [Io](#in-Io) / [Wren](#in-Wren) / [GNU Smalltalk](#in-GNU-Smalltalk) / [JScript](#in-JScript) / [Pharo](#in-Pharo) / [Scratch](#in-Scratch) / [Standard ML](#in-Standard-ML) / [なでしこ](#in-なでしこ) / [Kuin](#in-Kuin) / [ClojureScript](#in-ClojureScript) / [HSP](#in-HSP) / [Reason](#in-Reason) / [THPL](#in-THPL) / [Janet](#in-Janet) / [Phel](#in-Phel) / [Raku](#in-Raku) / [文言](#in-文言) / [Vala](#in-Vala) / [SmileBASIC](#in-SmileBASIC) / [Small Basic](#in-Small-Basic) / [Flix](#in-Flix) / [PowerShell](#in-PowerShell) / [Koka](#in-Koka) / [Zig](#in-Zig) / [BanchaScript](#in-BanchaScript) / [AssemblyScript](#in-AssemblyScript) / [Clawn](#in-Clawn) / [FORTRAN 77](#in-FORTRAN-77) / [orelang](#in-orelang) / [Laze](#in-Laze) / [WebAssembly](#in-WebAssembly) / [Nelua](#in-Nelua) / [Roland](#in-Roland) / [ReScript](#in-ReScript) / [Effekt](#in-Effekt) / [Ceylon](#in-Ceylon) / [Mochi](#in-Mochi))
 
 supported languages list / サポート言語一覧  
 https://taisukef.github.io/Geo3x3/langlist.html  
@@ -2217,6 +2217,37 @@ to run:
 ```bash
 $ ceylon compile-js --source ./ Geo3x3.ceylon
 $ ceylon run-js --run main default
+```
+
+### in Mochi
+[Mochi](https://github.com/code4fukui/Mochi/)  
+[geo3x3.mochi.js](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mochi.js)
+```
+import { importWASM } from "https://code4fukui.github.io/Mochi/wasmutil.js";
+const { i_encode, i_decode, memory } = await importWASM("./geo3x3.wasm");
+
+const pccode = 0;
+const res = i_encode(35.65858, 139.745433, 14, pccode);
+const pccodemem = new Uint8Array(memory.buffer, 0, 14);
+const code = new TextDecoder().decode(pccodemem);
+console.log(res, code);
+
+const pfres = 16;
+const res2 = i_decode(pccode, pfres);
+const geo2 = new Float32Array(memory.buffer, pfres, 4);
+console.log(res2, geo2);
+```
+setup:  
+install [Deno](https://deno.land/)  
+to run:
+```bash
+$ deno run -A https://code4fukui.github.io/Mochi/mochic.js geo3x3.mochi.js --wasm
+$ deno run -A simple_geo3x3_mochi_wasm.js
+```
+
+also run as JavaScript!
+```bash
+deno run -A simple_geo3x3_mochi_js.js
 ```
 
 ## History
