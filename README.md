@@ -2108,7 +2108,7 @@ to run: [Laze エディタ](https://laze.ddns.net/ja/editor)
 ```
 to run:
 ```bash
-$ deno run -A https://code4fukui.github.io/WABT-es/wata.js geo3x3.wat
+$ deno run -A https://code4fukui.github.io/WABT-es/wata.js geo3x3.wat --run
 ```
 
 ### in Nelua
