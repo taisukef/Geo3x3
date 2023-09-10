@@ -1,0 +1,9 @@
+// nekoc geo3x3.neko
+// nekoc simple_geo3x3.neko
+// neko simple_geo3x3.n
+
+var geo3x3 = $loader.loadmodule("geo3x3",$loader);
+
+$print(geo3x3.encode(35.65858, 139.745433, 14) + "\n");
+var res = geo3x3.decode("E9139659937288");
+$print(res.lat + " " + res.lng + " " + res.level + " " + res.unit + "\n");
