@@ -2277,9 +2277,9 @@ $ neko simple_geo3x3.n
 
 ## How to contribute
 1. add lang
-2. add lang section in README.md (ex. [Neko](#in-Neko))
-3. increment the number of languages at [#Supported-Languages](Supported Languages) section in README.md
-4. add a link to the lang at [#Supported-Languages](Supported Languages) section in README.md
+2. add lang section in [README.md](README.md) (ex. [Neko](#in-Neko))
+3. increment the number of languages at [Supported Languages](#supported-languages) section in [README.md](README.md)
+4. add a link to the lang at [Supported Languages](#supported-languages) section in [README.md](README.md)
 5. add a line in [langlist.csv](langlist.csv)
     - name: lang name
     - ext: src extension
