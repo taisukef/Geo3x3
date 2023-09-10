@@ -1,0 +1,73 @@
+
+function encode (lat:float, lng:float, level:int) {
+    if level < 1 then ""
+    else {
+        var ic, ilng = if lng >= 0.0 then ('E',lng)
+                                     else ('W',lng + 180.0);
+        var ilat  = lat + 90.0;
+        var iunit = 180.0;
+        var res = Buffer.create();
+        Buffer.add_char res ic;
+
+        var rlng = &ilng;
+        var rlat = &ilat;
+        var runit = &iunit;
+        function rec loop (i) {
+            if i < level then {
+                runit := *runit / 3.0;
+                var x = Math.floor (*rlng / *runit);
+                var y = Math.floor (*rlat / *runit);
+                var c = chr ((ord '0') + x + y * 3 + 1);
+                Buffer.add_char res c;
+                rlng := *rlng - (x * (*runit));
+                rlat := *rlat - (y * (*runit));
+                loop (i+1);
+            }
+        }
+        loop 1;
+        Buffer.string res;
+    }
+}
+
+
+function decode (code:string) {
+    if String.length code == 0 then (0.0, 0.0, 0, 0.0)
+    else {
+        var begin, isWest =
+            match String.get code 0 {
+                | c when c == '-' || c == 'W' -> (1,true)
+                | c when c == '+' || c == 'E' -> (1,false)
+                | c -> (0,false)
+            }
+
+        var unit = &180.0;
+        var lat = &0.0;
+        var lng = &0.0;
+        var level = &1;
+        var clen = String.length code;
+
+        function rec loop (i) {
+            if i < clen then {
+                var n = (ord (String.get code i)) - (ord '0');
+                if 1 <= n && n <= 9 then {
+                    var n = n -1;
+                    unit := *unit / 3.0;
+                    lng := *lng + n % 3 * (*unit);
+                    lat := *lat + n / 3 * (*unit);
+                    level := *level +1;
+                    loop (i+1);
+                }
+            }            
+        }
+        loop begin;
+
+        lat := *lat + *unit / 2.0;
+        lng := *lng + *unit / 2.0;
+        lat := *lat - 90.0;
+        if isWest then {
+            lng := *lng - 180.0;
+        }
+        (*lat, *lng, *level, *unit);
+    }
+}
+
