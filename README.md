@@ -2265,7 +2265,7 @@ $print(res.lat + " " + res.lng + " " + res.level + " " + res.unit + "\n");
 ```
 setup:
 ```bash
-$ brew install neko --HEAD
+$ brew install neko
 ```
 to run:
 ```bash
