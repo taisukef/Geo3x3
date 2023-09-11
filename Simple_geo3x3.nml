@@ -1,6 +1,6 @@
 // nekoml Geo3x3.nml
-// nekoml Simple_geo3x3.nml
-// neko Simple_geo3x3.n
+// nekoml simple_geo3x3.nml
+// neko simple_geo3x3.n
 
 print (Geo3x3.encode(35.65858, 139.745433, 14) + "\n");
 var lat, lng, level, unit = Geo3x3.decode("E9139659937288");
