@@ -2287,13 +2287,13 @@ print (lat + " " + lng + " " + level + " " + unit + "\n");
 ```
 setup:
 ```bash
-$ brew install neko --HEAD
+$ brew install neko
 ```
 to run:
 ```bash
 $ nekoml Geo3x3.nml
-$ nekoml Simple_geo3x3.nml
-$ neko Simple_geo3x3.n
+$ nekoml simple_geo3x3.nml
+$ neko simple_geo3x3.n
 ```
 
 ## How to contribute
