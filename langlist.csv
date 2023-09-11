@@ -99,3 +99,5 @@ Rescript,res,blacket,none,none,AltJS,https://github.com/taisukef/Geo3x3/blob/mas
 Effekt,effekt,blacket,type,all,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.effekt
 Ceylon,ceylon,blacket,type,value,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ceylon
 Mochi,mochi.js,blacket,type,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mochi.js
+Neko,neko,blacket,var,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.neko
+NekoML,nml,blacket,var,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.nml

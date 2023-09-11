@@ -23,15 +23,16 @@ E1384700 = level 6 (postfix 0 = dummy)
 
 | level | location | Geo3x3 | lat,lng |
 |-------|----------|--------|---------|
-| 3     | 日本 | E91 | 40,130 | 
-| 5     | 中部 | E9138 | 35.555555,136.666666 |
-| 6     | 福井県 | E91384 | 35.555555,135.925925 |
-| 8     | 福井県鯖江市 | E9138732 | 35.967078,136.172839 |
-| 10    | 鯖江市西山公園 | E913873229 | 35.948788,136.181984 |
+| 3     | 日本 (Japan) | E91 | 40,130 | 
+| 5     | 中部 (Chubu region) | E9138 | 35.555555,136.666666 |
+| 6     | 福井県 (Fukui pref) | E91384 | 35.555555,135.925925 |
+| 8     | 福井県鯖江市 (Sabae city) | E9138732 | 35.967078,136.172839 |
+| 10    | 鯖江市西山公園 (Nishiyama park) | E913873229 | 35.948788,136.181984 |
 | 13    | 鯖江市西山公園のトイレ | E9138732298349 | 35.950933,136.182774 |
 | 16    | 鯖江市西山公園のトイレの入り口 | E913873229834833 | 35.950883,136.182712 |
 
-※範囲が狭くなるほどコードが長くなり、範囲が含まれるかどうか前方一致で分かります
+the narrower the range, the longer the code, and the forward matching will tell you if the range is included or not.  
+範囲が狭くなるほどコードが長くなり、範囲が含まれるかどうか前方一致で分かります  
 
 ## Applications
 [Geo3x3 map](https://code4sabae.github.io/geo3x3-map/) [(src)](https://github.com/code4sabae/geo3x3-map/)  
@@ -39,13 +40,14 @@ E1384700 = level 6 (postfix 0 = dummy)
 
 ## Supported Languages
 
-101 languages supported  
+102 languages supported  
 
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [VBScript](#in-VBScript) / [Visual Basic](#in-Visual-Basic) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL) / [Tcl](#in-Tcl) / [V](#in-V) / [Pike](#in-Pike) / [Io](#in-Io) / [Wren](#in-Wren) / [GNU Smalltalk](#in-GNU-Smalltalk) / [JScript](#in-JScript) / [Pharo](#in-Pharo) / [Scratch](#in-Scratch) / [Standard ML](#in-Standard-ML) / [なでしこ](#in-なでしこ) / [Kuin](#in-Kuin) / [ClojureScript](#in-ClojureScript) / [HSP](#in-HSP) / [Reason](#in-Reason) / [THPL](#in-THPL) / [Janet](#in-Janet) / [Phel](#in-Phel) / [Raku](#in-Raku) / [文言](#in-文言) / [Vala](#in-Vala) / [SmileBASIC](#in-SmileBASIC) / [Small Basic](#in-Small-Basic) / [Flix](#in-Flix) / [PowerShell](#in-PowerShell) / [Koka](#in-Koka) / [Zig](#in-Zig) / [BanchaScript](#in-BanchaScript) / [AssemblyScript](#in-AssemblyScript) / [Clawn](#in-Clawn) / [FORTRAN 77](#in-FORTRAN-77) / [orelang](#in-orelang) / [Laze](#in-Laze) / [WebAssembly](#in-WebAssembly) / [Nelua](#in-Nelua) / [Roland](#in-Roland) / [ReScript](#in-ReScript) / [Effekt](#in-Effekt) / [Ceylon](#in-Ceylon) / [Mochi](#in-Mochi) / [NekoML](#in-NekoML))
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [VBScript](#in-VBScript) / [Visual Basic](#in-Visual-Basic) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL) / [Tcl](#in-Tcl) / [V](#in-V) / [Pike](#in-Pike) / [Io](#in-Io) / [Wren](#in-Wren) / [GNU Smalltalk](#in-GNU-Smalltalk) / [JScript](#in-JScript) / [Pharo](#in-Pharo) / [Scratch](#in-Scratch) / [Standard ML](#in-Standard-ML) / [なでしこ](#in-なでしこ) / [Kuin](#in-Kuin) / [ClojureScript](#in-ClojureScript) / [HSP](#in-HSP) / [Reason](#in-Reason) / [THPL](#in-THPL) / [Janet](#in-Janet) / [Phel](#in-Phel) / [Raku](#in-Raku) / [文言](#in-文言) / [Vala](#in-Vala) / [SmileBASIC](#in-SmileBASIC) / [Small Basic](#in-Small-Basic) / [Flix](#in-Flix) / [PowerShell](#in-PowerShell) / [Koka](#in-Koka) / [Zig](#in-Zig) / [BanchaScript](#in-BanchaScript) / [AssemblyScript](#in-AssemblyScript) / [Clawn](#in-Clawn) / [FORTRAN 77](#in-FORTRAN-77) / [orelang](#in-orelang) / [Laze](#in-Laze) / [WebAssembly](#in-WebAssembly) / [Nelua](#in-Nelua) / [Roland](#in-Roland) / [ReScript](#in-ReScript) / [Effekt](#in-Effekt) / [Ceylon](#in-Ceylon) / [Mochi](#in-Mochi) / [Neko](#in-Neko) / [NekoML](#in-NekoML))
 
 supported languages list / サポート言語一覧  
+https://github.com/taisukef/Geo3x3/blob/master/langlist.csv  
 https://taisukef.github.io/Geo3x3/langlist.html  
-
+https://taisukef.github.io/Geo3x3/langlist.csv  
 
 ## Licence
 These codes are licensed under CC0 (Public Domain)  
@@ -2252,6 +2254,28 @@ also run as JavaScript!
 deno run -A simple_geo3x3_mochi_js.js
 ```
 
+### in Neko
+[Neko](https://nekovm.org)  
+[geo3x3.neko](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.neko),
+[simple_geo3x3.neko](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.neko)
+```
+var geo3x3 = $loader.loadmodule("geo3x3",$loader);
+
+$print(geo3x3.encode(35.65858, 139.745433, 14) + "\n");
+var res = geo3x3.decode("E9139659937288");
+$print(res.lat + " " + res.lng + " " + res.level + " " + res.unit + "\n");
+```
+setup:
+```bash
+$ brew install neko
+```
+to run:
+```bash
+$ nekoc geo3x3.neko
+$ nekoc simple_geo3x3.neko
+$ neko simple_geo3x3.n
+```
+
 ### in NekoML
 [NekoML](https://nekovm.org/)  
 [Geo3x3.nml](https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.nml),
@@ -2272,6 +2296,19 @@ $ nekoml Simple_geo3x3.nml
 $ neko Simple_geo3x3.n
 ```
 
+## How to contribute
+1. add a lang
+2. add a lang section in [README.md](README.md) (ex. [Neko](#in-Neko))
+3. increment the number of languages at [Supported Languages](#supported-languages) section in [README.md](README.md)
+4. add a link to the lang at [Supported Languages](#supported-languages) section in [README.md](README.md)
+5. add a line in [langlist.csv](langlist.csv)
+    - name: lang name
+    - ext: src extension
+    - struct: a structure of language (blacket, indent, end ...)
+    - variable: how to describe variables
+    - const: how to describe constants
+    - type: language type (AltJS, compile ...)
+    - sample: link to the src of geo3x3
 
 ## History
 ver 1.05 2021-03-01 change coding (origin lat:90 lng:0 → lat:-90 lng:0)  
