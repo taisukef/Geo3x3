@@ -10,13 +10,17 @@
 <meta property="og:image"  content="https://taisukef.github.io/Geo3x3/langlist.png">
 <meta name="twitter:image" content="https://taisukef.github.io/Geo3x3/langlist.png">
 </head><body>
-<h1 class="my-3 mx-3">Geo3x3 Programming Language List</h1>
+<h1 class="my-3 mx-3">Geo3x3 Programming Language List (n:<span id=span_n></span>)</h1>
+
+<div id="fig"></div>
 
 <div id="main" class="table-responsive">
 </div>
 
 <script type="module">
 import { CSV } from "https://code4sabae.github.io/js/CSV.js";
+import { ChartPie } from "https://code4fukui.github.io/chart-pie-plotly/chart-pie.js";
+import { ArrayUtil } from "https://js.sabae.cc/ArrayUtil.js";
 
 const filtered = (csv) => {
   const year = document.location.hash.substring(1);
@@ -29,14 +33,17 @@ const filtered = (csv) => {
   return res;
 }
 
-(async () => {
-  const url = "./langlist.csv";
-  const csv = await CSV.fetch(url);
-  const csv2 = filtered(csv);
-  const tbl = CSV.makeTable(csv2);
-  tbl.className = "table table-hover";
-  main.appendChild(tbl);
-})();
+const url = "./langlist.csv";
+const csv = await CSV.fetch(url);
+const csv2 = filtered(csv);
+const tbl = CSV.makeTable(csv2);
+tbl.className = "table table-hover";
+main.appendChild(tbl);
+
+const data = CSV.toJSON(csv2);
+fig.appendChild(new ChartPie(ArrayUtil.countBy(data.map(d => d.struct))));
+
+span_n.textContent = data.length;
 </script>
 
 <footer class="text-muted">
