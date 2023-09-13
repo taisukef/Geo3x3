@@ -71,7 +71,7 @@ Scratch,sb3,block,none,none,script,https://github.com/taisukef/Geo3x3/blob/maste
 Standard ML,sml,end,val,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.sml
 なでしこ3,nako3,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.nako3
 Kuin,kn,end,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.kn
-ClojureScript,cljs,blackets,none,none,AltJS,https://github.com/taisukef/Geo3x3/blob/master/cljs/geo3x3.cljs
+ClojureScript,cljs,blacket,none,none,AltJS,https://github.com/taisukef/Geo3x3/blob/master/cljs/geo3x3.cljs
 HSP,hsp,mixed,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.hsp
 Reason,re,blacket,let,none,AltJS,https://github.com/taisukef/Geo3x3/blob/master/reason/geo3x3.re
 THPL,html,blacket,var,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.thpl.html
@@ -84,7 +84,7 @@ SmileBASIC,prg,none,dim,none,$%,https://github.com/taisukef/Geo3x3/blob/master/g
 Small Basic,smallbasic,none,none,none,$,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.smallbasic
 Flix,flix,indent,none,let,JVM,https://github.com/taisukef/Geo3x3/blob/master/flix/src/Geo3x3.flix
 PowerShell,"ps1,psm1",blacket,[type],none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.psm1
-Koka,kk,indent / blacket,var,val,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.kk
+Koka,kk,indent/blacket,var,val,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.kk
 Zig,zig,blacket,type,const,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.zig
 BanchaScript,bancha,blacket,var,none,AltJS,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.bancha
 AssemblyScript,ts,blacket,let,const,complie,https://github.com/taisukef/Geo3x3/blob/master/asc/assembly/index.ts
