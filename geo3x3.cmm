@@ -1,0 +1,102 @@
+// https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/rts/cmm
+// https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/compiler/cmm-type
+// https://www.cs.tufts.edu/~nr/c--/extern/man2.pdf
+
+section "data" { ac_0:     bits8 48; } // '0'
+section "data" { ac_Plus:  bits8 43; } // '+'
+section "data" { ac_Minus: bits8 45; } // '-'
+section "data" { ac_E:     bits8 69; } // 'E'
+section "data" { ac_W:     bits8 87; } // 'W'
+
+encode (float64 lat, float64 lng, bits8 level, bits32 buff, bits64 blen) {
+
+  if (level < 1::bits8) { // level is too small
+    bits8[buff] = 0::bits8; // terminate string
+    return (1);
+  }
+
+  if (%zx64(level) >= blen) { // buffer size is not enough
+    bits8[buff] = 0::bits8; // terminate string
+    return (2);
+  }
+
+  if lng >= 0.0 {
+    bits8[buff] = bits8[ac_E];
+  } else {
+    bits8[buff] = bits8[ac_W];
+    lng = %fadd (lng,180.0);
+  }
+  lat = %fadd(lat,90.0);
+
+  float64 unit; unit = 180.0;
+  bits32 i; i = 1::bits32;
+loop:
+  if i < %zx32(level) {
+    unit = %fquot(unit,3.0);
+    float64 x0; (x0) = foreign "C" floor(%fquot(lng,unit));
+    float64 y0; (y0) = foreign "C" floor(%fquot(lat,unit));
+    bits8 x; x = %lobits8(%f2i64(x0));
+    bits8 y; y = %lobits8(%f2i64(y0));
+    bits8 c; c = bits8[ac_0] + x + y * 3::bits8 + 1::bits8;
+    bits8[buff+i] = c;
+    lng = %fsub(lng,%fmul(%i2f64(%zx64(x)),unit));
+    lat = %fsub(lat,%fmul(%i2f64(%zx64(y)),unit));
+    i = i + 1::bits32;
+    goto loop;
+  }
+  bits8[buff+i] = 0; // terminate string
+
+  return (0);
+}
+
+decode (bits32 code) {
+  bits64 clen; (clen) = foreign "C" strlen (code);
+  if (clen == 0) {
+    return (0.0,0.0,0,0.0);
+  }
+
+  bits32 begin; begin = 0::bits32;
+  bits8 flg; flg = 0::bits8;
+  bits8 c; c = bits8[code];
+
+  if c == bits8[ac_Minus] || c == bits8[ac_W] {
+    flg = 1::bits8;
+    begin = 1::bits32;
+  } else {
+    if c == bits8[ac_Plus] || c == bits8[ac_E] {
+      begin = 1::bits32;
+    }
+  }
+
+  float64 unit; unit = 180.0;
+  float64 lat; lat = 0.0;
+  float64 lng; lng = 0.0;
+  bits8 level; level = 1::bits8;
+  bits32 i; i = begin;
+loop:
+  if i < %lobits32(clen) {
+    bits8 n; n = bits8[code+i] - bits8[ac_0];
+    if (n < 1::bits8 || 9::bits8 < n) {
+      return (0.0,0.0,0,0.0);
+    }
+    unit = %fquot(unit,3.0);
+    n = n - 1::bits8;
+    float64 lng0; lng0 = %i2f64(%zx64(n % 3::bits8));
+    float64 lat0; lat0 = %i2f64(%zx64(n / 3::bits8));
+    lng = %fadd(lng,%fmul(lng0,unit));
+    lat = %fadd(lat,%fmul(lat0,unit));
+    level = level + 1::bits8;
+    i = i + 1::bits32;
+    goto loop;
+  }
+
+  lat = %fadd(lat,%fquot(unit,2.0));
+  lng = %fadd(lng,%fquot(unit,2.0));
+  lat = %fsub(lat,90.0);
+  if flg == 1::bits8 {
+    lng = %fsub(lng,180.0);
+  }
+
+  return (lat,lng,level,unit);
+}
+
