@@ -7,10 +7,7 @@ define dso_local i32 @encode(double %lat, double %lng, i8 %level, i8* %buff, i64
   %level.64 = zext i8 %level to i64
   %cmp.levela = icmp ult i8 %level, 1 ;; when level too small
   %cmp.levelb = icmp uge i64 %level.64, %buff.len ;; when %buff.len not enough
-  %cmp.levela.i8 = zext i1 %cmp.levela to i8
-  %cmp.levelb.i8 = zext i1 %cmp.levelb to i8
-  %cmp.level.i8 = add i8 %cmp.levela.i8, %cmp.levelb.i8 ;; or operation
-  %cmp.level = icmp ne i8 %cmp.level.i8, 0
+  %cmp.level  = or i1 %cmp.levela, %cmp.levelb
   br i1 %cmp.level, label %level.ng, label %level.ok
 
 
@@ -130,21 +127,15 @@ code.ok:
 
 
 check.west:
-  %eq.minus    = icmp eq i8 %c.begin, 45 ;;'-'
-  %eq.w        = icmp eq i8 %c.begin, 87 ;;'W'
-  %eq.minus.i8 = zext i1 %eq.minus to i8
-  %eq.w.i8     = zext i1 %eq.w to i8
-  %cmp.west.i8 = add i8 %eq.minus.i8, %eq.w.i8 ;; or operation
-  %cmp.west    = icmp ne i8 %cmp.west.i8, 0
+  %eq.minus = icmp eq i8 %c.begin, 45 ;;'-'
+  %eq.w     = icmp eq i8 %c.begin, 87 ;;'W'
+  %cmp.west = or i1 %eq.minus, %eq.w
   br i1 %cmp.west, label %ew.west, label %check.east
 
 check.east:
-  %eq.plus     = icmp eq i8 %c.begin, 43 ;;'+'
-  %eq.e        = icmp eq i8 %c.begin, 69 ;;'E'
-  %eq.plus.i8  = zext i1 %eq.plus to i8
-  %eq.e.i8     = zext i1 %eq.e to i8
-  %cmp.east.i8 = add i8 %eq.plus.i8, %eq.e.i8 ;; or operation
-  %cmp.east    = icmp ne i8 %cmp.east.i8, 0
+  %eq.plus  = icmp eq i8 %c.begin, 43 ;;'+'
+  %eq.e     = icmp eq i8 %c.begin, 69 ;;'E'
+  %cmp.east = or i1 %eq.plus, %eq.e
   br i1 %cmp.east, label %ew.east, label %loop.init
 
 
@@ -176,12 +167,9 @@ loop.main:
   %pc = getelementptr i8, i8* %code, i64 %i
   %c = load i8, i8* %pc
   %n = sub i8 %c, 48 ;; '0'
-  %n.lt.one     = icmp ult i8 %n, 1
-  %n.gt.nine    = icmp ugt i8 %n, 9
-  %n.lt.one.i8  = zext i1 %n.lt.one to i8
-  %n.gt.nine.i8 = zext i1 %n.gt.nine to i8
-  %cmp.n.i8     = add i8 %n.lt.one.i8, %n.gt.nine.i8 ;; or operation
-  %cmp.n        = icmp ne i8 %cmp.n.i8, 0
+  %n.lt.one  = icmp ult i8 %n, 1
+  %n.gt.nine = icmp ugt i8 %n, 9
+  %cmp.n     = or i1 %n.lt.one, %n.gt.nine
   br i1 %cmp.n, label %loop.break, label %loop.continue
 
 
