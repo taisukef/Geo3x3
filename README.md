@@ -2307,16 +2307,12 @@ $ neko simple_geo3x3.n
   call i32 (i8*, ...) @printf(i8* @.format.encode, i8* %buff)
 
   ;; call decode
-  %pcode = alloca i8*
-  store i8* @.str.code, i8** %pcode
-  %code = load i8*, i8** %pcode
-  %code.len = call i64 @strlen(i8* %code)
   %plat = alloca double
   %plng = alloca double
   %plevel = alloca i8
   %punit = alloca double
-  call i32 @decode(i8* %code, i64 %code.len,
-                   double* %plat, double* %plng, i32* %plevel, double* %punit)
+  call i32 @decode(i8* @.str.code,
+                   double* %plat, double* %plng, i8* %plevel, double* %punit)
   %lat = load double, double* %plat
   %lng = load double, double* %plng
   %level = load i8, i8* %plevel

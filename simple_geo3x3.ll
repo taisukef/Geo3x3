@@ -2,11 +2,10 @@
 ;; lli --extra-object=geo3x3.o simple_geo3x3.ll
 
 declare dso_local i32 @printf(i8*, ...)
-declare dso_local i64 @strlen(i8*)
 
 declare dso_local i32 @encode(double %lat, double %lng, i8 %level,
                               i8* %buff, i64 %buff.len)
-declare dso_local i32 @decode(i8* %code, i64 %code.len,
+declare dso_local i32 @decode(i8* %code,
                               double* %plat, double* %plng, i8* %plevel, double* %punit)
 
 @.format.encode = private unnamed_addr constant [4 x i8] c"%s\0A\00"
@@ -21,12 +20,11 @@ define dso_local i32 @main(i32 %argc, i8** %argv) {
   call i32 (i8*, ...) @printf(i8* @.format.encode, i8* %buff)
 
   ;; call decode
-  %code.len = call i64 @strlen(i8* @.str.code)
   %plat = alloca double
   %plng = alloca double
   %plevel = alloca i8
   %punit = alloca double
-  call i32 @decode(i8* @.str.code, i64 %code.len,
+  call i32 @decode(i8* @.str.code,
                    double* %plat, double* %plng, i8* %plevel, double* %punit)
   %lat = load double, double* %plat
   %lng = load double, double* %plng

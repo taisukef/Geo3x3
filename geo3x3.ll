@@ -1,4 +1,4 @@
-
+declare dso_local i64 @strlen(i8*)
 
 define dso_local i32 @encode(double %lat, double %lng, i8 %level, i8* %buff, i64 %buff.len) {
   %pret = alloca i32
@@ -101,9 +101,10 @@ exit:
 }
 
 
-define dso_local i32 @decode(i8* %code, i64 %code.len,
+define dso_local i32 @decode(i8* %code,
                              double* %plat, double* %plng, i8* %plevel, double* %punit) {
   %pret = alloca i32
+  %code.len = call i64 @strlen(i8* %code)
   %cmp.code = icmp eq i64 %code.len, 0
   br i1 %cmp.code, label %code.ng, label %code.ok
 
