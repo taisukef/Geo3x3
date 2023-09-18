@@ -8,7 +8,7 @@ section "data" { ac_Minus: bits8 45; } // '-'
 section "data" { ac_E:     bits8 69; } // 'E'
 section "data" { ac_W:     bits8 87; } // 'W'
 
-encode (float64 lat, float64 lng, bits8 level, bits32 buff, bits64 blen) {
+encode (float64 lat, float64 lng, bits8 level, bits64 buff, bits64 blen) {
 
   if (level < 1::bits8) { // level is too small
     bits8[buff] = 0::bits8; // terminate string
@@ -29,9 +29,9 @@ encode (float64 lat, float64 lng, bits8 level, bits32 buff, bits64 blen) {
   lat = %fadd(lat,90.0);
 
   float64 unit; unit = 180.0;
-  bits32 i; i = 1::bits32;
+  bits64 i; i = 1;
 loop:
-  if i < %zx32(level) {
+  if i < %zx64(level) {
     unit = %fquot(unit,3.0);
     float64 x0; (x0) = foreign "C" floor(%fquot(lng,unit));
     float64 y0; (y0) = foreign "C" floor(%fquot(lat,unit));
@@ -41,7 +41,7 @@ loop:
     bits8[buff+i] = c;
     lng = %fsub(lng,%fmul(%i2f64(%zx64(x)),unit));
     lat = %fsub(lat,%fmul(%i2f64(%zx64(y)),unit));
-    i = i + 1::bits32;
+    i = i + 1;
     goto loop;
   }
   bits8[buff+i] = 0; // terminate string
@@ -49,22 +49,22 @@ loop:
   return (0);
 }
 
-decode (bits32 code) {
+decode (bits64 code) {
   bits64 clen; (clen) = foreign "C" strlen (code);
   if (clen == 0) {
     return (0.0,0.0,0,0.0);
   }
 
-  bits32 begin; begin = 0::bits32;
+  bits64 begin; begin = 0;
   bits8 flg; flg = 0::bits8;
   bits8 c; c = bits8[code];
 
   if c == bits8[ac_Minus] || c == bits8[ac_W] {
     flg = 1::bits8;
-    begin = 1::bits32;
+    begin = 1;
   } else {
     if c == bits8[ac_Plus] || c == bits8[ac_E] {
-      begin = 1::bits32;
+      begin = 1;
     }
   }
 
@@ -72,9 +72,9 @@ decode (bits32 code) {
   float64 lat; lat = 0.0;
   float64 lng; lng = 0.0;
   bits8 level; level = 1::bits8;
-  bits32 i; i = begin;
+  bits64 i; i = begin;
 loop:
-  if i < %lobits32(clen) {
+  if i < clen {
     bits8 n; n = bits8[code+i] - bits8[ac_0];
     if (n < 1::bits8 || 9::bits8 < n) {
       return (0.0,0.0,0,0.0);
@@ -86,7 +86,7 @@ loop:
     lng = %fadd(lng,%fmul(lng0,unit));
     lat = %fadd(lat,%fmul(lat0,unit));
     level = level + 1::bits8;
-    i = i + 1::bits32;
+    i = i + 1;
     goto loop;
   }
 
