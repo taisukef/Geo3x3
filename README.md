@@ -2296,8 +2296,8 @@ $ nekoml simple_geo3x3.nml
 $ neko simple_geo3x3.n
 ```
 
-### in LLVM IR (LLVM/Xcode 15.x or later)
-[LLVM IR](https://llvm.org/docs/LangRef.html)  
+### in LLVM IR
+[LLVM IR](https://llvm.org/docs/LangRef.html) (LLVM/Xcode 15.x or later)  
 [geo3x3.ll](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ll),
 [simple_geo3x3.ll](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.ll)
 ```
