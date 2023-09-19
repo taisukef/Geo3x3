@@ -89,7 +89,7 @@ loop.main:
 
 loop.term:
   %pc.end = getelementptr i8, i8* %buff, i8 %ni
-  store i32 0, i8* %pc.end
+  store i8 0, i8* %pc.end
   store i32 0, i32* %pret
   br label %exit
 
