@@ -29,9 +29,10 @@ define dso_local i32 @main(i32 %argc, i8** %argv) {
   %lat = load double, double* %plat
   %lng = load double, double* %plng
   %level = load i8, i8* %plevel
+  %level.32 = zext i8 %level to i32 ;solution for windows
   %unit = load double, double* %punit
   call i32 (i8*, ...) @printf(i8* @.format.decode,
-                              double %lat, double %lng, i8 %level, double %unit)
+                              double %lat, double %lng, i32 %level.32, double %unit)
 
   ret i32 0
 }
