@@ -1,5 +1,10 @@
-;; llc -filetype=obj geo3x3.ll
-;; lli --extra-object=geo3x3.o simple_geo3x3.ll
+;; build'n run using llc/lli
+;; $ llc -filetype=obj geo3x3.ll
+;; $ lli --extra-object=geo3x3.o simple_geo3x3.ll
+
+;; build'n run using clang
+;; $ clang geo3x3.ll simple_geo3x3.ll
+;; $ ./a.out
 
 declare dso_local i32 @printf(ptr, ...)
 
