@@ -2349,6 +2349,7 @@ $ brew install ghc
 to run:
 ```bash
 $ ghc -dcmm-lint geo3x3.cmm simple_geo3x3.cmm -no-hs-main simple_geo3x3.cmm.c
+$ ./a.out
 ```
 
 ## How to contribute
