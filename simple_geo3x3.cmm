@@ -1,0 +1,24 @@
+// ghc -dcmm-lint geo3x3.cmm simple_geo3x3.cmm -no-hs-main simple_geo3x3.cmm.c
+// ./a.out
+
+section "data" {
+  buff: bits8[32];
+}
+
+section "data" {
+  code: bits8[] "E9139659937288\0";
+}
+
+cmmmain () {
+  float64 flat; flat =  35.65858;
+  float64 flng; flng = 139.745433;
+//  float64 flat; flat = %fneg( 35.65858 ); // could be used instead of negative literal
+//  float64 flng; flng = %fneg(139.745433); // could be used instead of negative literal
+  call encode(flat, flng, 14, buff, 32);
+  foreign "C" printf ("%s\n",buff);
+
+  (float64 lat, float64 lng, bits8 level, float64 unit) = call decode (code);
+  foreign "C" printf ("%lf %lf %d %lf\n", lat, lng, level, unit);
+
+  foreign "C" exit(0);
+}
