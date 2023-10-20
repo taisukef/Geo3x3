@@ -322,14 +322,14 @@ $ mono ./simple_geo3x3.exe
 [simple_geo3x3.php](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.php)
 ```php
 <?php
-require('Geo3x3.php');
+
+require __DIR__ . '/Geo3x3.php';
 
 $code = Geo3x3::encode(35.65858, 139.745433, 14);
-echo $code . "\n";
+echo "{$code}\n";
 
-$pos = Geo3x3::decode('E9139659937288');
-echo $pos[0] . " " . $pos[1] . " " . $pos[2] . " " . $pos[3] . "\n";
-?>
+[$lat, $lng, $level, $unit] = Geo3x3::decode('E9139659937288');
+echo "{$lat} {$lng} {$level} {$unit}\n";
 ```
 
 to run:
