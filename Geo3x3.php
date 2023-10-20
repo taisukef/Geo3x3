@@ -1,14 +1,16 @@
 <?php
 
 class Geo3x3 {
-  public static function encode(float $lat, float $lng, int $level): string {
+
+  public static function encode(float $lat, float $lng, int $level): string
+  {
     if ($level < 1) {
-      return "";
+      return '';
     }
     if ($lng >= 0) {
-      $res = "E";
+      $res = 'E';
     } else {
-      $res = "W";
+      $res = 'W';
       $lng += 180;
     }
     $lat += 90;
@@ -23,14 +25,19 @@ class Geo3x3 {
     }
     return $res;
   }
-  public static function decode(string $code): array {
+
+  /**
+   * @phpstan-return array{float, float, positive-int, float}
+   */
+  public static function decode(string $code): array
+  {
     $c = $code[0];
     $begin = 0;
     $flg = false;
-    if ($c == "-" || $c == "W") {
+    if (in_array($c, ['-', 'W'], true)) {
       $flg = true;
       $begin++;
-    } else if ($c == "E" || $c == "+") {
+    } elseif (in_array($c, ['E', '+'], true)) {
       $begin++;
     }
     $unit = 180.0;
@@ -48,7 +55,7 @@ class Geo3x3 {
       $unit /= 3;
       $n--;
       $lng += $n % 3 * $unit;
-      $lat += (int)($n / 3) * $unit;
+      $lat += intdiv($n, 3) * $unit;
       $level++;
     }
     $lat += $unit / 2;
@@ -60,4 +67,3 @@ class Geo3x3 {
     return [$lat, $lng, $level, $unit];
   }
 }
-?>
