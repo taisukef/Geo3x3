@@ -1,16 +1,15 @@
-(setq load-path nil)
-(load "geo3x3")
+;;; Code:
 
-(message (geo3x3_encode 35.65858 139.745433 14))
+(require 'geo3x3 (expand-file-name "geo3x3" default-directory))
 
-(setq pos (geo3x3_decode "E9139659937288"))
-(message (number-to-string (nth 0 pos)))
-(message (number-to-string (nth 1 pos)))
-(message (number-to-string (nth 2 pos)))
-(message (number-to-string (nth 3 pos)))
+(message "encode: %s" (geo3x3-encode 35.65858 139.745433 14))
 
-(setq pos2 (geo3x3_decode "W9"))
-(message (number-to-string (nth 0 pos2)))
-(message (number-to-string (nth 1 pos2)))
-(message (number-to-string (nth 2 pos2)))
-(message (number-to-string (nth 3 pos2)))
+(pcase (geo3x3-decode "E9139659937288")
+  (`(,lat ,lng ,level ,unit)
+   (message "lat:%s lng:%s level:%d unit:%s" lat lng level unit)))
+
+(pcase (geo3x3-decode "W9")
+  (`(,lat ,lng ,level ,unit)
+   (message "lat:%s lng:%s level:%d unit:%s" lat lng level unit)))
+
+;;; simple_geo3x3.el ends here

@@ -1370,16 +1370,17 @@ $ octave simple_geo3x3.m
 [geo3x3.el](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.el),
 [simple_geo3x3.el](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.el)
 ```Lisp
-(setq load-path nil)
-(load "geo3x3")
+(require 'geo3x3 (expand-file-name "geo3x3" default-directory))
 
-(message (geo3x3_encode 35.65858 139.745433 14))
+(message "encode: %s" (geo3x3-encode 35.65858 139.745433 14))
 
-(setq pos (geo3x3_decode "E9139659937288"))
-(message (number-to-string (nth 0 pos)))
-(message (number-to-string (nth 1 pos)))
-(message (number-to-string (nth 2 pos)))
-(message (number-to-string (nth 3 pos)))
+(pcase (geo3x3-decode "E9139659937288")
+  (`(,lat ,lng ,level ,unit)
+   (message "lat:%f lng:%f level:%d unit:%f" lat lng level unit)))
+
+(pcase (geo3x3-decode "W9")
+  (`(,lat ,lng ,level ,unit)
+   (message "lat:%f lng:%f level:%d unit:%f" lat lng level unit)))
 ```
 setup:
 ```bash
