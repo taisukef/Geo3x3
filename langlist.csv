@@ -102,3 +102,4 @@ Mochi,mochi.js,blacket,type,none,compile,https://github.com/taisukef/Geo3x3/blob
 Neko,neko,blacket,var,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.neko
 NekoML,nml,blacket,var,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.nml
 LLVM IR,ll,blacket,none,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ll
+Mojo,mojo,indent,var,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mojo
