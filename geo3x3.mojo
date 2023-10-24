@@ -5,15 +5,13 @@ struct Geo3x3:
     fn encode(lat: Float64, lng: Float64, level: Int) -> String:
         if level < 1:
             return ""
-        let res = Pointer[UInt8].alloc(level)
+        var res = String()
         var plng = lng
         var plat = lat
         if lng >= 0:
-            #res += "E"
-            res.store(0, ord("E"))
+            res += "E"
         else:
-            #res += "W"
-            res.store(0, ord("W"))
+            res += "W"
             plng += 180
         plat += 90 # 180:the North Pole,  0:the South Pole
         var unit: Float64 = 180
@@ -21,16 +19,10 @@ struct Geo3x3:
             unit /= 3
             let x = (plng / unit).cast[DType.int64]().to_int()
             let y = (plat / unit).cast[DType.int64]().to_int()
-            #res += chr(ord("0") + x + y * 3 + 1)
-            res.store(i, ord("0") + x + y * 3 + 1)
+            res += chr(ord("0") + x + y * 3 + 1)
             plng -= x * unit
             plat -= y * unit
-        
-        var s = String()
-        for i in range(level):
-            let c = chr(res.load(i).to_int())
-            s += c[0]   
-        return s
+        return res
 
     @staticmethod
     fn decode(code: String) -> (Float64, Float64, Int, Float64):
