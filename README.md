@@ -2333,7 +2333,7 @@ $ ./a.out
 ```
 
 ### in Mojo
-[Mojo](https://www.modular.com/)
+[Mojo](https://www.modular.com/)  
 [geo3x3.mojo](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mojo),
 [simple_geo3x3.mojo](https://github.com/taisukef/Geo3x3/blob/master/simple_geo3x3.mojo)
 ```
