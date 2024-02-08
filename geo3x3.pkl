@@ -1,0 +1,51 @@
+module geo3x3
+
+function encode_fn(code, level, i, lat, lng, unit) =
+  if (i >= level)
+    code
+  else
+    encode_fn(
+      code + "\(lng ~/ unit + lat ~/ unit * 3 + 1)",
+      level,
+      i + 1,
+      lat - unit * (lat ~/ unit),
+      lng - unit * (lng ~/ unit),
+      unit / 3.0
+    )
+
+function encode(lat, lng, level) =
+  encode_fn(
+    if (lng < 0.0) "W" else "E",
+    level,
+    1,
+    lat + 90.0,
+    if (lng < 0.0) lng + 180.0 else lng,
+    180.0 / 3.0
+  )
+
+function decode_fn(code, lat, lng, level, unit, wflg) =
+  if (code.length == level)
+    List(
+      -90.0 + (lat + unit * 3.0 / 2.0),
+      if (wflg)
+        (lng + unit * 3.0 / 2.0) - 180.0
+      else
+        lng + unit * 3.0 / 2.0,
+      level,
+      unit * 3.0
+    )
+  else
+      decode_fn(
+      code,
+      lat + (code[level].toInt() - 1) ~/ 3 * unit,
+      lng + (code[level].toInt() - 1) % 3 * unit,
+      level + 1,
+      unit / 3.0,
+      wflg
+    )
+
+function decode(code) =
+  if (code[0] == "W")
+    decode_fn(code, 0.0, 0.0, 1, 180.0 / 3.0, true)
+  else
+    decode_fn(code, 0.0, 0.0, 1, 180.0 / 3.0, false)
