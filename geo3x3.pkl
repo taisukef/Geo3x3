@@ -35,7 +35,7 @@ function decode_fn(code, lat, lng, level, unit, wflg) =
       unit * 3.0
     )
   else
-      decode_fn(
+    decode_fn(
       code,
       lat + (code[level].toInt() - 1) ~/ 3 * unit,
       lng + (code[level].toInt() - 1) % 3 * unit,
