@@ -1,3 +1,4 @@
+//import "https://taisukef.github.io/Geo3x3/geo3x3.pkl"
 import "geo3x3.pkl"
 
 enc = geo3x3.encode(35.65858, 139.745433, 14)
