@@ -104,3 +104,4 @@ NekoML,nml,blacket,var,none,compile,https://github.com/taisukef/Geo3x3/blob/mast
 LLVM IR,ll,blacket,none,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.ll
 Mojo,mojo,indent,var,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mojo
 Pkl,pkl,none,none,let,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pkl
+Jsonnet,"jsonnet,libsonnet",none,none,local,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.libsonnet
