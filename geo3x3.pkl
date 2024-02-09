@@ -25,12 +25,10 @@ function encode(lat, lng, level) =
 
 function decode_fn(code, _lat, _lng, _level, _unit, wflg) =
   if (code.length == _level)
+    let (_lng2 = _lng + _unit * 3.0 / 2.0)
     new {
       lat = -90.0 + (_lat + _unit * 3.0 / 2.0)
-      lng = if (wflg)
-          (_lng + _unit * 3.0 / 2.0) - 180.0
-        else
-          _lng + _unit * 3.0 / 2.0
+      lng = if (wflg) _lng2 - 180.0 else _lng2
       level = _level
       unit = _unit * 3.0
     }
@@ -46,7 +44,4 @@ function decode_fn(code, _lat, _lng, _level, _unit, wflg) =
     )
 
 function decode(code) =
-  if (code[0] == "W")
-    decode_fn(code, 0.0, 0.0, 1, 180.0 / 3.0, true)
-  else
-    decode_fn(code, 0.0, 0.0, 1, 180.0 / 3.0, false)
+  decode_fn(code, 0.0, 0.0, 1, 180.0 / 3.0, code[0] == "W")
