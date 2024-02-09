@@ -35,10 +35,11 @@ function decode_fn(code, _lat, _lng, _level, _unit, wflg) =
       unit = _unit * 3.0
     }
   else
+    let (n = code[_level].toInt() - 1)
     decode_fn(
       code,
-      _lat + (code[_level].toInt() - 1) ~/ 3 * _unit,
-      _lng + (code[_level].toInt() - 1) % 3 * _unit,
+      _lat + n ~/ 3 * _unit,
+      _lng + n % 3 * _unit,
       _level + 1,
       _unit / 3.0,
       wflg
