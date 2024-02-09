@@ -2416,6 +2416,7 @@ $ jsonnet simple_geo3x3.jsonnet
     - sample: link to the src of geo3x3
 
 ## History
+ver 1.05 2023-01-03 supported 100 languages!  
 ver 1.05 2021-03-01 change coding (origin lat:90 lng:0 → lat:-90 lng:0)  
 ver 1.04 2021-02-22 fixed WGS84  
 ver 1.03 2021-02-20 support int encoded, license CC BY -> CC0 (Public Domain)  
@@ -2429,3 +2430,4 @@ https://twitter.com/taisukef
 https://fukuno.jig.jp/139  
 https://fukuno.jig.jp/205  
 https://fukuno.jig.jp/3131  
+https://fukuno.jig.jp/3814  
