@@ -25,12 +25,10 @@ local _encode = function(lat, lng, level)
 
 local decode_fn = function(code, lat, lng, level, unit, wflg)
   if std.length(code) == level then
+    local lng2 = lng + unit * 3.0 / 2.0;
     {
       lat: -90.0 + (lat + unit * 3.0 / 2.0),
-      lng: if wflg then
-          (lng + unit * 3.0 / 2.0) - 180.0
-        else
-          lng + unit * 3.0 / 2.0,
+      lng: if wflg then lng2 - 180.0 else lng2,
       level: level,
       unit: unit * 3.0,
     }
@@ -47,10 +45,7 @@ local decode_fn = function(code, lat, lng, level, unit, wflg)
 ;
 
 local _decode = function(code)
-  if code[0] == "W" then
-    decode_fn(code, 0.0, 0.0, 1, 180.0 / 3.0, true)
-  else
-    decode_fn(code, 0.0, 0.0, 1, 180.0 / 3.0, false)
+  decode_fn(code, 0.0, 0.0, 1, 180.0 / 3.0, code[0] == "W")
 ;
 
 {
