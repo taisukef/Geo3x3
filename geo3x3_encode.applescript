@@ -1,5 +1,5 @@
 on encodeGeo3x3(lat, lng, level)
-	if level < 1 then
+    if level < 1 then
         return ""
     end if
     set res to ""
