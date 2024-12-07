@@ -105,3 +105,4 @@ LLVM IR,ll,blacket,none,none,compile,https://github.com/taisukef/Geo3x3/blob/mas
 Mojo,mojo,indent,var,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mojo
 Pkl,pkl,none,none,let,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pkl
 Jsonnet,"jsonnet,libsonnet",none,none,local,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.libsonnet
+AppleScript,applescript,end,none,none,none,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.applescript
