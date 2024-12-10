@@ -80,8 +80,8 @@ Phel,phel,blacket,let,def,script,https://github.com/taisukef/Geo3x3/blob/master/
 Raku,"raku,rakumod",blacket,my,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.rakumod
 文言,wy,end,數,none,script,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3_encode.wy
 Vala,vala,blacket,var,none,compile,https://github.com/taisukef/Geo3x3/blob/master/Geo3x3.vala
-SmileBASIC,prg,none,dim,none,$%,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.prg
-Small Basic,smallbasic,none,none,none,$,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.smallbasic
+SmileBASIC,prg,none,dim$%,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.prg
+Small Basic,smallbasic,none,$,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.smallbasic
 Flix,flix,indent,none,let,JVM,https://github.com/taisukef/Geo3x3/blob/master/flix/src/Geo3x3.flix
 PowerShell,"ps1,psm1",blacket,[type],none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.psm1
 Koka,kk,indent/blacket,var,val,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.kk
@@ -105,4 +105,4 @@ LLVM IR,ll,blacket,none,none,compile,https://github.com/taisukef/Geo3x3/blob/mas
 Mojo,mojo,indent,var,let,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.mojo
 Pkl,pkl,none,none,let,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.pkl
 Jsonnet,"jsonnet,libsonnet",none,none,local,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.libsonnet
-AppleScript,applescript,end,none,none,none,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.applescript
+AppleScript,applescript,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.applescript
