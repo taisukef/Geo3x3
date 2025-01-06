@@ -1,0 +1,75 @@
+function encode(lat, lng, level)
+  res = "E"
+  if lng < 0
+    res = "W"
+    lng = lng + 180
+  endif
+  lat = lat + 90 # 180:the North Pole, 0:the South Pole
+  unit = 180
+  for i = 1 to level - 1
+    unit = unit / 3
+    x = lng // unit
+    y = lat // unit
+    res = res + (x + y * 3 + 1)
+    lng = lng - x * unit
+    lat = lat - y * unit
+  next
+  return res
+end
+
+function char2n(c)
+  if c == "0"
+    return 0
+  elseif c == "1"
+    return 1
+  elseif c == "2"
+    return 2
+  elseif c == "3"
+    return 3
+  elseif c == "4"
+    return 4
+  elseif c == "5"
+    return 5
+  elseif c == "6"
+    return 6
+  elseif c == "7"
+    return 7
+  elseif c == "8"
+    return 8
+  elseif c == "9"
+    return 9
+  endif
+  return -1
+end
+
+function decode(code)
+  flg = 0
+  if code[0] == "W"
+    flg = 1
+  endif
+  unit = 180
+  lat = 0
+  lng = 0
+  level = 1
+  while 1
+    n = char2n(code[level])
+    if n <= 0
+      break
+    endif
+    unit = unit / 3
+    n = n - 1
+    lng = lng + n % 3 * unit
+    lat = lat + n // 3 * unit
+    level = level + 1
+  next
+  lat = lat + unit / 2
+  lng = lng + unit / 2
+  lat = lat - 90
+  if flg
+    lng = lng - 180
+  endif
+  return [lat, lng, level, unit]
+end
+
+print encode(35.65858, 139.745433, 14)
+print decode("E9139659937288")

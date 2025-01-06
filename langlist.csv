@@ -107,3 +107,4 @@ Pkl,pkl,none,none,let,script,https://github.com/taisukef/Geo3x3/blob/master/geo3
 Jsonnet,"jsonnet,libsonnet",none,none,local,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.libsonnet
 AppleScript,applescript,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.applescript
 DNCL3,dncl,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.dncl
+Wirth,wirth,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.wirth
