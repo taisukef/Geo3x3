@@ -5,9 +5,9 @@ Geo3x3
 
 ## Supported Languages
 
-109 languages supported ([langlist.csv](langlist.csv) / [langlist.html](https://taisukef.github.io/Geo3x3/langlist.html))  
+110 languages supported ([langlist.csv](langlist.csv) / [langlist.html](https://taisukef.github.io/Geo3x3/langlist.html))  
 
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [VBScript](#in-VBScript) / [Visual Basic](#in-Visual-Basic) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL) / [Tcl](#in-Tcl) / [V](#in-V) / [Pike](#in-Pike) / [Io](#in-Io) / [Wren](#in-Wren) / [GNU Smalltalk](#in-GNU-Smalltalk) / [JScript](#in-JScript) / [Pharo](#in-Pharo) / [Scratch](#in-Scratch) / [Standard ML](#in-Standard-ML) / [なでしこ](#in-なでしこ) / [Kuin](#in-Kuin) / [ClojureScript](#in-ClojureScript) / [HSP](#in-HSP) / [Reason](#in-Reason) / [THPL](#in-THPL) / [Janet](#in-Janet) / [Phel](#in-Phel) / [Raku](#in-Raku) / [文言](#in-文言) / [Vala](#in-Vala) / [SmileBASIC](#in-SmileBASIC) / [Small Basic](#in-Small-Basic) / [Flix](#in-Flix) / [PowerShell](#in-PowerShell) / [Koka](#in-Koka) / [Zig](#in-Zig) / [BanchaScript](#in-BanchaScript) / [AssemblyScript](#in-AssemblyScript) / [Clawn](#in-Clawn) / [FORTRAN 77](#in-FORTRAN-77) / [orelang](#in-orelang) / [Laze](#in-Laze) / [WebAssembly](#in-WebAssembly) / [Nelua](#in-Nelua) / [Roland](#in-Roland) / [ReScript](#in-ReScript) / [Effekt](#in-Effekt) / [Ceylon](#in-Ceylon) / [Mochi](#in-Mochi) / [Neko](#in-Neko) / [NekoML](#in-NekoML) / [LLVM IR](#in-LLVM-IR) / [Mojo](#in-Mojo) / [Pkl](#in-Pkl) / [Jsonnet](#in-Jsonnet) / [AppleScript](#in-AppleScript) / [DNCL3](#in-DNCL3) / [Wirth](#in-Wirth))
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [VBScript](#in-VBScript) / [Visual Basic](#in-Visual-Basic) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL) / [Tcl](#in-Tcl) / [V](#in-V) / [Pike](#in-Pike) / [Io](#in-Io) / [Wren](#in-Wren) / [GNU Smalltalk](#in-GNU-Smalltalk) / [JScript](#in-JScript) / [Pharo](#in-Pharo) / [Scratch](#in-Scratch) / [Standard ML](#in-Standard-ML) / [なでしこ](#in-なでしこ) / [Kuin](#in-Kuin) / [ClojureScript](#in-ClojureScript) / [HSP](#in-HSP) / [Reason](#in-Reason) / [THPL](#in-THPL) / [Janet](#in-Janet) / [Phel](#in-Phel) / [Raku](#in-Raku) / [文言](#in-文言) / [Vala](#in-Vala) / [SmileBASIC](#in-SmileBASIC) / [Small Basic](#in-Small-Basic) / [Flix](#in-Flix) / [PowerShell](#in-PowerShell) / [Koka](#in-Koka) / [Zig](#in-Zig) / [BanchaScript](#in-BanchaScript) / [AssemblyScript](#in-AssemblyScript) / [Clawn](#in-Clawn) / [FORTRAN 77](#in-FORTRAN-77) / [orelang](#in-orelang) / [Laze](#in-Laze) / [WebAssembly](#in-WebAssembly) / [Nelua](#in-Nelua) / [Roland](#in-Roland) / [ReScript](#in-ReScript) / [Effekt](#in-Effekt) / [Ceylon](#in-Ceylon) / [Mochi](#in-Mochi) / [Neko](#in-Neko) / [NekoML](#in-NekoML) / [LLVM IR](#in-LLVM-IR) / [Mojo](#in-Mojo) / [Pkl](#in-Pkl) / [Jsonnet](#in-Jsonnet) / [AppleScript](#in-AppleScript) / [DNCL3](#in-DNCL3) / [Wirth](#in-Wirth) / [C--](#in-C-3))
 
 ## What is Geo3x3
 Geo3x3 is a simple geo-coding system for WGS84  
@@ -2438,6 +2438,59 @@ print decode("E9139659937288")
 to run:
 ```bash
 $ deno -A https://code4fukui.github.io/Wirth/cli.js geo3x3.wirth
+```
+
+## in C--
+[C--](https://github.com/tctsigemura/C--)  
+[geo3x3.hmm](https://github.com/taisukef/Geo3x3/blob/master/geo3x3.hmm)
+```
+#include <stdio.hmm>
+#include "geo3x3.hmm"
+
+int[] lat = {0, 3, 5, 6, 5, 8, 5, 8, 0};
+int[] lng = {1, 3, 9, 7, 4, 5, 4, 3, 3};
+
+public int main() {
+  char[] code = geo3x3_encode(lat, lng, 14);
+  if (code == null) {
+    printf("err geo3x3_encode\n");
+    return 1;
+  }
+  printf("geo3x3_encode: %s\n", code); // geo3x3: E9139519253557
+  free(code);
+
+  int n = 9;
+  void[][] res = geo3x3_decode("E9139659937288", n);
+  printf("geo3x3_decode:\n");
+  printf("  lat: ");
+  show(res[0], n);
+  printf("  lng: ");
+  show(res[1], n);
+  int[] level2 = res[2];
+  printf("  level: %d\n", level2[0]);
+  printf("  unit: ");
+  show(res[3], n);
+  for (int i = 0; i < 4; i = i + 1) {
+    free(res[i]);
+  }
+  free(res);
+  return 0;
+}
+```
+setup:
+```
+clone https://github.com/tctsigemura/C--.git
+cd C--/src
+make
+sudo make install
+cd ../lib
+sudo make install
+cd ../include
+sudo make install
+```
+to run:
+```bash
+$ cm2c simple_geo3x3.cmm; ./a.out
 ```
 
 ## How to contribute

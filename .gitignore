@@ -1,6 +1,7 @@
 *.class
 __pycache__
 a.out
+a.out.*
 *.exe
 main
 *.o

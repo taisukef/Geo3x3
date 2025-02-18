@@ -1,0 +1,167 @@
+#include <stdlib.hmm>
+
+int[] create(int val, int n) {
+  int[] res = iMalloc(n);
+  for (int i = 0; i < n; i = i + 1) {
+    res[i] = 0;
+  }
+  res[0] = val / 100;
+  res[1] = val / 10 % 10;
+  res[2] = val % 10;
+  return res;
+}
+
+void show(int[] val, int n) {
+  for (int i = 0; i < n; i = i + 1) {
+    printf("%d ", val[i]);
+  }
+  printf("\n");
+}
+
+void norm(int[] a, int n) {
+  for (int i = n - 1; i >= 1; i = i - 1) {
+    a[i - 1] = a[i - 1] + a[i] / 10;
+    a[i] = a[i] % 10;
+  }
+}
+
+void add(int[] a, int[] b, int[] c, int n) {
+  for (int i = 0; i < n; i = i + 1) {
+    c[i] = a[i] + b[i];
+  }
+  norm(c, n);
+}
+
+void sub(int[] a, int[] b, int[] c, int n) {
+  for (int i = n - 1; i >= 0; i = i - 1) {
+    if (a[i] < b[i] && i > 0) {
+      a[i - 1] = a[i - 1] - 1;
+      a[i] = a[i] + 10;
+    }
+    c[i] = a[i] - b[i];
+  }
+}
+
+void xmul(int[] a, int x, int n) {
+  for (int i = n - 1; i >= 0; i = i - 1) {
+    a[i] = a[i] * x;
+  }
+  norm(a, n);
+}
+
+void xdiv(int[] a, int x, int n) {
+  for (int i = 0; i < n; i = i + 1) {
+    int d = a[i] % x;
+    a[i] = a[i] / x;
+    if (i < n - 1) {
+      a[i + 1] = a[i + 1] + d * 10;
+    }
+  }
+}
+
+void a2b(int[] a, int[] b, int n) {
+  for (int i = 0; i < n; i = i + 1) {
+    b[i] = a[i];
+  }
+}
+
+int divx(int[] a, int[] b, int n) {
+  int[] a2 = create(0, n);
+  int[]c = create(0, n);
+  for (int i = 0; i < n; i = i + 1) {
+    a2[i] = a[i];
+    c[i] = 0;
+  }
+  int x = 0;
+  for (;;) {
+    sub(a2, b, c, n);
+    if (c[0] < 0) {
+      break;
+    }
+    x = x + 1;
+    a2b(c, a2, n);
+  }
+  free(a2);
+  free(c);
+  return x;
+}
+
+public char[] geo3x3_encode(int[] lat, int[] lng, int level) {
+  int n = 9;
+  char[] code = cMalloc(level + 1);
+  lat[1] = lat[1] + 9;
+  norm(lat, n);
+  if (lng[0] >= 0) {
+    code[0] = 'E';
+  } else {
+    code[0] = 'W';
+    int[] n180 = create(180, n);
+    add(lng, n180, lng, n);
+    free(n180);
+  }
+  int[] temp = create(0, n);
+  int[] unit = create(180, n);
+  for (int i = 1; i < level; i = i + 1) {
+    xdiv(unit, 3, n);
+    int y = divx(lat, unit, n);
+    int x = divx(lng, unit, n);
+    code[i] = chr('0' + (x + y * 3 + 1));
+    a2b(unit, temp, n);
+    xmul(temp, x, n);
+    sub(lng, temp, lng, n);
+    a2b(unit, temp, n);
+    xmul(temp, y, n);
+    sub(lat, temp, lat, n);
+  }
+  code[level] = '\0';
+  free(temp);
+  free(unit);
+  return code;
+}
+
+public int[][] geo3x3_decode(char[] code, int n) {
+  boolean flg = false;
+  if (code[0] == 'W') {
+    flg = true;
+  }
+  int[] unit = create(180, n);
+  int[] lat = create(0, n);
+  int[] lng = create(0, n);
+  int[] temp = create(0, n);
+  int level = 1;
+  for (int i = 1;; i = i + 1) {
+    char c = code[i];
+    if (c == '\0') {
+      break;
+    }
+    int m = c - '1';
+    xdiv(unit, 3, n);
+    a2b(unit, temp, n);
+    xmul(temp, m % 3, n);
+    add(lng, temp, lng, n);
+    a2b(unit, temp, n);
+    xmul(temp, m / 3, n);
+    add(lat, temp, lat, n);
+    level = level + 1;
+  }
+  a2b(unit, temp, n);
+  xdiv(temp, 2, n);
+  add(lat, temp, lat, n);
+  add(lng, temp, lng, n);
+  int[] n90 = create(90, n);
+  sub(lat, n90, lat, n);
+  free(n90);
+  if (flg) {
+    int[] n180 = create(180, n);
+    sub(lng, n180, lng, n);
+    free(n180);
+  }
+  int[] level2 = iMalloc(1);
+  level2[0] = level;
+  void[][] res = rMalloc(4);
+  res[0] = lat;
+  res[1] = lng;
+  res[2] = level2;
+  res[3] = unit;
+  return res;
+}

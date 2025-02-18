@@ -108,3 +108,4 @@ Jsonnet,"jsonnet,libsonnet",none,none,local,script,https://github.com/taisukef/G
 AppleScript,applescript,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.applescript
 DNCL3,dncl,blacket,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.dncl
 Wirth,wirth,end,none,none,script,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.wirth
+C--,"cmm,hmm",blacket,int,none,compile,https://github.com/taisukef/Geo3x3/blob/master/geo3x3.hmm
