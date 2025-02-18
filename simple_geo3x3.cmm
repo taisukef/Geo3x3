@@ -1,0 +1,33 @@
+#include <stdio.hmm>
+#include <stdlib.hmm>
+#include "geo3x3.hmm"
+
+int[] lat = {0, 3, 5, 6, 5, 8, 5, 8, 0};
+int[] lng = {1, 3, 9, 7, 4, 5, 4, 3, 3};
+
+public int main() {
+  char[] code = geo3x3_encode(lat, lng, 14);
+  if (code == null) {
+    printf("err geo3x3_encode\n");
+    return 1;
+  }
+  printf("geo3x3_encode: %s\n", code); // geo3x3: E9139519253557
+  free(code);
+
+  int n = 9;
+  void[][] res = geo3x3_decode("E9139659937288", n);
+  printf("geo3x3_decode:\n");
+  printf("  lat: ");
+  show(res[0], n);
+  printf("  lng: ");
+  show(res[1], n);
+  int[] level2 = res[2];
+  printf("  level: %d\n", level2[0]);
+  printf("  unit: ");
+  show(res[3], n);
+  for (int i = 0; i < 4; i = i + 1) {
+    free(res[i]);
+  }
+  free(res);
+  return 0;
+}
