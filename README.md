@@ -7,7 +7,7 @@ Geo3x3
 
 110 languages supported ([langlist.csv](langlist.csv) / [langlist.html](https://taisukef.github.io/Geo3x3/langlist.html))  
 
-([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [VBScript](#in-VBScript) / [Visual Basic](#in-Visual-Basic) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL) / [Tcl](#in-Tcl) / [V](#in-V) / [Pike](#in-Pike) / [Io](#in-Io) / [Wren](#in-Wren) / [GNU Smalltalk](#in-GNU-Smalltalk) / [JScript](#in-JScript) / [Pharo](#in-Pharo) / [Scratch](#in-Scratch) / [Standard ML](#in-Standard-ML) / [なでしこ](#in-なでしこ) / [Kuin](#in-Kuin) / [ClojureScript](#in-ClojureScript) / [HSP](#in-HSP) / [Reason](#in-Reason) / [THPL](#in-THPL) / [Janet](#in-Janet) / [Phel](#in-Phel) / [Raku](#in-Raku) / [文言](#in-文言) / [Vala](#in-Vala) / [SmileBASIC](#in-SmileBASIC) / [Small Basic](#in-Small-Basic) / [Flix](#in-Flix) / [PowerShell](#in-PowerShell) / [Koka](#in-Koka) / [Zig](#in-Zig) / [BanchaScript](#in-BanchaScript) / [AssemblyScript](#in-AssemblyScript) / [Clawn](#in-Clawn) / [FORTRAN 77](#in-FORTRAN-77) / [orelang](#in-orelang) / [Laze](#in-Laze) / [WebAssembly](#in-WebAssembly) / [Nelua](#in-Nelua) / [Roland](#in-Roland) / [ReScript](#in-ReScript) / [Effekt](#in-Effekt) / [Ceylon](#in-Ceylon) / [Mochi](#in-Mochi) / [Neko](#in-Neko) / [NekoML](#in-NekoML) / [LLVM IR](#in-LLVM-IR) / [Mojo](#in-Mojo) / [Pkl](#in-Pkl) / [Jsonnet](#in-Jsonnet) / [AppleScript](#in-AppleScript) / [DNCL3](#in-DNCL3) / [Wirth](#in-Wirth) / [C--](#in-C--))
+([JavaScript](#in-JavaScript-HTML) / [TypeScript](#in-TypeScript-Deno) / [Zen](#in-Zen) / [C](#in-C) / [C++](#in-C-1) / [C#](#in-C-2) / [Swift](#in-Swift) / [Java](#in-Java) / [Python](#in-Python) / [Ruby](#in-Ruby) / [PHP](#in-PHP) / [Go](#in-Go) / [Kotlin](#in-Kotlin) / [Dart](#in-Dart) / [Rust](#in-Rust) / [Haskell](#in-haskell-ghc-84x-or-later) / [OpenVBS](#in-OpenVBS) / [VBScript](#in-VBScript) / [Visual Basic](#in-Visual-Basic) / [Scala](#in-Scala) / [R](#in-R) / [GAS](#in-GAS-Google-App-Script) / [Nim](#in-Nim) / [Lua](#in-Lua) / [Perl](#in-Perl) / [Elixir](#in-Elixir) / [Groovy](#in-Groovy) / [D](#in-D) / [Julia](#in-Julia) / [Racket](#in-Racket) / [OCaml](#in-OCaml) / [Erlang](#in-Erlang) / [Clojure](#in-Clojure) / [F#](#in-F) / [Haxe](#in-Haxe) / [Scheme](#in-Scheme-R6RS) / [Common Lisp](#in-Common-Lisp) / [Elm](#in-Elm) / [Hack](#in-Hack) / [PureScript](#in-PureScript) / [CoffeeScript](#in-CoffeeScript) / [Objective-C](#in-Objective-C) / [Frege](#in-Frege) / [Eiffel](#in-Eiffel) / [Ada](#in-Ada) / [Free Pascal](#in-Free-Pascal) / [Crystal](#in-Crystal) / [Forth](#in-Forth) / [Bash](#in-Bash) / [AWK](#in-AWK) / [Vim script](#in-Vim-script) / [Vim9 script](#in-Vim9-script) / [IchigoJam BASIC](#in-IchigoJam-BASIC) / [GnuCOBOL](#in-GnuCOBOL) / [MoonScript](#in-MoonScript) / [Octave](#in-Octave) / [Emacs Lisp](#in-Emacs-Lisp) / [Fortran 90](#in-Fortran-90) / [MariaDB SQL/PSM](#in-MariaDB-SQL) / [PL/pgSQL](#in-PLpgSQL) / [Tcl](#in-Tcl) / [V](#in-V) / [Pike](#in-Pike) / [Io](#in-Io) / [Wren](#in-Wren) / [GNU Smalltalk](#in-GNU-Smalltalk) / [JScript](#in-JScript) / [Pharo](#in-Pharo) / [Scratch](#in-Scratch) / [Standard ML](#in-Standard-ML) / [なでしこ](#in-なでしこ) / [Kuin](#in-Kuin) / [ClojureScript](#in-ClojureScript) / [HSP](#in-HSP) / [Reason](#in-Reason) / [THPL](#in-THPL) / [Janet](#in-Janet) / [Phel](#in-Phel) / [Raku](#in-Raku) / [文言](#in-文言) / [Vala](#in-Vala) / [SmileBASIC](#in-SmileBASIC) / [Small Basic](#in-Small-Basic) / [Flix](#in-Flix) / [PowerShell](#in-PowerShell) / [Koka](#in-Koka) / [Zig](#in-Zig) / [BanchaScript](#in-BanchaScript) / [AssemblyScript](#in-AssemblyScript) / [Clawn](#in-Clawn) / [FORTRAN 77](#in-FORTRAN-77) / [orelang](#in-orelang) / [Laze](#in-Laze) / [WebAssembly](#in-WebAssembly) / [Nelua](#in-Nelua) / [Roland](#in-Roland) / [ReScript](#in-ReScript) / [Effekt](#in-Effekt) / [Ceylon](#in-Ceylon) / [Mochi](#in-Mochi) / [Neko](#in-Neko) / [NekoML](#in-NekoML) / [LLVM IR](#in-LLVM-IR) / [Mojo](#in-Mojo) / [Pkl](#in-Pkl) / [Jsonnet](#in-Jsonnet) / [AppleScript](#in-AppleScript) / [DNCL3](#in-DNCL3) / [Wirth](#in-Wirth) / [C--](#in-C--) / [WGSL](#WGSL))
 
 ## What is Geo3x3
 Geo3x3 is a simple geo-coding system for WGS84  
@@ -2491,6 +2491,34 @@ sudo make install
 to run:
 ```bash
 $ cm2c simple_geo3x3.cmm; ./a.out
+```
+
+## in WGSL
+[WGSL](https://www.w3.org/TR/WGSL/)  
+[geo3x3_WGSL.ts](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_WGSL.ts)
+[geo3x3_WGSL_encode.wgsl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_WGSL_encode.wgsl)
+[geo3x3_WGSL_decode.wgsl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_WGSL_decode.wgsl)
+```
+import { encodeGPU, decodeGPU, getGPUDevice } from "./geo3x3_WGSL.ts";
+
+const device = await getGPUDevice();
+
+const data = { lat: 35.65858, lng: 139.745433, level: 14 };
+const lats = new Float32Array([data.lat]);
+const lngs = new Float32Array([data.lng]);
+const gpuCodes = await encodeGPU(device, lats, lngs, data.level);
+console.log(gpuCodes);
+
+const code = "E9139659937288";
+const gpuDec = await decodeGPU(device, [code], code.length);
+console.log(gpuDec);
+```
+setup:
+install [Deno](https://deno.com/)
+
+to run:
+```bash
+$ deno -A simple_geo3x3_WGSL.js
 ```
 
 ## How to contribute
