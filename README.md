@@ -2496,6 +2496,7 @@ $ cm2c simple_geo3x3.cmm; ./a.out
 ## in WGSL
 [WGSL](https://www.w3.org/TR/WGSL/)  
 [geo3x3_WGSL.ts](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_WGSL.ts)
+(or [geo3x3_WGSL.js](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_WGSL.ts))
 [geo3x3_WGSL_encode.wgsl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_WGSL_encode.wgsl)
 [geo3x3_WGSL_decode.wgsl](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_WGSL_decode.wgsl)
 ```
