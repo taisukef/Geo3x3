@@ -2514,7 +2514,7 @@ const gpuDec = await decodeGPU(device, [code], code.length);
 console.log(gpuDec);
 ```
 setup:
-install [Deno](https://deno.com/)
+- install [Deno](https://deno.com/) or [run on the browser](https://taisukef.github.io/Geo3x3/simple_geo3x3_WGSL.html)
 
 to run:
 ```bash

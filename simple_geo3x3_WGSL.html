@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
+<title>geo3x3_WGSL</title></head><body>
+<h1>geo3x3_WGSL</h1>
+<textarea id="ta" style="width: 90vw; height: 10em"></textarea>
+<script type="module">
+import { encodeGPU, decodeGPU, getGPUDevice } from "./geo3x3_WGSL.js";
+
+const log = (s) => ta.value += JSON.stringify(s) + "\n";
+
+const device = await getGPUDevice();
+
+const data = { lat: 35.65858, lng: 139.745433, level: 14 };
+const lats = new Float32Array([data.lat]);
+const lngs = new Float32Array([data.lng]);
+const gpuCodes = await encodeGPU(device, lats, lngs, data.level);
+log(gpuCodes);
+
+const code = "E9139659937288";
+const gpuDec = await decodeGPU(device, [code], code.length);
+log(gpuDec);
+</script>
+
+<hr>
+<a href="https://github.com/taisukef/Geo3x3/">src on GitHub</a><br>
+</body></html>
