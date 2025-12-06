@@ -2525,7 +2525,7 @@ $ deno -A simple_geo3x3_WGSL.js
 ## in Sui
 [Sui](https://github.com/TakatoHonda/sui-lang)  
 [geo3x3_encode.sui](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_encode.sui)  
-[geo3x3_decode.sui](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_WGSL_decode.sui)  
+[geo3x3_decode.sui](https://github.com/taisukef/Geo3x3/blob/master/geo3x3_decode.sui)  
 
 setup:
 ```bash
