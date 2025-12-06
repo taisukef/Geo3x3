@@ -39,3 +39,4 @@ simple_geo3x3.wat
 node_modules/
 rescript/lib/
 *.n
+sui-lang/
